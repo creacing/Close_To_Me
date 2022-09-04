@@ -1,6 +1,8 @@
 const config = {
     //作者名字
     author: 'Creazing',
+    title: '優萌初華',
+    description: '= 有夢書架 =',
     // 导航栏
     nav: [
         { name: 'Creazing', link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },

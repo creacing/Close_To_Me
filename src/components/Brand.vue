@@ -5,15 +5,17 @@
     <div id="brand">
       <div class="pjax">
         <a href="/" class="logo" rel="start" data-pjax-state=""
-          ><p class="artboard">Yume Shoka</p>
-          <h1 itemprop="name headline" class="title">優萌初華</h1>
+          ><p class="artboard">{{ author }}</p>
+          <h1 itemprop="name headline" class="title">{{ title }}</h1>
         </a>
-        <p class="meta" itemprop="description">= 有夢書架 =</p>
+        <p class="meta" itemprop="description">{{ description }}</p>
       </div>
     </div>
   </div>
 </template>
 <script setup>
+import config from "../../public/config";
+const { author, title, description } = config;
 </script>
 
 <style lang="scss" scoped>

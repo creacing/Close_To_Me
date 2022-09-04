@@ -1,9 +1,3 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-import Nav from "@/components/Nav.vue";
-import Loading from "@/components/Loading.vue";
-</script>
-
 <template>
   <div class="pace pace-inactive pace-inactive">
     <div
@@ -53,11 +47,25 @@ import Loading from "@/components/Loading.vue";
       <Footer />
     </footer>
   </div>
-</template>
-<script>
+</template>  
+<script setup>
+import { RouterLink, RouterView } from "vue-router";
+import Nav from "@/components/Nav.vue";
+import Loading from "@/components/Loading.vue";
 import Footer from "@/components/Footer.vue";
 import Wave from "@/components/Wave.vue";
 import LayOut from "@/views/LayOut.vue";
+import { onMounted } from "vue";
+import initAnime from "@/utils/animateParticules.js";
+onMounted(() => {
+  document.addEventListener(
+    "click",
+    function (e) {
+      initAnime(e);
+    },
+    false
+  );
+});
 </script>
 <style scoped>
 </style>
