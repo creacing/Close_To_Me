@@ -1,8 +1,10 @@
 <template>
-  <div id="loading" style="display: none; opacity: 0">
+  <div id="loading" :class="[showLoading?'':'show--loading']">
     <div class="cat">
       <div class="body"></div>
-      <div class="head"><div class="face"></div></div>
+      <div class="head">
+        <div class="face"></div>
+      </div>
       <div class="foot">
         <div class="tummy-end"></div>
         <div class="bottom"></div>
@@ -17,7 +19,21 @@
   </div>
 </template>
 <script setup>
+import { onMounted, ref, onBeforeMount } from 'vue'
+const showLoading = ref(false)
+onBeforeMount(() => {
+  showLoading.value = true
+})
+onMounted(() => {
+  window.onload = () => {
+    showLoading.value = false
+  }
+})
 </script>
 
 <style lang="scss" scoped>
+.show--loading {
+  display: none;
+  opacity: 0;
+}
 </style>
