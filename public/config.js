@@ -23,6 +23,9 @@ const config = {
             ], liClass: 'dropdown', rel: '', iClass: 'i-magic', aClass: ''
         },
         { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
-    ]
+    ],
+    sidebar:{
+      
+    }
 }
 export default config
