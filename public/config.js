@@ -7,7 +7,7 @@ const config = {
     nav: [
         { name: 'Creazing', link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },
         { name: '首页', link: "/", children: [], liClass: 'active', rel: 'section', iClass: 'i-home', aClass: '' },
-        { name: '关于', link: "/about/", children: [{ name: '自设', link: "/about/yume", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }], liClass: 'dropdown', rel: 'section', iClass: 'i-use', aClass: '' },
+        { name: '关于', link: "/about/", children: [{ name: '自设', link: "/about/yume", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }], liClass: 'dropdown', rel: 'section', iClass: 'i-user', aClass: '' },
         {
             name: '文章', link: "#", children: [
                 { name: '归档', link: "/archives/", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
@@ -24,21 +24,21 @@ const config = {
         },
         { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
     ],
-    sidebar:{
-      avator: '//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg',
-      author: 'Creazing',
-      description: 'xxxx',
-      articlesNum: '11',
-      categoriesNum: '22',
-      tagsNum: '33',
-      socialLinks: [
-        { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
-        { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
-        { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
-        { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
-        { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
-        { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
-      ]
+    sidebar: {
+        avator: '//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg',
+        author: 'Creazing',
+        description: 'xxxx',
+        articlesNum: '11',
+        categoriesNum: '22',
+        tagsNum: '33',
+        socialLinks: [
+            { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
+            { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
+            { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
+            { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
+            { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
+            { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
+        ]
     }
 }
 export default config

@@ -3,7 +3,10 @@
   <div class="inner">
     <Brand />
 
-    <nav id="nav" class="show up">
+    <nav
+      id="nav"
+      :class="navBottom === 2 ? '' : navBottom === 1 ? 'show down' : 'show up'"
+    >
       <div class="inner">
         <div class="toggle">
           <div class="lines" aria-label="切换导航栏">
@@ -13,14 +16,29 @@
           </div>
         </div>
         <ul class="menu">
-          <li class="item" :class="item.liClass" v-for="item in nav" :key="item">
-            <a :href="item.link" data-pjax-state :class="item.aClass" :rel="item.rel">
+          <li
+            class="item"
+            :class="item.liClass"
+            v-for="item in nav"
+            :key="item"
+          >
+            <a
+              :href="item.link"
+              data-pjax-state
+              :class="item.aClass"
+              :rel="item.rel"
+            >
               <i class="ic" :class="item.iClass"></i>
               {{ item.name }}
             </a>
             <ul class="submenu" v-if="item.children.length > 0">
               <li class="item" v-for="child in item.children" :key="child">
-                <a :href="child.link" :rel="child.rel" data-pjax-state :class="child.iClass">
+                <a
+                  :href="child.link"
+                  :rel="child.rel"
+                  data-pjax-state
+                  :class="child.iClass"
+                >
                   <i class="ic" :class="child.iClass"></i>
                   {{ child.name }}
                 </a>
@@ -30,8 +48,18 @@
         </ul>
         <ul class="right">
           <li class="item theme">
-            <i v-if="isSun" class="ic i-sun" @click="changeTheme" data-theme></i>
-            <i v-if="!isSun" class="ic i-moon" @click="changeTheme" data-theme="dark"></i>
+            <i
+              v-if="isSun"
+              class="ic i-sun"
+              @click="changeTheme"
+              data-theme
+            ></i>
+            <i
+              v-if="!isSun"
+              class="ic i-moon"
+              @click="changeTheme"
+              data-theme="dark"
+            ></i>
           </li>
           <li class="item search">
             <i class="ic i-search" @click="searchForArticles"></i>
@@ -52,21 +80,21 @@ import Brand from "./Brand.vue";
 import BgImage from "./BgImage.vue";
 import PlayMusic from "./PlayMusic.vue";
 import { transition } from "@/utils/tool.js";
-import { nextTick, ref } from "vue";
+import { onMounted, ref } from "vue";
 const { author, nav } = config;
 //切换黑白背景
 const isSun = ref(true); // 白天黑夜 default 白天
 const isShow = ref(false); // 是否显示 default 不显示
 const changeTheme = () => {
-  const HTML = document.documentElement
+  const HTML = document.documentElement;
 
   isSun.value = !isSun.value;
   isShow.value = !isShow.value;
   //background color
   if (!isSun.value) {
-    HTML.setAttribute('data-theme', 'dark')
+    HTML.setAttribute("data-theme", "dark");
   } else {
-    HTML.setAttribute('data-theme', '')
+    HTML.setAttribute("data-theme", "");
   }
   // switch white and dark
   setTimeout(() => {
@@ -85,6 +113,29 @@ const searchForArticles = () => {
 };
 const closeSearchDialog = (value) => {
   showSearch.value = value;
+};
+
+const navBottom = ref(2);
+let scroll = 0;
+let offsetWave = null;
+
+onMounted(() => {
+  offsetWave = document.getElementById("waves").offsetTop;
+  window.addEventListener("scroll", scrollTop, true);
+});
+
+const scrollTop = () => {
+  const newScroll =
+    document.documentElement.scrollTop || document.body.scrollTop;
+
+  if (newScroll > scroll) {
+    //往下拉
+    newScroll < offsetWave ? (navBottom.value = 2) : (navBottom.value = 1);
+  } else {
+    // 往上拉
+    newScroll < offsetWave ? (navBottom.value = 2) : (navBottom.value = 0);
+  }
+  scroll = newScroll;
 };
 </script>
 

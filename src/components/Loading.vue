@@ -1,5 +1,5 @@
 <template>
-  <div id="loading" :class="[showLoading?'':'show--loading']">
+  <div id="loading" :class="[showLoading ? '' : 'show--loading']">
     <div class="cat">
       <div class="body"></div>
       <div class="head">
@@ -19,16 +19,16 @@
   </div>
 </template>
 <script setup>
-import { onMounted, ref, onBeforeMount } from 'vue'
-const showLoading = ref(false)
+import { onMounted, ref, onBeforeMount } from "vue";
+const showLoading = ref(false);
 onBeforeMount(() => {
-  showLoading.value = true
-})
+  showLoading.value = true;
+});
 onMounted(() => {
   window.onload = () => {
-    showLoading.value = false
-  }
-})
+    showLoading.value = false;
+  };
+});
 </script>
 
 <style lang="scss" scoped>
