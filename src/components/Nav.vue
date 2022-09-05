@@ -3,7 +3,7 @@
   <div class="inner">
     <Brand />
 
-    <nav id="nav">
+    <nav id="nav" class="show up">
       <div class="inner">
         <div class="toggle">
           <div class="lines" aria-label="切换导航栏">
