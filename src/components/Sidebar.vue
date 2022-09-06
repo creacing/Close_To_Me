@@ -1,6 +1,5 @@
 <template>
-  <!-- affix -->
-  <div id="sidebar">
+  <div id="sidebar" :class="isSidebar?'on sidebar-show':''">
     <div class="inner">
       <div class="panels">
         <div class="inner">
@@ -56,7 +55,7 @@
             <ul class="menu">
               <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
                 <a href="link.link" data-pjax-state>
-                  <i class="ic" :class="link.iClass"></i>
+                  <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
                 </a>
                 <ul class="submenu" v-if="link.children.length > 0">
@@ -91,17 +90,26 @@
   </div>
 </template>
 <script setup>
-import { onMounted, ref } from "vue";
+import { toRefs } from "vue";
 import config from "../../public/config";
+import { store } from '@/stores/store.js'
+import anime from 'animejs/lib/anime.es.js';
+
 const { nav, sidebar } = config;
+const state = store()
+const { isSidebar } = toRefs(state)
+
 </script>
 
 <style lang='scss' scoped>
 .panels {
   padding-top: 0.625rem;
 }
-#sidebar {
-  position: sticky;
-  top: 0;
+
+@media (min-width: 991px) {
+  #sidebar {
+    position: sticky;
+    top: 0;
+  }
 }
 </style>

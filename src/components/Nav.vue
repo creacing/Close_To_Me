@@ -5,7 +5,7 @@
 
     <nav id="nav" :class="navBottom === 2 ? '' : navBottom === 1 ? 'show down' : 'show up'">
       <div class="inner">
-        <div class="toggle" @click="showSidebar">
+        <div class="toggle" :class="isSidebar?'close':''" @click.stop="showSidebar">
           <div class="lines" aria-label="切换导航栏">
             <span class="line"></span>
             <span class="line"></span>
@@ -15,7 +15,7 @@
         <ul class="menu">
           <li class="item" :class="item.liClass" v-for="item in nav" :key="item">
             <RouterLink :to="item.link" data-pjax-state :class="item.aClass" :rel="item.rel">
-              <i class="ic" :class="item.iClass"></i>
+              <i class="ic" :class="item.iClass" v-if="item.iClass"></i>
               {{ item.name }}
             </RouterLink>
             <ul class="submenu" v-if="item.children.length > 0">
@@ -53,8 +53,11 @@ import Brand from "./Brand.vue";
 import BgImage from "./BgImage.vue";
 // import PlayMusic from "./PlayMusic.vue";
 import { transition } from "@/utils/tool.js";
-import { onMounted, ref, onUnmounted } from "vue";
+import { onMounted, ref, onUnmounted, toRefs } from "vue";
 const { nav } = config;
+import { store } from '@/stores/store.js'
+import anime from 'animejs/lib/anime.es.js';
+
 //切换黑白背景
 const isSun = ref(true); // 白天黑夜 default 白天
 const isShow = ref(false); // 是否显示 default 不显示
@@ -115,9 +118,52 @@ onUnmounted(() => {
   window.removeEventListener("scroll", scrollTop)
 })
 
-const showSidebar = () => {
 
+const state = store()
+const { isSidebar } = toRefs(state)
+const showSidebar = () => {
+  isSidebar.value = true
+
+  const sidebar = document.getElementById('sidebar')
+  const animation = {
+    begin: function (anim) {
+      sidebar.style.display = 'block'
+    },
+    translateX: [100, 0],
+    opacity: [0, 1]
+  }
+
+  anime(Object.assign({
+    targets: sidebar,
+    duration: 400,
+    easing: 'linear'
+  }, animation)).finished.then(function () {
+    sidebar.style.display = 'block'
+  });
+  const hiddenSidebar = (e) => {
+    isSidebar.value = false
+
+    const animation = {
+      begin: function (anim) {
+        // sidebar.style.display = 'none'
+      },
+      translateX: [0, 100],
+      opacity: [1, 0]
+    }
+
+    anime(Object.assign({
+      targets: sidebar,
+      duration: 400,
+      easing: 'linear'
+    }, animation)).finished.then(function () {
+      sidebar.style.display = 'none'
+    });
+  }
+
+  window.addEventListener('click', hiddenSidebar)
 }
+
+
 </script>
 
 <style lang="scss" scoped>
