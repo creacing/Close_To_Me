@@ -13,7 +13,6 @@
 import TopArticle from '@/components/TopArticle.vue'
 import Types from '@/components/Types.vue'
 import ArticleList from '@/components/ArticleList.vue'
-
 </script>
 
 

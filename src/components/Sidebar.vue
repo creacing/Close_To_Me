@@ -7,12 +7,7 @@
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div
-              class="author"
-              itemprop="author"
-              itemscope
-              itemtype="http://schema.org/Person"
-            >
+            <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
               <img
                 class="image lozaded"
                 itemprop="image"
@@ -22,9 +17,7 @@
                 data-loaded="true"
               />
               <p class="name" itemprop="name">{{ sidebar.author }}</p>
-              <div class="description" itemprop="description">
-                {{ sidebar.description }}
-              </div>
+              <div class="description" itemprop="description">{{ sidebar.description }}</div>
             </div>
             <nav class="state">
               <div class="item posts">
@@ -61,22 +54,13 @@
               </a>
             </div>
             <ul class="menu">
-              <li
-                class="item"
-                v-for="link in nav"
-                :class="link.liClass"
-                :key="link"
-              >
+              <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
                 <a href="link.link" data-pjax-state>
                   <i class="ic" :class="link.iClass"></i>
                   {{ link.name }}
                 </a>
                 <ul class="submenu" v-if="link.children.length > 0">
-                  <li
-                    class="item"
-                    v-for="subLink in link.children"
-                    :key="subLink"
-                  >
+                  <li class="item" v-for="subLink in link.children" :key="subLink">
                     <a :href="subLink.link" rel="section" data-pjax-state>
                       <i class="ic" :class="subLink.iClass"></i>
                       {{ subLink.name }}
@@ -118,5 +102,6 @@ const { nav, sidebar } = config;
 }
 #sidebar {
   position: sticky;
+  top: 0;
 }
 </style>

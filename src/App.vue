@@ -10,7 +10,7 @@
     </div>
     <div class="pace-activity"></div>
   </div>
-  <Loading />
+  <!-- <Loading :showLoading="showLoading" /> -->
   <div id="container">
     <!-- 头部 -->
     <header id="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -34,14 +34,16 @@
   </div>
 </template>  
 <script setup>
-import { RouterLink, RouterView } from "vue-router";
+import { RouterView } from "vue-router";
 import Nav from "@/components/Nav.vue";
 import Loading from "@/components/Loading.vue";
 import Footer from "@/components/Footer.vue";
 import Wave from "@/components/Wave.vue";
 import LayOut from "@/views/LayOut.vue";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import initAnime from "@/utils/clickAnime.js";
+const showLoading = ref(false)
+
 onMounted(() => {
   document.addEventListener(
     "click",
@@ -50,7 +52,23 @@ onMounted(() => {
     },
     false
   );
+
+  // document.addEventListener('visibilitychange', () => {
+  //   switch (document.visibilityState) {
+  //     case 'hidden':
+  //       showLoading.value = true
+  //       break;
+  //     case 'visible':
+  //       setTimeout(function () {
+  //         showLoading.value = false
+  //       }, 2000);
+  //       break;
+  //   }
+  // });
+
 });
+
+
 </script>
 <style lang="scss" scoped>
 </style>

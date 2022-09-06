@@ -19,16 +19,14 @@
   </div>
 </template>
 <script setup>
-import { onMounted, ref, onBeforeMount } from "vue";
-const showLoading = ref(false);
-onBeforeMount(() => {
-  showLoading.value = true;
-});
-onMounted(() => {
-  window.onload = () => {
-    showLoading.value = false;
-  };
-});
+import { defineProps, toRefs, watch } from "vue";
+const props = defineProps({
+  showLoading: {
+    type: Boolean,
+    default: false
+  }
+})
+const { showLoading } = toRefs(props);
 </script>
 
 <style lang="scss" scoped>
