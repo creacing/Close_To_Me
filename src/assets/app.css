@@ -2808,7 +2808,6 @@ main>.inner {
 }
 
 .overview .menu .item {
-    border-radius: .9375rem;
     margin-bottom: .625rem;
     display: block;
     color: var(--grey-5);

@@ -1,12 +1,17 @@
 <template>
-  <div id="sidebar" :class="isSidebar?'on sidebar-show':''">
+  <div id="sidebar" :class="isSidebar ? 'on sidebar-show' : ''">
     <div class="inner">
       <div class="panels">
         <div class="inner">
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <div
+              class="author"
+              itemprop="author"
+              itemscope
+              itemtype="http://schema.org/Person"
+            >
               <img
                 class="image lozaded"
                 itemprop="image"
@@ -16,7 +21,9 @@
                 data-loaded="true"
               />
               <p class="name" itemprop="name">{{ sidebar.author }}</p>
-              <div class="description" itemprop="description">{{ sidebar.description }}</div>
+              <div class="description" itemprop="description">
+                {{ sidebar.description }}
+              </div>
             </div>
             <nav class="state">
               <div class="item posts">
@@ -53,13 +60,22 @@
               </a>
             </div>
             <ul class="menu">
-              <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
+              <li
+                class="item"
+                v-for="link in nav"
+                :class="link.liClass"
+                :key="link"
+              >
                 <a href="link.link" data-pjax-state>
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
                 </a>
                 <ul class="submenu" v-if="link.children.length > 0">
-                  <li class="item" v-for="subLink in link.children" :key="subLink">
+                  <li
+                    class="item"
+                    v-for="subLink in link.children"
+                    :key="subLink"
+                  >
                     <a :href="subLink.link" rel="section" data-pjax-state>
                       <i class="ic" :class="subLink.iClass"></i>
                       {{ subLink.name }}
@@ -92,13 +108,12 @@
 <script setup>
 import { toRefs } from "vue";
 import config from "../../public/config";
-import { store } from '@/stores/store.js'
-import anime from 'animejs/lib/anime.es.js';
+import { store } from "@/stores/store.js";
+import anime from "animejs/lib/anime.es.js";
 
 const { nav, sidebar } = config;
-const state = store()
-const { isSidebar } = toRefs(state)
-
+const state = store();
+const { isSidebar } = toRefs(state);
 </script>
 
 <style lang='scss' scoped>
@@ -110,6 +125,9 @@ const { isSidebar } = toRefs(state)
   #sidebar {
     position: sticky;
     top: 0;
+    transform: translateX(0) !important;
+    opacity: 1 !important;
+    display: block !important;
   }
 }
 </style>

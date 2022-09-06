@@ -1,11 +1,12 @@
+const author = 'Cheshire Cat'
 const config = {
     //作者名字
-    author: 'Creazing',
-    title: '優萌初華',
-    description: '= 有夢書架 =',
+    author: author,
+    title: '柴郡猫',
+    description: 'Wonderland',
     // 导航栏
     nav: [
-        { name: 'Creazing', link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },
+        { name: author, link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },
         { name: '首页', link: "/", children: [], liClass: 'active', rel: 'section', iClass: 'i-home', aClass: '' },
         { name: '关于', link: "/about/", children: [{ name: '自设', link: "/about/yume", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }], liClass: 'dropdown', rel: 'section', iClass: 'i-user', aClass: '' },
         {
