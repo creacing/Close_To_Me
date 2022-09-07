@@ -6,12 +6,7 @@
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div
-              class="author"
-              itemprop="author"
-              itemscope
-              itemtype="http://schema.org/Person"
-            >
+            <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
               <img
                 class="image lozaded"
                 itemprop="image"
@@ -21,35 +16,33 @@
                 data-loaded="true"
               />
               <p class="name" itemprop="name">{{ sidebar.author }}</p>
-              <div class="description" itemprop="description">
-                {{ sidebar.description }}
-              </div>
+              <div class="description" itemprop="description">{{ sidebar.description }}</div>
             </div>
             <nav class="state">
               <div class="item posts">
-                <a href="/archives/" data-pjax-state>
+                <router-link to="/archives/" data-pjax-state>
                   <span class="count">{{ sidebar.articlesNum }}</span>
                   <span class="name">文章</span>
-                </a>
+                </router-link>
               </div>
               <div class="item categories">
-                <a href="/categories/" data-pjax-state>
+                <router-link to="/categories/" data-pjax-state>
                   <span class="count">{{ sidebar.categoriesNum }}</span>
                   <span class="name">分类</span>
-                </a>
+                </router-link>
               </div>
               <div class="item tags">
-                <a href="/tags/" data-pjax-state>
+                <router-link to="/tags/" data-pjax-state>
                   <span class="count">{{ sidebar.tagsNum }}</span>
                   <span class="name">标签</span>
-                </a>
+                </router-link>
               </div>
             </nav>
             <div class="social">
-              <a
+              <router-link
                 v-for="link of sidebar.socialLinks"
                 :key="link"
-                :href="link.url"
+                :to="link.url"
                 rel="noopener external nofollow noreferrer"
                 target="_blank"
                 class="exturl item"
@@ -57,29 +50,24 @@
                 :title="link.url"
               >
                 <i class="ic" :class="link.icon"></i>
-              </a>
+              </router-link>
             </div>
             <ul class="menu">
-              <li
-                class="item"
-                v-for="link in nav"
-                :class="link.liClass"
-                :key="link"
-              >
-                <a href="link.link" data-pjax-state>
+              <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
+                <router-link :to="link.link" data-pjax-state v-if="link.children.length === 0">
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
-                </a>
+                </router-link>
+                <span data-pjax-state v-else>
+                  <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
+                  {{ link.name }}
+                </span>
                 <ul class="submenu" v-if="link.children.length > 0">
-                  <li
-                    class="item"
-                    v-for="subLink in link.children"
-                    :key="subLink"
-                  >
-                    <a :href="subLink.link" rel="section" data-pjax-state>
+                  <li class="item" v-for="subLink in link.children" :key="subLink">
+                    <router-link :to="subLink.link" rel="section" data-pjax-state>
                       <i class="ic" :class="subLink.iClass"></i>
                       {{ subLink.name }}
-                    </a>
+                    </router-link>
                   </li>
                 </ul>
               </li>
@@ -110,7 +98,7 @@ import { toRefs } from "vue";
 import config from "../../public/config";
 import { store } from "@/stores/store.js";
 import anime from "animejs/lib/anime.es.js";
-
+import { RouterLink } from "vue-router";
 const { nav, sidebar } = config;
 const state = store();
 const { isSidebar } = toRefs(state);
@@ -129,5 +117,15 @@ const { isSidebar } = toRefs(state);
     opacity: 1 !important;
     display: block !important;
   }
+}
+#sidebar > .inner {
+  height: 100%;
+}
+
+#sidebar > .inner > .panels {
+  height: calc(100% - 0.625rem);
+}
+#sidebar > .inner > .panels > .inner {
+  height: 100%;
 }
 </style>

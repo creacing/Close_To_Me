@@ -3,16 +3,9 @@
   <div class="inner">
     <Brand />
 
-    <nav
-      id="nav"
-      :class="navBottom === 2 ? '' : navBottom === 1 ? 'show down' : 'show up'"
-    >
+    <nav id="nav" :class="navBottom === 2 ? '' : navBottom === 1 ? 'show down' : 'show up'">
       <div class="inner">
-        <div
-          class="toggle"
-          :class="isSidebar ? 'close' : ''"
-          @click.stop="showSidebar"
-        >
+        <div class="toggle" :class="isSidebar ? 'close' : ''" @click.stop="showSidebar">
           <div class="lines" aria-label="切换导航栏">
             <span class="line"></span>
             <span class="line"></span>
@@ -20,29 +13,14 @@
           </div>
         </div>
         <ul class="menu">
-          <li
-            class="item"
-            :class="item.liClass"
-            v-for="item in nav"
-            :key="item"
-          >
-            <RouterLink
-              :to="item.link"
-              data-pjax-state
-              :class="item.aClass"
-              :rel="item.rel"
-            >
+          <li class="item" :class="item.liClass" v-for="item in nav" :key="item">
+            <RouterLink :to="item.link" data-pjax-state :class="item.aClass" :rel="item.rel">
               <i class="ic" :class="item.iClass" v-if="item.iClass"></i>
               {{ item.name }}
             </RouterLink>
             <ul class="submenu" v-if="item.children.length > 0">
               <li class="item" v-for="child in item.children" :key="child">
-                <RouterLink
-                  :to="child.link"
-                  :rel="child.rel"
-                  data-pjax-state
-                  :class="child.iClass"
-                >
+                <RouterLink :to="child.link" :rel="child.rel" data-pjax-state :class="child.iClass">
                   <i class="ic" :class="child.iClass"></i>
                   {{ child.name }}
                 </RouterLink>
@@ -52,18 +30,8 @@
         </ul>
         <ul class="right">
           <li class="item theme">
-            <i
-              v-if="isSun"
-              class="ic i-sun"
-              @click="changeTheme"
-              data-theme
-            ></i>
-            <i
-              v-if="!isSun"
-              class="ic i-moon"
-              @click="changeTheme"
-              data-theme="dark"
-            ></i>
+            <i v-if="isSun" class="ic i-sun" @click="changeTheme" data-theme></i>
+            <i v-if="!isSun" class="ic i-moon" @click="changeTheme" data-theme="dark"></i>
           </li>
           <li class="item search">
             <i class="ic i-search" @click="searchArticles"></i>
@@ -196,7 +164,7 @@ const showSidebar = () => {
     isSidebar.value = false;
 
     const animation = {
-      begin: function (anim) {},
+      begin: function (anim) { },
       translateX: [0, 100],
       opacity: [1, 0],
     };
@@ -216,8 +184,11 @@ const showSidebar = () => {
 
     window.removeEventListener("click", hiddenSidebar);
   };
-
+  const preventHidden = (e) => {
+    e.stopPropagation();
+  }
   window.addEventListener("click", hiddenSidebar);
+  sidebar.addEventListener('click', preventHidden)
 };
 </script>
 
