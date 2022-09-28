@@ -3,13 +3,22 @@
     <div id="main" class="pjax">
       <slot name="content"></slot>
     </div>
-    <Sidebar />
+    <Sidebar v-if="switchSidebar" />
+    <ArticleSidebar v-else />
     <div class="dimmer"></div>
   </div>
 </template>
   <script setup>
 import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
+import ArticleSidebar from "@/components/ArticleSidebar.vue";
+import { useRoute } from "vue-router";
+import { ref, watch } from 'vue'
+const route = useRoute();
+const switchSidebar = ref(true)
+watch(() => route.path, (newPath, oldPath) => {
+  switchSidebar.value = newPath.startsWith('/post') ? false : true
+}, { immediate: true });
 </script>
   
   

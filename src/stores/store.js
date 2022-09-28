@@ -23,7 +23,8 @@ export const store = defineStore('main', {
     return {
       isSidebar: false,
       posts,
-      tags: getTags()
+      tags: getTags(),
+      currentArticle: {}
     }
   },
 })

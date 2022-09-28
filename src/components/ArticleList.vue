@@ -2,9 +2,9 @@
   <div class="segments posts">
     <article class="item show" v-for="article in articles" :key="article">
       <div class="cover">
-        <a :href="article.path" itemprop="url" :title="article.title">
-          <img :data-src="article.imgSrc" :src="article.imgSrc" data-loaded="true" class="lozaded" />
-        </a>
+        <RouterLink to="/post" :title="article.title" @click="toArticleDetail(article)">
+          <img :data-src="article.imgSrc" :src="article.imgSrc" class="lozaded" />
+        </RouterLink>
       </div>
       <div class="info">
         <div class="meta">
@@ -29,18 +29,27 @@
           </span>
         </div>
         <h3>
-          <a :href="article.path" itemprop="url" :title="article.title">{{ article.title }}</a>
+          <RouterLink
+            to="/post"
+            :title="article.title"
+            @click="toArticleDetail(article)"
+          >{{ article.title }}</RouterLink>
         </h3>
         <div class="excerpt">{{ article.description }}</div>
         <div class="meta footer">
           <span>
-            <a :href="article.path" :title="article.title">
+            <RouterLink to="/post" :title="article.title" @click="toArticleDetail(article)">
               <i class="ic i-flag"></i>
               {{ article.title }}
-            </a>
+            </RouterLink>
           </span>
         </div>
-        <a :href="article.path" itemprop="url" :title="article.title" class="btn">more...</a>
+        <RouterLink
+          to="/post"
+          :title="article.title"
+          class="btn"
+          @click="toArticleDetail(article)"
+        >more...</RouterLink>
       </div>
     </article>
   </div>
@@ -48,8 +57,13 @@
 
 <script setup>
 import { store } from "@/stores/store.js";
-import { toRefs } from 'vue'
+import { toRefs, watch } from 'vue'
+import { RouterLink } from "vue-router";
+
 const state = store();
-const { posts } = toRefs(state);
-const articles = posts
+const articles = state.posts
+
+const toArticleDetail = (article) => {
+  state.currentArticle = article
+}
 </script>
