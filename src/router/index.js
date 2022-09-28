@@ -44,6 +44,11 @@ const router = createRouter({
       name: 'webstack',
       component: () => import('@/views/WebSites.vue')
     },
+    {
+      path: '/post',
+      name: 'post',
+      component: () => import('@/views/Content.vue')
+    },
   ]
 })
 

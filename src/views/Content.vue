@@ -1,0 +1,497 @@
+<template>
+  <div class="inner">
+    <div id="main" class="pjax">
+      <div class="article wrap">
+        <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+          <i class="ic i-home"></i>
+          <span>
+            <a href="/">首页</a>
+          </span>
+          <i class="ic i-angle-right"></i>
+          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学">
+              <span itemprop="name">计算机科学</span>
+            </a>
+            <meta itemprop="position" content="1" />
+          </span>
+          <i class="ic i-angle-right"></i>
+          <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+            <a
+              href="/categories/computer-science/note/"
+              itemprop="item"
+              rel="index"
+              title="分类于 二进制杂谈"
+            >
+              <span itemprop="name">二进制杂谈</span>
+            </a>
+            <meta itemprop="position" content="2" />
+          </span>
+          <i class="ic i-angle-right"></i>
+          <span
+            class="current"
+            itemprop="itemListElement"
+            itemscope
+            itemtype="https://schema.org/ListItem"
+          >
+            <a
+              href="/categories/computer-science/note/theme-shoka-doc/"
+              itemprop="item"
+              rel="index"
+              title="分类于 Theme Shoka Documentation"
+            >
+              <span itemprop="name">Theme Shoka Documentation</span>
+            </a>
+            <meta itemprop="position" content="3" />
+          </span>
+        </div>
+        <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+          <link
+            itemprop="mainEntityOfPage"
+            href="https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/"
+          />
+          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <meta
+              itemprop="image"
+              content="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg"
+            />
+            <meta itemprop="name" content="Ruri Shimotsuki" />
+            <meta itemprop="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+          </span>
+          <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+            <meta itemprop="name" content="優萌初華" />
+          </span>
+          <div class="body md" itemprop="articleBody">
+            <div class="note info">
+              <p>跳票 N 久终于更新的简单的使用说明</p>
+              <ul>
+                <li>
+                  <a
+                    href="https://github.com//hexo-theme-shoka"
+                    rel="noopener external nofollow noreferrer"
+                    target="_blank"
+                    class="exturl"
+                    title="hexo-theme-shoka"
+                  >hexo-theme-shoka</a> ：本博客自用的主题
+                </li>
+                <li>
+                  <a
+                    href="https://github.com//hexo-renderer-multi-markdown-it"
+                    rel="noopener external nofollow noreferrer"
+                    target="_blank"
+                    class="exturl"
+                    title="hexo-renderer-multi-markdown-it"
+                  >hexo-renderer-multi-markdown-it</a>：配套的 markdown 渲染器
+                </li>
+              </ul>
+              <p>已经支持 hexo 5。</p>
+            </div>
+            <div class="note info">
+              <p>因博主被学业和工作掏空，本项目已停滞更新大半年，问题也无法及时回复大家，这个悲惨状态可能还要持续半年的样子。</p>
+              <p>有很多热心小伙伴在评论区或者项目 issue 帮忙回答问题，非常非常感谢！</p>
+              <p>
+                本项目是完全开源的，也有做一些 example 示例，大家可以随便拿随便改。
+                <br />但是很抱歉，博主我暂时不能提供更多的支持，这个写的乱七八糟的文档，暂时也没有时间把它写得更专业一些。
+                <br />非常对不住大家！
+              </p>
+              <p>iconfont 的添加申请，我看到留言后会尽快加上，希望各位小伙伴能看到。</p>
+            </div>
+            <div class="note warning">
+              <p>
+                当前版本更新至 0.2.5，
+                <a href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95">更新记录点此</a>
+              </p>
+            </div>
+            <div class="note primary">
+              <p>
+                <a href="/computer-science/note/theme-shoka-doc/">
+                  <strong>🚀快速开始</strong>
+                </a> -
+                <a href="/computer-science/note/theme-shoka-doc/dependents/">💌依赖插件</a> -
+                <a href="/computer-science/note/theme-shoka-doc/config/">📌基本配置</a> -
+                <a href="/computer-science/note/theme-shoka-doc/display/">🌈界面显示</a> -
+                <a href="/computer-science/note/theme-shoka-doc/special/">🦄特殊功能</a>
+              </p>
+            </div>
+            <h1 id="设计缘由" class="active">
+              <a class="anchor" href="#设计缘由">#</a> 设计缘由
+            </h1>
+            <p>
+              前几年在 Bear 和 Evernote 上整理了大量笔记，非常喜欢 Bear 默认的 markdown 渲染样式。
+              <br />后来因为换了安卓手机，用不了 Bear，四处搜寻替代品，没有满意的。
+              <br />然后阴差阳错知道了 Hexo，又得知 Github 也可以免费建私有仓库了，故再次转移阵地到了自建博客，并部署在 Github Pages。
+            </p>
+            <p>
+              因为这个博客是用来记笔记的，故起名
+              <code>书架</code> 。
+              <br />对应的主题即
+              <code>Theme.Shoka</code> ，可以说是为了笔记阅读而生的主题。
+              <br />样式严重参考 Bear，部分代码严重参考
+              <a
+                href="https://github.com/theme-next/"
+                rel="noopener external nofollow noreferrer"
+                target="_blank"
+                class="exturl"
+                title=" NexT"
+              >NexT</a>。
+            </p>
+            <p>
+              Hexo 的默认及常用渲染器均使用
+              <code>highlight.js</code> 进行代码高亮，而我喜欢
+              <code>Prism.js</code> ，故重写了一个渲染器配合主题食用。
+              <br />渲染器取名
+              <code>multi</code> ，因为集成了很多很多很多
+              <code>markdown-it</code> 插件，以及压缩静态文件的功能。
+              <br />（最新版的默认渲染器也支持
+              <code>Prism.js</code> 了，可喜可贺，但不想用，哈哈哈哈哈哈哈
+            </p>
+            <p>
+              墙内 Github Pages 访问速度时而感人，所以用了
+              <a
+                href="http://www.jsdelivr.com/"
+                rel="noopener external nofollow noreferrer"
+                target="_blank"
+                class="exturl"
+                title=" jsDelivr"
+              >jsDelivr</a> 加速，主要是因为它可以按需合并依赖文件。
+            </p>
+            <h1 id="快速安装">
+              <a class="anchor" href="#快速安装">#</a> 快速安装
+            </h1>
+            <figure class="highlight bash">
+              <figcaption data-lang="bash"></figcaption>
+              <div class="code-container">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td data-num="1"></td>
+                      <td>
+                        <pre><span class="token comment"># cd your-blog</span></pre>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td data-num="2"></td>
+                      <td>
+                        <pre><span class="token function">git</span> clone https://github.com//hexo-theme-shoka.git ./themes/shoka</pre>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="operation">
+                <span class="breakline-btn">
+                  <i class="ic i-align-left"></i>
+                </span>
+                <span class="copy-btn">
+                  <i class="ic i-clipboard"></i>
+                </span>
+                <span class="fullscreen-btn">
+                  <i class="ic i-expand"></i>
+                </span>
+              </div>
+            </figure>
+            <p>
+              打开主题目录，内有
+              <code>example</code> 文件夹，提供了配置文件的 demo 供参考。
+            </p>
+            <h1 id="安装依赖插件">
+              <a class="anchor" href="#安装依赖插件">#</a> 安装依赖插件
+            </h1>
+            <p>
+              在应用主题之前，必须至少安装
+              <a
+                href="https://github.com//hexo-renderer-multi-markdown-it"
+                rel="noopener external nofollow noreferrer"
+                target="_blank"
+                class="exturl"
+                title="hexo-renderer-multi-markdown-it"
+              >hexo-renderer-multi-markdown-it</a> 渲染插件 和
+              <a
+                href="https://www.npmjs.com/package/hexo-autoprefixer"
+                rel="noopener external nofollow noreferrer"
+                target="_blank"
+                class="exturl"
+                title="hexo-autoprefixer"
+              >hexo-autoprefixer</a>。
+            </p>
+            <p>
+              <a href="dependents/">插件安装与配置教程戳此</a>
+            </p>
+            <h1 id="应用主题">
+              <a class="anchor" href="#应用主题">#</a> 应用主题
+            </h1>
+            <h2 id="修改站点配置">
+              <a class="anchor" href="#修改站点配置">#</a> 修改站点配置
+            </h2>
+            <p>
+              修改站点配置文件
+              <code>&lt;root&gt;/_config.yml</code> ，把主题改为
+              <code>shoka</code>
+            </p>
+            <figure class="highlight yml">
+              <figcaption data-lang="YAML"></figcaption>
+              <div class="code-container">
+                <table>
+                  <tbody>
+                    <tr>
+                      <td data-num="1"></td>
+                      <td>
+                        <pre><span class="token key atrule">theme</span><span class="token punctuation">:</span> shoka</pre>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="operation">
+                <span class="breakline-btn">
+                  <i class="ic i-align-left"></i>
+                </span>
+                <span class="copy-btn">
+                  <i class="ic i-clipboard"></i>
+                </span>
+                <span class="fullscreen-btn">
+                  <i class="ic i-expand"></i>
+                </span>
+              </div>
+            </figure>
+            <h2 id="修改主题配置">
+              <a class="anchor" href="#修改主题配置">#</a> 修改主题配置
+            </h2>
+            <p>
+              主题配置的所有参数在
+              <code>&lt;root&gt;/themes/shoka/_config.yml</code> 文件中。
+            </p>
+            <p>
+              为了方便主题升级，请在根目录新建一个 yml 文件，命名为
+              <code>_config.shoka.yml</code> 。
+              <br />也就是说，所有主题的自定义配置均保存于
+              <code>&lt;root&gt;/_config.shoka.yml</code> 文件。
+            </p>
+            <p>
+              <a href="config/">主题的基础配置可以参考这里</a>
+              <br />
+              <a href="display/">界面显示相关的配置参考这里</a>
+            </p>
+            <h1 id="更新记录">
+              <a class="anchor" href="#更新记录">#</a> 更新记录
+            </h1>
+            <p>
+              标签含义：
+              <br />❗ 需要手动操作的更新信息
+              <br />⚠️ 需要注意的更新信息
+              <br />🔧 已修复的问题
+              <br />⌛ TODO
+            </p>
+            <h2 id="024-025">
+              <a class="anchor" href="#024-025">#</a> 0.2.4 👉 0.2.5
+            </h2>
+            <p>💡 避免直接修改主题文件，添加各种自定义：</p>
+            <ul>
+              <li>
+                <a
+                  href="display/#%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2%E9%85%8D%E8%89%B2"
+                >样式</a>：包括配色、
+                <a href="config/#iconfont%E5%9B%BE%E6%A0%87">icon</a>、其他自定义样式
+              </li>
+              <li>
+                图片：包括
+                <a
+                  href="display/#%E8%87%AA%E5%AE%9A%E4%B9%89%E4%B8%BB%E9%A2%98%E5%9B%BE%E7%89%87"
+                >主题图片</a>、
+                <a href="config/#%E9%9A%8F%E6%9C%BA%E5%9B%BE%E5%BA%93">随机图库</a>
+              </li>
+            </ul>
+            <p>🔧 修复一些 BUG</p>
+            <h2 id="023-024">
+              <a class="anchor" href="#023-024">#</a> 0.2.3 👉 0.2.4
+            </h2>
+            <p>
+              ⚠️
+              <strong>评论功能更新</strong>
+            </p>
+            <ul>
+              <li>
+                MiniValine 魔改版更新至 beta10，修改过主题默认
+                <code>_config.yml</code> 的同学，记得更新末尾的
+                <code>vendors</code> 到最新哦
+              </li>
+              <li>
+                ❗ 评论相关的配置有更新，
+                <a href="config/#%E6%96%87%E7%AB%A0%E8%AF%84%E8%AE%BA">配置戳此</a>
+                <ul>
+                  <li>主要增加的 Tag 配置，现在可以各种自定义啦</li>
+                </ul>
+              </li>
+            </ul>
+            <p>⚠️ 配置新增</p>
+            <ul>
+              <li>
+                夜间模式
+                <code>darkmode</code> ，
+                <a href="config/#%E5%A4%9C%E9%97%B4%E6%A8%A1%E5%BC%8F">配置戳此</a>
+              </li>
+              <li>
+                自动定位
+                <code>auto_scroll</code> ，
+                <a href="config/#%E8%87%AA%E5%8A%A8%E5%AE%9A%E4%BD%8D">配置戳此</a>
+              </li>
+              <li>
+                图床 API 设置
+                <code>image_server</code> ，
+                <a href="config/#%E9%9A%8F%E6%9C%BA%E5%9B%BE%E5%BA%93">配置戳此</a>
+              </li>
+            </ul>
+            <p>
+              ⚠️ 背景音乐功能增强，
+              <a href="config/#%E8%83%8C%E6%99%AF%E9%9F%B3%E4%B9%90">配置戳此</a>
+            </p>
+            <ul>
+              <li>可以添加多个播放列表</li>
+              <li>加了一些控制按钮</li>
+            </ul>
+            <p>
+              ⚠️ 增加
+              <code>media</code> 标签，在文章中插入音频和视频播放列表，
+              <a href="special/#media%E5%A4%9A%E5%AA%92%E4%BD%93">方法戳此</a>
+              <br />⌛ 视频播放器有待增强（显示分段标签，字幕）
+            </p>
+            <p>
+              🔧 随机图库支持非渣浪图床的任意图片
+              <br />🔧 还有许多小 BUG
+            </p>
+            <h2 id="022-023">
+              <a class="anchor" href="#022-023">#</a> 0.2.2 👉 0.2.3
+            </h2>
+            <p>
+              ❗ 增加主题文件外自定义语言包的功能，
+              <a
+                href="display/#%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%AD%E8%A8%80%E5%8C%85"
+              >配置戳此</a>
+              <br />🔧 提高低版本浏览器兼容性
+            </p>
+            <h2 id="021-022">
+              <a class="anchor" href="#021-022">#</a> 0.2.1 👉 0.2.2
+            </h2>
+            <p>
+              ⚠️ 弃用
+              <code>mediumzoom</code> ，改成
+              <code>fancybox</code> ，
+              <a
+                href="display/#%E5%9B%BE%E7%89%87%E5%B1%95%E7%A4%BA%E4%B8%8E%E7%9B%B8%E5%86%8C"
+              >配置戳此</a>
+              <br />💡 增加语言包：
+              <code>繁体中文</code> 和
+              <code>日语</code>
+              <br />💡 quiz 功能优化，根据语言显示题型标签
+              <br />🔧 修复评论功能中反复初始化 leancloud-storage
+              <br />🔧 修复
+              <code>audio: false</code> 时不能隐藏播放按钮、停止播放
+            </p>
+            <h2 id="02-021">
+              <a class="anchor" href="#02-021">#</a> 0.2 👉 0.2.1
+            </h2>
+            <p>
+              ⚠️ 配置文件添加
+              <code>loader</code> 参数，
+              <a href="config/#%E5%8A%A0%E8%BD%BD%E5%8A%A8%E7%94%BB">配置戳此</a>
+              <br />💡 二级 list 区别显示
+              <br />🔧 修复浏览位置定位 BUG
+              <br />🔧 修复 firework 动画延迟
+              <br />🔧 优化评论功能
+            </p>
+            <h2 id="019-02">
+              <a class="anchor" href="#019-02">#</a> 0.1.9 👉 0.2
+            </h2>
+            <p>
+              ⚠️
+              <strong>评论功能大改</strong>
+            </p>
+            <ul>
+              <li>
+                弃用不开源的 Valine，改用 MiniValine，并且进行了魔改，
+                <a
+                  href="https://github.com//MiniValine"
+                  rel="noopener external nofollow noreferrer"
+                  target="_blank"
+                  class="exturl"
+                  title="项目戳此"
+                >项目戳此</a>
+                <br />主要是大量压缩了代码，弃用一些花里胡哨的功能，又加了一些别的花里胡哨的功能。
+              </li>
+              <li>
+                为防止泄露用户邮箱、IP 等隐私信息，弃用 QQ 号获取昵称及头像。
+                <br />❗ 同时需要手动进行一些迁移，
+                <a
+                  href="https://github.com/imaegoo/Valine"
+                  rel="noopener external nofollow noreferrer"
+                  target="_blank"
+                  class="exturl"
+                  title="具体步骤戳此"
+                >具体步骤戳此</a>
+              </li>
+              <li>
+                ❗ 评论相关的配置亦有更新，
+                <a href="config/#%E6%96%87%E7%AB%A0%E8%AF%84%E8%AE%BA">配置戳此</a>
+              </li>
+            </ul>
+            <p>
+              ⚠️ 增加单击页面烟花效果，
+              <a href="config/#%E9%A1%B5%E9%9D%A2%E7%89%B9%E6%95%88">配置戳此</a>
+              <br />💡 弃用 Velocity，改用 anime.js，方便未来添加更多
+              <span class="spoiler" title="你知道得太多了">花里胡哨的</span>功能
+              <span class="spoiler" title="你知道得太多了">严重拖慢页面滑行速度</span>
+              <br />🔧 新增多枚 icon，包括豆瓣
+              <code>i-douban</code> 等
+              <br />🔧 一些显示问题
+            </p>
+            <div class="tags">
+              <a href="/tags/Hexo/" rel="tag" class="danger">
+                <i class="ic i-tag"></i> Hexo
+              </a>
+              <a href="/tags/%E6%95%99%E7%A8%8B/" rel="tag" class="danger">
+                <i class="ic i-tag"></i> 教程
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="post-nav">
+        <div class="item left">
+          <a
+            href="/inter-discipline/health-informatics/specialization-1/course-1/week-1/"
+            itemprop="url"
+            rel="prev"
+            data-background-image="https://tva2.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"
+            title="Week 1. Overview of Health Informatics"
+          >
+            <span class="type">上一篇</span>
+            <span class="category">
+              <i class="ic i-flag"></i> Course 1. The Social and Technical Context of Health Informatics
+            </span>
+            <h3>Week 1. Overview of Health Informatics</h3>
+          </a>
+        </div>
+        <div class="item right">
+          <a
+            href="/computer-science/note/theme-shoka-doc/dependents/"
+            itemprop="url"
+            rel="next"
+            data-background-image="https://tva2.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"
+            title="Step.1 依赖插件"
+          >
+            <span class="type">下一篇</span>
+            <span class="category">
+              <i class="ic i-flag"></i> Theme Shoka Documentation
+            </span>
+            <h3>Step.1 依赖插件</h3>
+          </a>
+        </div>
+      </div>
+    </div>
+    <ArticleSidebar />
+    <div class="dimmer"></div>
+  </div>
+</template>
+<script>
+import { ArticleSidebar } from '@/components/ArticleSidebar.vue'
+
+</script>

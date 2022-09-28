@@ -438,6 +438,9 @@
 .i-feather:before {
     content: "\efbd"
 }
+.i-feather:before {
+  content: "\efbd"
+}
 
 #tool .player .music::before,.i-music:before {
     content: "\f059"
