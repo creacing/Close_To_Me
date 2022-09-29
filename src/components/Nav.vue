@@ -52,7 +52,6 @@ import config from "./../../public/config.js";
 import Brand from "./Brand.vue";
 import BgImage from "./BgImage.vue";
 // import PlayMusic from "./PlayMusic.vue";
-import { transition } from "@/utils/tool.js";
 import { onMounted, ref, onUnmounted, toRefs, nextTick } from "vue";
 import { store } from "@/stores/store.js";
 import anime from "animejs/lib/anime.es.js";

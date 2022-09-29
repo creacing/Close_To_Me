@@ -1,7 +1,8 @@
+import avator from './../public/images/avator.jpg'
 const author = 'Cheshire Cat'
 const config = {
     //作者名字
-    author: author,
+    author,
     title: '柴郡猫',
     description: 'Wonderland',
     // 导航栏
@@ -19,7 +20,7 @@ const config = {
 
         {
             name: '链环', link: "#", children: [
-                { name: '友達', link: "/friends/", children: [], liClass: '', rel: 'section', iClass: 'i-heart', aClass: '' },
+                // { name: '友達', link: "/friends/", children: [], liClass: '', rel: 'section', iClass: 'i-heart', aClass: '' },
                 { name: '网址', link: "/webstack/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
             ], liClass: 'dropdown', rel: '', iClass: 'i-magic', aClass: ''
         },
@@ -30,20 +31,19 @@ const config = {
         { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
     ],
     sidebar: {
-        avator: '',
-        // avator: '//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg',
+        avator,
         author: 'Creazing',
-        description: 'xxxx',
-        articlesNum: '11',
-        categoriesNum: '22',
+        description: '一个专注于前端的web爱好者',
+        articlesNum: '0',
+        categoriesNum: '0',
         tagsNum: '33',
         socialLinks: [
-            // { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
-            // { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
-            // { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
-            // { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
-            // { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
-            // { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
+            { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
+            { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
+            { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
+            { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
+            { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
+            { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
         ]
     },
     cloudColorList: [

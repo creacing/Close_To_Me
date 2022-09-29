@@ -79,15 +79,16 @@ const randomPosts = posts.slice(0, 10) || [];
 .random--articles {
   margin: 0 auto;
 }
-@media (min-width: 1600px) {
-  .random--articles {
-    width: 73%;
-  }
-}
 
 @media (min-width: 1200px) {
   .random--articles {
     width: 72.5rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .random--articles {
+    width: 73%;
   }
 }
 </style>

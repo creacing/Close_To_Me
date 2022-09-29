@@ -9,8 +9,8 @@
       <span class="copywrite--author">{{ author }}</span>
     </div>
 
-    <div class="copywrite--power">
-      基于
+    <div class="copywrite--base">
+      Power By
       <a
         href="https://hexo.io"
         rel="noopener external nofollow noreferrer"
@@ -29,7 +29,8 @@
   </div>
 </template>
 <script setup>
-const author = 'cheshire cat';
+import config from './../../public/config.js'
+const { author } = config;
 const currentDate = new Date();
 const currentYear = currentDate.getFullYear();
 </script>
@@ -44,7 +45,7 @@ const currentYear = currentDate.getFullYear();
   display: inline-block;
   margin: 0 0.3125rem 0 0.125rem;
 }
-.copywrite--power {
+.copywrite--base {
   display: inline-block;
   margin-bottom: 0.625rem;
 }
