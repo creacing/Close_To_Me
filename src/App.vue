@@ -41,6 +41,7 @@ import Footer from "@/components/Footer.vue";
 import Wave from "@/components/Wave.vue";
 import LayOut from "@/views/LayOut.vue";
 import { onMounted, ref } from "vue";
+
 import initAnime from "@/utils/clickAnime.js";
 const showLoading = ref(false)
 

@@ -1,7 +1,8 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory ,createWebHashHistory } from 'vue-router'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  // history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes: [
     {
       path: '/',
@@ -45,8 +46,8 @@ const router = createRouter({
       component: () => import('@/views/WebSites.vue')
     },
     {
-      path: '/post',
-      name: 'post',
+      path: '/article/:type/:path',
+      name: 'article',
       component: () => import('@/views/Post.vue')
     },
   ]

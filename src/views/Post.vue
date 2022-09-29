@@ -474,16 +474,22 @@
     </div>
   </div>
 </template>
-<script>
+<script setup>
 import { store } from "@/stores/store.js";
 import { ref, watch } from "vue";
+import { useRoute, onBeforeRouteUpdate } from 'vue-router'
+const route = useRoute();
 const state = store()
 const articleContent = ref('')
-watch(() => state.currentArticle, (newArticle, oldArticle) => {
-  articleContent.value = newArticle.content
-  console.log(articleContent.value);
 
-}, {
-  immediate: true
-})
+watch(() => route.params, (newParams, oldParams) => {
+  const { type, path } = newParams
+  const matchPath = `/${type}/${path}`
+  articleContent.value = state.postsDic.get(matchPath).content
+
+}, { immediate: true });
+
+onBeforeRouteUpdate((to) => {
+  console.log('---------', to);
+});
 </script>

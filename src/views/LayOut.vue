@@ -17,7 +17,7 @@ import { ref, watch } from 'vue'
 const route = useRoute();
 const switchSidebar = ref(true)
 watch(() => route.path, (newPath, oldPath) => {
-  switchSidebar.value = newPath.startsWith('/post') ? false : true
+  switchSidebar.value = newPath.startsWith('/article/') ? false : true
 }, { immediate: true });
 </script>
   

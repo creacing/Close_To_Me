@@ -2,7 +2,7 @@
   <div class="segments posts">
     <article class="item show" v-for="article in articles" :key="article">
       <div class="cover">
-        <RouterLink to="/post" :title="article.title" @click="toArticleDetail(article)">
+        <RouterLink :to="`article${article.path}`" :title="article.title">
           <img :data-src="article.imgSrc" :src="article.imgSrc" class="lozaded" />
         </RouterLink>
       </div>
@@ -29,41 +29,32 @@
           </span>
         </div>
         <h3>
-          <RouterLink
-            to="/post"
-            :title="article.title"
-            @click="toArticleDetail(article)"
-          >{{ article.title }}</RouterLink>
+          <RouterLink :to="`article${article.path}`" :title="article.title">{{ article.title }}</RouterLink>
         </h3>
         <div class="excerpt">{{ article.description }}</div>
         <div class="meta footer">
           <span>
-            <RouterLink to="/post" :title="article.title" @click="toArticleDetail(article)">
+            <RouterLink :to="`article${article.path}`" :title="article.title">
               <i class="ic i-flag"></i>
               {{ article.title }}
             </RouterLink>
           </span>
         </div>
-        <RouterLink
-          to="/post"
-          :title="article.title"
-          class="btn"
-          @click="toArticleDetail(article)"
-        >more...</RouterLink>
+        <RouterLink :to="`article${article.path}`" :title="article.title" class="btn">more...</RouterLink>
       </div>
     </article>
   </div>
 </template>
 
 <script setup>
-import { store } from "@/stores/store.js";
-import { toRefs, watch } from 'vue'
+import { defineProps, toRefs } from 'vue'
 import { RouterLink } from "vue-router";
+const props = defineProps({
+  articles: {
+    type: Array,
+    default: () => []
+  }
+})
 
-const state = store();
-const articles = state.posts
-
-const toArticleDetail = (article) => {
-  state.currentArticle = article
-}
+const { articles } = toRefs(props)
 </script>

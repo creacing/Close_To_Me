@@ -30,19 +30,20 @@ const config = {
         { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
     ],
     sidebar: {
-        avator: '//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg',
+        avator: '',
+        // avator: '//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg',
         author: 'Creazing',
         description: 'xxxx',
         articlesNum: '11',
         categoriesNum: '22',
         tagsNum: '33',
         socialLinks: [
-            { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
-            { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
-            { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
-            { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
-            { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
-            { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
+            // { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
+            // { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
+            // { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
+            // { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
+            // { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
+            // { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
         ]
     },
     cloudColorList: [
