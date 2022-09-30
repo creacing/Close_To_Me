@@ -56,6 +56,7 @@ import { onMounted, ref, onUnmounted, toRefs, nextTick } from "vue";
 import { store } from "@/stores/store.js";
 import anime from "animejs/lib/anime.es.js";
 const { nav } = config;
+const state = store();
 
 //切换黑白背景
 const isSun = ref(true); // 白天黑夜 default 白天
@@ -66,6 +67,8 @@ onMounted(() => {
   //初始化读取localStorage数据 判断主题颜色
   if (hasSun) {
     isSun.value = Number(hasSun) === 0 ? false : true;
+    state.isSun = isSun.value ? 1 : 0
+
     if (!isSun.value) {
       HTML.setAttribute("data-theme", "dark");
     } else {
@@ -81,7 +84,7 @@ const changeTheme = () => {
   isShow.value = !isShow.value;
   //background color
   localStorage.setItem("isSun", isSun.value ? 1 : 0);
-
+  state.isSun = isSun.value ? 1 : 0
   if (!isSun.value) {
     HTML.setAttribute("data-theme", "dark");
   } else {
@@ -133,7 +136,6 @@ onUnmounted(() => {
   window.removeEventListener("scroll", scrollTop);
 });
 
-const state = store();
 const { isSidebar } = toRefs(state);
 const showSidebar = () => {
   isSidebar.value = true;

@@ -39,7 +39,8 @@ export const store = defineStore('main', {
       tags: getTags(),
       currentArticle: {},
       posts,
-      postLen
+      postLen,
+      isSun: 1
     }
   },
 })
