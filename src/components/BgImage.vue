@@ -7,7 +7,6 @@
         v-for="bgImageUrl in bgImageList"
         class="item lozaded"
         :data-background-image="bgImageUrl"
-        data-loaded="true"
         :style="{
           'background-image': `url(${bgImageUrl})`
         }"

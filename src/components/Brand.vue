@@ -6,9 +6,9 @@
       <div class="pjax">
         <RouterLink to="/" class="logo" rel="start">
           <p class="artboard">{{ author }}</p>
-          <h1 ="name headline" class="title">{{ title }}</h1>
+          <h1 class="title">{{ title }}</h1>
         </RouterLink>
-        <p class="meta" ="description">{{ description }}</p>
+        <p class="meta">{{ description }}</p>
       </div>
     </div>
   </div>

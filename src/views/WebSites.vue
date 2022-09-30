@@ -31,7 +31,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/zerochan.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/zerochan.png');
                 "
@@ -55,7 +55,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/yande.re.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/yande.re.png');
                 "
@@ -79,7 +79,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/danbooru.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/danbooru.png');
                 "
@@ -103,7 +103,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anime-pictures.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anime-pictures.png');
                 "
@@ -127,7 +127,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaper-abyss.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaper-abyss.png');
                 "
@@ -151,7 +151,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaperboys.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaperboys.png');
                 "
@@ -175,7 +175,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/tsundora.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/tsundora.png');
                 "
@@ -199,7 +199,7 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anihonetwallpaper.png"
-                data-loaded="true"
+                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anihonetwallpaper.png');
                 "

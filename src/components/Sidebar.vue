@@ -6,17 +6,15 @@
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div class="author" ="author" itemscope itemtype="http://schema.org/Person">
+            <div class="author" itemscope itemtype="http://schema.org/Person">
               <img
                 class="image lozaded"
-                ="image"
                 alt="Ruri Shimotsuki"
                 :data-src="sidebar.avator"
                 :src="sidebar.avator"
-                data-loaded="true"
               />
-              <p class="name" ="name">{{ sidebar.author }}</p>
-              <div class="description" ="description">{{ sidebar.description }}</div>
+              <p class="name">{{ sidebar.author }}</p>
+              <div class="description">{{ sidebar.description }}</div>
             </div>
             <nav class="state">
               <div class="item posts">

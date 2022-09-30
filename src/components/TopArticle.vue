@@ -6,7 +6,7 @@
           <img
             :data-src="MOCKDATA.imgSrc"
             :src="MOCKDATA.imgSrc"
-            data-loaded="true"
+            
             class="lozaded"
           />
         </a>

@@ -20,6 +20,3 @@ watch(() => route.path, (newPath, oldPath) => {
   switchSidebar.value = newPath.startsWith('/article/') ? false : true
 }, { immediate: true });
 </script>
-  
-  
-  

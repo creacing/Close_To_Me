@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar" class style>
+  <div id="sidebar">
     <div class="inner">
       <ul class="tab">
         <li class="contents item active">
@@ -146,17 +146,15 @@
             </ul>
           </div>
           <div class="overview panel" data-title="站点概览">
-            <div class="author" ="author" itemscope itemtype="http://schema.org/Person">
+            <div class="author" itemscope itemtype="http://schema.org/Person">
               <img
                 class="image lozaded"
-                ="image"
                 alt="Ruri Shimotsuki"
                 data-src="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg"
                 src="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg"
-                data-loaded="true"
               />
-              <p class="name" ="name">Ruri Shimotsuki</p>
-              <div class="description" ="description">琉璃的医学 &amp; 编程笔记</div>
+              <p class="name">Ruri Shimotsuki</p>
+              <div class="description">琉璃的医学 &amp; 编程笔记</div>
             </div>
             <nav class="state">
               <div class="item posts">
@@ -332,3 +330,11 @@
     </div>
   </div>
 </template>
+<script setup>
+
+</script>
+<style scoped lang='scss'>
+.sidebar {
+  box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
+}
+</style>
