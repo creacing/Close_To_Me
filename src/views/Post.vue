@@ -6,51 +6,51 @@
         <a href="/">首页</a>
       </span>
       <i class="ic i-angle-right"></i>
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/categories/computer-science/" itemprop="item" rel="index" title="分类于 计算机科学">
-          <span itemprop="name">计算机科学</span>
+      <span ="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/categories/computer-science/" ="item" rel="index" title="分类于 计算机科学">
+          <span ="name">计算机科学</span>
         </a>
-        <meta itemprop="position" content="1" />
+        <meta ="position" content="1" />
       </span>
       <i class="ic i-angle-right"></i>
-      <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/categories/computer-science/note/" itemprop="item" rel="index" title="分类于 二进制杂谈">
-          <span itemprop="name">二进制杂谈</span>
+      <span ="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <a href="/categories/computer-science/note/" ="item" rel="index" title="分类于 二进制杂谈">
+          <span ="name">二进制杂谈</span>
         </a>
-        <meta itemprop="position" content="2" />
+        <meta ="position" content="2" />
       </span>
       <i class="ic i-angle-right"></i>
       <span
         class="current"
-        itemprop="itemListElement"
+        ="itemListElement"
         itemscope
         itemtype="https://schema.org/ListItem"
       >
         <a
           href="/categories/computer-science/note/theme-shoka-doc/"
-          itemprop="item"
+          ="item"
           rel="index"
           title="分类于 Theme Shoka Documentation"
         >
-          <span itemprop="name">Theme Shoka Documentation</span>
+          <span ="name">Theme Shoka Documentation</span>
         </a>
-        <meta itemprop="position" content="3" />
+        <meta ="position" content="3" />
       </span>
     </div>
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
       <!-- <link
-        itemprop="mainEntityOfPage"
+        ="mainEntityOfPage"
         href="https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/"
       />
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <meta itemprop="image" content="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg" />
-        <meta itemprop="name" content="Ruri Shimotsuki" />
-        <meta itemprop="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+      <span hidden ="author" itemscope itemtype="http://schema.org/Person">
+        <meta ="image" content="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg" />
+        <meta ="name" content="Ruri Shimotsuki" />
+        <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="優萌初華" />
+      <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta ="name" content="優萌初華" />
       </span>
-      <div class="body md" itemprop="articleBody">
+      <div class="body md" ="articleBody">
         <div class="note info">
           <p>跳票 N 久终于更新的简单的使用说明</p>
           <ul>
@@ -441,11 +441,11 @@
       <div v-html="articleContent"></div>
     </article>
   </div>
-  <div class="post-nav">
+  <!-- <div class="post-nav">
     <div class="item left">
       <a
         href="/inter-discipline/health-informatics/specialization-1/course-1/week-1/"
-        itemprop="url"
+        
         rel="prev"
         data-background-image="https://tva2.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"
         title="Week 1. Overview of Health Informatics"
@@ -460,7 +460,7 @@
     <div class="item right">
       <a
         href="/computer-science/note/theme-shoka-doc/dependents/"
-        itemprop="url"
+        
         rel="next"
         data-background-image="https://tva2.sinaimg.cn/mw690/6833939bly1giclx29mstj20zk0m8hdt.jpg"
         title="Step.1 依赖插件"
@@ -472,12 +472,12 @@
         <h3>Step.1 依赖插件</h3>
       </a>
     </div>
-  </div>
+  </div>-->
 </template>
 <script setup>
 import { store } from "@/stores/store.js";
 import { ref, watch } from "vue";
-import { useRoute, onBeforeRouteUpdate } from 'vue-router'
+import { useRoute } from 'vue-router'
 const route = useRoute();
 const state = store()
 const articleContent = ref('')
@@ -488,8 +488,4 @@ watch(() => route.params, (newParams, oldParams) => {
   articleContent.value = state.postsDic.get(matchPath).content
 
 }, { immediate: true });
-
-onBeforeRouteUpdate((to) => {
-  console.log('---------', to);
-});
 </script>

@@ -4,11 +4,11 @@
   <div class="inner">
     <div id="brand" class="affix">
       <div class="pjax">
-        <RouterLink to="/" class="logo" rel="start" data-pjax-state>
+        <RouterLink to="/" class="logo" rel="start">
           <p class="artboard">{{ author }}</p>
-          <h1 itemprop="name headline" class="title">{{ title }}</h1>
+          <h1 ="name headline" class="title">{{ title }}</h1>
         </RouterLink>
-        <p class="meta" itemprop="description">{{ description }}</p>
+        <p class="meta" ="description">{{ description }}</p>
       </div>
     </div>
   </div>

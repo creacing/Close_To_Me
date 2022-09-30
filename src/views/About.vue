@@ -1,21 +1,21 @@
 <template>
   <div class="page wrap">
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-      <link itemprop="mainEntityOfPage" href="https://shoka.lostyu.me/about/" />
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <link ="mainEntityOfPage" href="https://shoka.lostyu.me/about/" />
+      <span hidden ="author" itemscope itemtype="http://schema.org/Person">
         <meta
-          itemprop="image"
+          ="image"
           content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
         />
-        <meta itemprop="name" content="Ruri Shimotsuki" />
-        <meta itemprop="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+        <meta ="name" content="Ruri Shimotsuki" />
+        <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="優萌初華" />
+      <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta ="name" content="優萌初華" />
       </span>
-      <div class="body md" itemprop="articleBody">
+      <div class="body md" ="articleBody">
         <h2 id="本人" class="active">
-          <a class="anchor" href="#本人" data-pjax-state>#</a> 本人
+          <a class="anchor" href="#本人">#</a> 本人
         </h2>
         <ul>
           <li>动漫</li>
@@ -174,7 +174,7 @@
           </table>
         </div>
         <h3 id="在做的事" class>
-          <a class="anchor" href="#在做的事" data-pjax-state>#</a> 在做的事
+          <a class="anchor" href="#在做的事">#</a> 在做的事
         </h3>
         <ul>
           <li>
@@ -191,7 +191,7 @@
           </li>
         </ul>
         <h2 id="博客" class>
-          <a class="anchor" href="#博客" data-pjax-state>#</a> 博客
+          <a class="anchor" href="#博客">#</a> 博客
         </h2>
         <ul>
           <li>

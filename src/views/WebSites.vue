@@ -2,24 +2,24 @@
   <div id="main" class="pjax">
     <div class="page wrap">
       <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-        <link itemprop="mainEntityOfPage" href="https://shoka.lostyu.me/webstack/" />
-        <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <link ="mainEntityOfPage" href="https://shoka.lostyu.me/webstack/" />
+        <span hidden ="author" itemscope itemtype="http://schema.org/Person">
           <meta
-            itemprop="image"
+            ="image"
             content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
           />
-          <meta itemprop="name" content="Ruri Shimotsuki" />
-          <meta itemprop="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+          <meta ="name" content="Ruri Shimotsuki" />
+          <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
         </span>
-        <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-          <meta itemprop="name" content="優萌初華" />
+        <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
+          <meta ="name" content="優萌初華" />
         </span>
-        <div class="body md" itemprop="articleBody">
+        <div class="body md" ="articleBody">
           <h1 id="二次元" class="active">
-            <a class="anchor" href="#二次元" data-pjax-state>#</a> 二次元
+            <a class="anchor" href="#二次元">#</a> 二次元
           </h1>
           <h2 id="图站">
-            <a class="anchor" href="#图站" data-pjax-state>#</a> 图站
+            <a class="anchor" href="#图站">#</a> 图站
           </h2>
           <p></p>
           <div class="links">
@@ -218,7 +218,7 @@
           </div>
           <p></p>
           <h2 id="数据库">
-            <a class="anchor" href="#数据库" data-pjax-state>#</a> 数据库
+            <a class="anchor" href="#数据库">#</a> 数据库
           </h2>
           <p></p>
           <div class="links">
@@ -345,10 +345,10 @@
           </div>
           <p></p>
           <h1 id="前端">
-            <a class="anchor" href="#前端" data-pjax-state>#</a> 前端
+            <a class="anchor" href="#前端">#</a> 前端
           </h1>
           <h2 id="素材">
-            <a class="anchor" href="#素材" data-pjax-state>#</a> 素材
+            <a class="anchor" href="#素材">#</a> 素材
           </h2>
           <p></p>
           <div class="links">
@@ -535,7 +535,7 @@
           </div>
           <p></p>
           <h2 id="图标">
-            <a class="anchor" href="#图标" data-pjax-state>#</a> 图标
+            <a class="anchor" href="#图标">#</a> 图标
           </h2>
           <p></p>
           <div class="links">
@@ -662,7 +662,7 @@
           </div>
           <p></p>
           <h2 id="字体">
-            <a class="anchor" href="#字体" data-pjax-state>#</a> 字体
+            <a class="anchor" href="#字体">#</a> 字体
           </h2>
           <p></p>
           <div class="links">
@@ -829,7 +829,7 @@
           </div>
           <p></p>
           <h2 id="配色">
-            <a class="anchor" href="#配色" data-pjax-state>#</a> 配色
+            <a class="anchor" href="#配色">#</a> 配色
           </h2>
           <p></p>
           <div class="links">
@@ -956,7 +956,7 @@
           </div>
           <p></p>
           <h2 id="渐变">
-            <a class="anchor" href="#渐变" data-pjax-state>#</a> 渐变
+            <a class="anchor" href="#渐变">#</a> 渐变
           </h2>
           <p></p>
           <div class="links">
@@ -1103,7 +1103,7 @@
           </div>
           <p></p>
           <h2 id="生成">
-            <a class="anchor" href="#生成" data-pjax-state>#</a> 生成
+            <a class="anchor" href="#生成">#</a> 生成
           </h2>
           <p></p>
           <div class="links">
@@ -1210,7 +1210,7 @@
           </div>
           <p></p>
           <h2 id="logo">
-            <a class="anchor" href="#logo" data-pjax-state>#</a> LOGO
+            <a class="anchor" href="#logo">#</a> LOGO
           </h2>
           <p></p>
           <div class="links">
@@ -1277,7 +1277,7 @@
           </div>
           <p></p>
           <h2 id="设计">
-            <a class="anchor" href="#设计" data-pjax-state>#</a> 设计
+            <a class="anchor" href="#设计">#</a> 设计
           </h2>
           <p></p>
           <div class="links">
@@ -1402,7 +1402,6 @@
                 <a
                   href="https://shoka.lostyu.me/webstack/"
                   title="网址收藏"
-                  data-pjax-state
                 >https://shoka.lostyu.me/webstack/</a>
               </li>
               <li class="license">

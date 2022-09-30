@@ -14,13 +14,13 @@
         </div>
         <ul class="menu">
           <li class="item" :class="item.liClass" v-for="item in nav" :key="item">
-            <RouterLink :to="item.link" data-pjax-state :class="item.aClass" :rel="item.rel">
+            <RouterLink :to="item.link" :class="item.aClass" :rel="item.rel">
               <i class="ic" :class="item.iClass" v-if="item.iClass"></i>
               {{ item.name }}
             </RouterLink>
             <ul class="submenu" v-if="item.children.length > 0">
               <li class="item" v-for="child in item.children" :key="child">
-                <RouterLink :to="child.link" :rel="child.rel" data-pjax-state :class="child.iClass">
+                <RouterLink :to="child.link" :rel="child.rel" :class="child.iClass">
                   <i class="ic" :class="child.iClass"></i>
                   {{ child.name }}
                 </RouterLink>

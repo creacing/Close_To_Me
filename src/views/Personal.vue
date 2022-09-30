@@ -6,13 +6,13 @@
       class="post block"
       lang="zh-CN"
     >
-      <div class="body md" itemprop="articleBody">
+      <div class="body md" ="articleBody">
         <h1 id="世界观" class="">
-          <a class="anchor" href="#" data-pjax-state=""></a> 世界观
+          <a class="anchor" href="#" =""></a> 世界观
         </h1>
         <p>这是存在于某处的幻想世界。</p>
         <h1 id="人物" class="">
-          <a class="anchor" href="#" data-pjax-state="">#</a> 施工中
+          <a class="anchor" href="#" ="">#</a> 施工中
         </h1>
       </div>
     </article>

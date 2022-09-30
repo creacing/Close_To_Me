@@ -1,28 +1,28 @@
 <template>
   <div class="page wrap">
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-      <link itemprop="mainEntityOfPage" href="https://shoka.lostyu.me/friends/" />
-      <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <link ="mainEntityOfPage" href="https://shoka.lostyu.me/friends/" />
+      <span hidden ="author" itemscope itemtype="http://schema.org/Person">
         <meta
-          itemprop="image"
+          ="image"
           content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
         />
-        <meta itemprop="name" content="Ruri Shimotsuki" />
-        <meta itemprop="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+        <meta ="name" content="Ruri Shimotsuki" />
+        <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
-      <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta itemprop="name" content="優萌初華" />
+      <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
+        <meta ="name" content="優萌初華" />
       </span>
-      <div class="body md" itemprop="articleBody">
+      <div class="body md" ="articleBody">
         <h1 id="本站信息" class>
-          <a class="anchor" href="#本站信息" data-pjax-state>#</a> 本站信息
+          <a class="anchor" href="#本站信息">#</a> 本站信息
         </h1>
         <ul>
           <li>站名： 優萌初華</li>
           <li>站长： 霜月琉璃</li>
           <li>
             地址：
-            <a href="https://shoka.lostyu.me" data-pjax-state>https://shoka.lostyu.me</a>
+            <a href="https://shoka.lostyu.me">https://shoka.lostyu.me</a>
           </li>
           <li>
             标志：
@@ -31,7 +31,7 @@
               href="https://cdn.jsdelivr.net/gh/amehime/shoka@latest/images/avatar.jpg"
               itemscope
               itemtype="http://schema.org/ImageObject"
-              itemprop="url"
+              
               data-fancybox="default"
               rel="default"
             >
@@ -49,7 +49,7 @@
           <li>简介： 琉璃的医学 &amp; 编程笔记</li>
         </ul>
         <h1 id="申请方法" class>
-          <a class="anchor" href="#申请方法" data-pjax-state>#</a> 申请方法
+          <a class="anchor" href="#申请方法">#</a> 申请方法
         </h1>
         <ul>
           <li>添加本站后，在本页留言，格式如下</li>
@@ -123,7 +123,7 @@
           </div>
         </figure>
         <h1 id="小伙伴们" class="active">
-          <a class="anchor" href="#小伙伴们" data-pjax-state>#</a> 小伙伴们
+          <a class="anchor" href="#小伙伴们">#</a> 小伙伴们
         </h1>
         <p></p>
         <div class="links">

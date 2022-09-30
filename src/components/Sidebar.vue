@@ -6,33 +6,33 @@
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <div class="author" ="author" itemscope itemtype="http://schema.org/Person">
               <img
                 class="image lozaded"
-                itemprop="image"
+                ="image"
                 alt="Ruri Shimotsuki"
                 :data-src="sidebar.avator"
                 :src="sidebar.avator"
                 data-loaded="true"
               />
-              <p class="name" itemprop="name">{{ sidebar.author }}</p>
-              <div class="description" itemprop="description">{{ sidebar.description }}</div>
+              <p class="name" ="name">{{ sidebar.author }}</p>
+              <div class="description" ="description">{{ sidebar.description }}</div>
             </div>
             <nav class="state">
               <div class="item posts">
-                <router-link to="/archives/" data-pjax-state>
+                <router-link to="/archives/">
                   <span class="count">{{ sidebar.articlesNum }}</span>
                   <span class="name">文章</span>
                 </router-link>
               </div>
               <div class="item categories">
-                <router-link to="/categories/" data-pjax-state>
+                <router-link to="/categories/">
                   <span class="count">{{ sidebar.categoriesNum }}</span>
                   <span class="name">分类</span>
                 </router-link>
               </div>
               <div class="item tags">
-                <router-link to="/tags/" data-pjax-state>
+                <router-link to="/tags/">
                   <span class="count">{{ sidebar.tagsNum }}</span>
                   <span class="name">标签</span>
                 </router-link>
@@ -54,17 +54,17 @@
             </div>
             <ul class="menu">
               <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
-                <router-link :to="link.link" data-pjax-state v-if="link.children.length === 0">
+                <router-link :to="link.link" v-if="link.children.length === 0">
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
                 </router-link>
-                <span data-pjax-state v-else>
+                <span v-else>
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
                 </span>
                 <ul class="submenu" v-if="link.children.length > 0">
                   <li class="item" v-for="subLink in link.children" :key="subLink">
-                    <router-link :to="subLink.link" rel="section" data-pjax-state>
+                    <router-link :to="subLink.link" rel="section">
                       <i class="ic" :class="subLink.iClass"></i>
                       {{ subLink.name }}
                     </router-link>
@@ -84,7 +84,7 @@
           <i class="ic i-arrow-down"></i>
         </li>
         <li class="next pjax">
-          <a href="/page/2/" rel="next" title="下一篇" data-pjax-state>
+          <a href="/page/2/" rel="next" title="下一篇">
             <i class="ic i-chevron-right"></i>
           </a>
         </li>

@@ -14,17 +14,17 @@
       </div>
       <div class="info">
         <div class="ribbon">
-          <a :href="card.typePath" itemprop="url" :title="card.title" data-pjax-state>{{card.title}}</a>
+          <a :href="card.typePath" :title="card.title">{{card.title}}</a>
         </div>
         <div class="inner">
           <ul class="posts">
             <li v-for="post in card.posts">
-              <a :title="post.title" :href="post.postPath" data-pjax-state>{{post.title}}</a>
+              <a :title="post.title" :href="post.postPath">{{post.title}}</a>
             </li>
           </ul>
           <div class="meta footer">
             <span>
-              <a :href="card.subTitlePath" itemprop="url" :title="card.subTitle" data-pjax-state>
+              <a :href="card.subTitlePath" :title="card.subTitle">
                 <i class="ic i-flag"></i>
                 {{card.subTitle}}
               </a>
@@ -34,13 +34,7 @@
               {{card.childrenNum}} 个子项，{{card.articlesNum}} 篇文章
             </span>
           </div>
-          <a
-            :href="card.typePath"
-            itemprop="url"
-            :title="card.title"
-            class="btn"
-            data-pjax-state
-          >more...</a>
+          <a :href="card.typePath" :title="card.title" class="btn">more...</a>
         </div>
       </div>
     </section>
