@@ -32,7 +32,7 @@ const config = {
     ],
     sidebar: {
         avator,
-        author: 'Creazing',
+        author: 'author',
         description: '一个专注于前端的web爱好者',
         articlesNum: '0',
         categoriesNum: '0',
@@ -46,6 +46,7 @@ const config = {
             { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
         ]
     },
+    //colud color
     cloudColorList: [
       '#747bff',
       '#646cff',
