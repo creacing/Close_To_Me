@@ -4366,9 +4366,9 @@ main>.inner {
     margin-left: .3125rem
 }
 
-.tag.cloud {
+/* .tag.cloud {
     text-align: center
-}
+} */
 
 .tag.cloud a {
     display: inline-block;

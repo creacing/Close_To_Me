@@ -244,7 +244,7 @@
                 </a>
                 <ul class="submenu">
                   <li class="item">
-                    <a href="/about/yume" rel="section">
+                    <a href="/about/qy" rel="section">
                       <i class="ic i-cloud"></i>自设
                     </a>
                   </li>
@@ -283,7 +283,7 @@
                     </a>
                   </li>
                   <li class="item">
-                    <a href="/webstack/" rel="section">
+                    <a href="/WebSites/" rel="section">
                       <i class="ic i-star"></i>网址
                     </a>
                   </li>

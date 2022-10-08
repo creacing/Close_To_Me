@@ -13,7 +13,7 @@ const config = {
         {
             name: '文章', link: "#", children: [
                 { name: '归档', link: "/archives/", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
-                { name: '分类', link: "/categories", children: [], liClass: '', rel: 'section', iClass: 'i-th', aClass: '' },
+                // { name: '分类', link: "/categories", children: [], liClass: '', rel: 'section', iClass: 'i-th', aClass: '' },
                 { name: '标签', link: "/tags", children: [], liClass: '', rel: 'section', iClass: 'i-tags', aClass: '' },
             ], liClass: 'dropdown', rel: '', iClass: 'i-feather', aClass: ''
         },
@@ -21,29 +21,29 @@ const config = {
         {
             name: '链环', link: "#", children: [
                 // { name: '友達', link: "/friends/", children: [], liClass: '', rel: 'section', iClass: 'i-heart', aClass: '' },
-                { name: '网址', link: "/webstack/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
+                { name: '网址', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
             ], liClass: 'dropdown', rel: '', iClass: 'i-magic', aClass: ''
         },
         { name: '关于', link: "/about/", 
         children: [
-          { name: '自设', link: "/about/yume", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }
+          { name: '自设', link: "/about/qy", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }
         ], liClass: 'dropdown', rel: 'section', iClass: 'i-user', aClass: '' },
         { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
     ],
     sidebar: {
         avator,
-        author: 'author',
+        author: author,
         description: '一个专注于前端的web爱好者',
         articlesNum: '0',
         categoriesNum: '0',
         tagsNum: '33',
         socialLinks: [
-            { url: 'https://github.com/amehime', name: 'github', icon: "i-github" },
-            { url: 'https://twitter.com/amehime', name: 'twitter', icon: "i-twitter" },
-            { url: 'https://www.zhihu.com/people/amehime', name: 'zhihu', icon: "i-zhihu" },
-            { url: 'https://music.163.com/#/user/home?id=12886823', name: 'music', icon: "i-cloud-music" },
-            { url: 'https://t.me/amehime', name: 'telegram', icon: "i-paper-plane" },
-            { url: 'https://about.me/amehime', name: 'about', icon: "i-address-card" },
+            { url: 'https://github.com/', name: 'github', icon: "i-github" },
+            { url: 'https://twitter.com/', name: 'twitter', icon: "i-twitter" },
+            { url: 'https://www.zhihu.com/people/', name: 'zhihu', icon: "i-zhihu" },
+            { url: 'https://music.163.com/', name: 'music', icon: "i-cloud-music" },
+            { url: 'https://t.me/', name: 'telegram', icon: "i-paper-plane" },
+            { url: '/about', name: 'about', icon: "i-address-card" },
         ]
     },
     //colud color

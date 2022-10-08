@@ -2,13 +2,8 @@
   <div class="segments sticky">
     <article class="item show">
       <div class="cover">
-        <a :href="MOCKDATA.path"  :title="MOCKDATA.title">
-          <img
-            :data-src="MOCKDATA.imgSrc"
-            :src="MOCKDATA.imgSrc"
-            
-            class="lozaded"
-          />
+        <a :href="MOCKDATA.path" :title="MOCKDATA.title">
+          <img :data-src="MOCKDATA.imgSrc" :src="MOCKDATA.imgSrc" class="lozaded" />
         </a>
       </div>
       <div class="info">
@@ -17,10 +12,7 @@
             <span class="icon">
               <i class="ic i-calendar"></i>
             </span>
-            <time
-              ="dateCreated datePublished"
-              :datetime="MOCKDATA.dateTime"
-            >{{MOCKDATA.date}}</time>
+            <time :datetime="MOCKDATA.dateTime">{{MOCKDATA.date}}</time>
           </span>
           <span class="item" title="本文字数">
             <span class="icon">
@@ -37,18 +29,18 @@
           </span>
         </div>
         <h3>
-          <a :href="MOCKDATA.path"  :title="MOCKDATA.title">{{MOCKDATA.title}}</a>
+          <a :href="MOCKDATA.path" :title="MOCKDATA.title">{{MOCKDATA.title}}</a>
         </h3>
         <div class="excerpt">{{MOCKDATA.description}}</div>
         <div class="meta footer">
           <span>
-            <a :href="MOCKDATA.flagPath"  :title="MOCKDATA.flag">
+            <a :href="MOCKDATA.flagPath" :title="MOCKDATA.flag">
               <i class="ic i-flag"></i>
               {{MOCKDATA.flag}}
             </a>
           </span>
         </div>
-        <a :href="MOCKDATA.path"  :title="MOCKDATA.title" class="btn">more...</a>
+        <a :href="MOCKDATA.path" :title="MOCKDATA.title" class="btn">more...</a>
       </div>
     </article>
   </div>

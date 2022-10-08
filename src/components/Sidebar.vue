@@ -6,10 +6,10 @@
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div class="author" itemscope itemtype="http://schema.org/Person">
+            <div class="author">
               <img
                 class="image lozaded"
-                alt="Ruri Shimotsuki"
+                alt="Cheshire Cat"
                 :data-src="sidebar.avator"
                 :src="sidebar.avator"
               />
@@ -37,10 +37,10 @@
               </div>
             </nav>
             <div class="social">
-              <router-link
+              <a
                 v-for="link of sidebar.socialLinks"
                 :key="link"
-                :to="link.url"
+                :href="link.url"
                 rel="noopener external nofollow noreferrer"
                 target="_blank"
                 class="exturl item"
@@ -48,9 +48,9 @@
                 :title="link.url"
               >
                 <i class="ic" :class="link.icon"></i>
-              </router-link>
+              </a>
             </div>
-            <ul class="menu">
+            <!-- <ul class="menu">
               <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
                 <router-link :to="link.link" v-if="link.children.length === 0">
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
@@ -69,7 +69,7 @@
                   </li>
                 </ul>
               </li>
-            </ul>
+            </ul>-->
           </div>
         </div>
       </div>

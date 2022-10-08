@@ -6,51 +6,45 @@
         <a href="/">首页</a>
       </span>
       <i class="ic i-angle-right"></i>
-      <span ="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/categories/computer-science/" ="item" rel="index" title="分类于 计算机科学">
-          <span ="name">计算机科学</span>
+      <span itemscope itemtype="https://schema.org/ListItem">
+        <a href="/categories/computer-science/" rel="index" title="分类于 计算机科学">
+          <span>计算机科学</span>
         </a>
-        <meta ="position" content="1" />
+        <meta content="1" />
       </span>
       <i class="ic i-angle-right"></i>
-      <span ="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a href="/categories/computer-science/note/" ="item" rel="index" title="分类于 二进制杂谈">
-          <span ="name">二进制杂谈</span>
+      <span itemscope itemtype="https://schema.org/ListItem">
+        <a href="/categories/computer-science/note/" rel="index" title="分类于 二进制杂谈">
+          <span>二进制杂谈</span>
         </a>
-        <meta ="position" content="2" />
+        <meta content="2" />
       </span>
       <i class="ic i-angle-right"></i>
-      <span
-        class="current"
-        ="itemListElement"
-        itemscope
-        itemtype="https://schema.org/ListItem"
-      >
+      <span class="current" itemscope itemtype="https://schema.org/ListItem">
         <a
           href="/categories/computer-science/note/theme-shoka-doc/"
-          ="item"
           rel="index"
           title="分类于 Theme Shoka Documentation"
         >
-          <span ="name">Theme Shoka Documentation</span>
+          <span>Theme Shoka Documentation</span>
         </a>
-        <meta ="position" content="3" />
+        <meta content="3" />
       </span>
     </div>
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
       <!-- <link
-        ="mainEntityOfPage"
+        
         href="https://shoka.lostyu.me/computer-science/note/theme-shoka-doc/"
       />
-      <span hidden ="author" itemscope itemtype="http://schema.org/Person">
-        <meta ="image" content="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg" />
-        <meta ="name" content="Ruri Shimotsuki" />
-        <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+      <span hidden  itemscope itemtype="http://schema.org/Person">
+        <meta  content="//cdn.jsdelivr.net/gh//shoka@30732f13/images/avatar.jpg" />
+        <meta  content="Ruri Shimotsuki" />
+        <meta  content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
-      <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta ="name" content="優萌初華" />
+      <span hidden  itemscope itemtype="http://schema.org/Organization">
+        <meta  content="優萌初華" />
       </span>
-      <div class="body md" ="articleBody">
+      <div class="body md">
         <div class="note info">
           <p>跳票 N 久终于更新的简单的使用说明</p>
           <ul>

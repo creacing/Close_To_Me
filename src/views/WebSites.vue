@@ -2,19 +2,16 @@
   <div id="main" class="pjax">
     <div class="page wrap">
       <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-        <link ="mainEntityOfPage" href="https://shoka.lostyu.me/webstack/" />
-        <span hidden ="author" itemscope itemtype="http://schema.org/Person">
-          <meta
-            ="image"
-            content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
-          />
-          <meta ="name" content="Ruri Shimotsuki" />
-          <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+        <link href="https://shoka.lostyu.me/webstack/" />
+        <span hidden itemscope itemtype="http://schema.org/Person">
+          <meta content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg" />
+          <meta content="Ruri Shimotsuki" />
+          <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
         </span>
-        <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
-          <meta ="name" content="優萌初華" />
+        <span hidden itemscope itemtype="http://schema.org/Organization">
+          <meta content="優萌初華" />
         </span>
-        <div class="body md" ="articleBody">
+        <div class="body md">
           <h1 id="二次元" class="active">
             <a class="anchor" href="#二次元">#</a> 二次元
           </h1>
@@ -31,7 +28,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/zerochan.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/zerochan.png');
                 "
@@ -55,7 +51,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/yande.re.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/yande.re.png');
                 "
@@ -79,7 +74,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/danbooru.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/danbooru.png');
                 "
@@ -103,7 +97,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anime-pictures.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anime-pictures.png');
                 "
@@ -127,7 +120,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaper-abyss.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaper-abyss.png');
                 "
@@ -151,7 +143,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaperboys.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/wallpaperboys.png');
                 "
@@ -175,7 +166,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/tsundora.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/tsundora.png');
                 "
@@ -199,7 +189,6 @@
                 class="exturl image lozaded"
                 title
                 data-background-image="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anihonetwallpaper.png"
-                
                 style="
                   background-image: url('//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/webstack/logo/anihonetwallpaper.png');
                 "

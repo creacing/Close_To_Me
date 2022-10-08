@@ -18,15 +18,15 @@
             <span class="icon">
               <i class="ic i-pen"></i>
             </span>
-            <span>{{ article.fontNums }}</span>
+            <span>{{ article.fontNum }}</span>
             <span class="text">字</span>
           </span>
-          <span class="item" title="阅读时长">
+          <!-- <span class="item" title="阅读时长">
             <span class="icon">
               <i class="ic i-clock"></i>
             </span>
             <span>{{ article.readTime }}</span>
-          </span>
+          </span>-->
         </div>
         <h3>
           <RouterLink :to="`article${article.path}`" :title="article.title">{{ article.title }}</RouterLink>

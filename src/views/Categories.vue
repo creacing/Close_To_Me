@@ -8,11 +8,11 @@
     </h2>
     <div v-for="category in categories" :key="category">
       <h2 class="item header">
-        <RouterLink :to="category.firstPath">{{category.firstTitle}}</RouterLink>
+        <p :path="category.firstPath">{{category.firstTitle}}</p>
         <small>( {{category.firstNum}} )</small>
       </h2>
       <h3 class="item section">
-        <RouterLink :to="category.secondPath">{{category.secondTitle}}</RouterLink>
+        <p :path="category.secondPath">{{category.secondTitle}}</p>
         <small>( {{category.secondNum}} )</small>
       </h3>
       <div class="item normal">
@@ -25,13 +25,15 @@
   </div>
 </template>
 <script setup>
-import { ref } from "vue-demi";
+import { ref } from "vue";
 import { RouterLink } from 'vue-router'
+import { store } from "@/stores/store.js";
 const categoryNum = ref(0)
+const state = store();
 
-const categories = [
-  { firstPath: 'demo', firstTitle: 'demo', firstNum: 'demo', secondPath: 'demo', secondTitle: 'demo', secondNum: 'demo', thirdPath: 'demo', thirdTitle: 'demo', thirdNum: 'demo' }
-]
+const posts = state.categoryDic
+
+const categories = posts
 </script>
 <style scoped lang='scss'>
 </style>

@@ -7,7 +7,7 @@
       篇文章。
       <small class="cheers">Practice makes perfect</small>
     </h2>
-    <RouterLink :to="{name:'article'}" v-for="archive in archiveList">
+    <RouterLink :to="`/article${archive.path}`" v-for="archive in archiveList">
       <h3 class="item section">
         <span>{{archive.date.split('-')[0]}} 年</span>
         <small>/</small>

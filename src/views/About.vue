@@ -1,19 +1,16 @@
 <template>
   <div class="page wrap">
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-      <link ="mainEntityOfPage" href="https://shoka.lostyu.me/about/" />
-      <span hidden ="author" itemscope itemtype="http://schema.org/Person">
-        <meta
-          ="image"
-          content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
-        />
-        <meta ="name" content="Ruri Shimotsuki" />
-        <meta ="description" content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+      <link href="https://shoka.lostyu.me/about/" />
+      <span hidden itemscope itemtype="http://schema.org/Person">
+        <meta content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg" />
+        <meta content="Ruri Shimotsuki" />
+        <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
-      <span hidden ="publisher" itemscope itemtype="http://schema.org/Organization">
-        <meta ="name" content="優萌初華" />
+      <span hidden itemscope itemtype="http://schema.org/Organization">
+        <meta content="優萌初華" />
       </span>
-      <div class="body md" ="articleBody">
+      <div class="body md">
         <h2 id="本人" class="active">
           <a class="anchor" href="#本人">#</a> 本人
         </h2>

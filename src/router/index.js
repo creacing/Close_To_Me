@@ -30,8 +30,8 @@ const router = createRouter({
       component: () => import('@/views/About.vue')
     },
     {
-      path: '/about/yume',
-      name: 'yume',
+      path: '/about/qy',
+      name: 'qy',
       component: () => import('@/views/Personal.vue')
     },
 
@@ -41,8 +41,8 @@ const router = createRouter({
       component: () => import('@/views/Friends.vue')
     },
     {
-      path: '/webstack',
-      name: 'webstack',
+      path: '/WebSites',
+      name: 'WebSites',
       component: () => import('@/views/WebSites.vue')
     },
     {
