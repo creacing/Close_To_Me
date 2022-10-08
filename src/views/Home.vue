@@ -2,9 +2,9 @@
   <div class="index wrap">
     <!-- <h2 class="divider">置顶文章</h2>
     <TopArticle />-->
-    <h2 class="divider">精选分类</h2>
+    <!-- <h2 class="divider">精选分类</h2>
     <Types />
-    <h2 class="divider">文章列表</h2>
+    <h2 class="divider">文章列表</h2>-->
     <ArticleList :articles="articles" />
   </div>
   <Pagination :pageNum="pageNum" />

@@ -17,18 +17,29 @@ const config = {
                 { name: '标签', link: "/tags", children: [], liClass: '', rel: 'section', iClass: 'i-tags', aClass: '' },
             ], liClass: 'dropdown', rel: '', iClass: 'i-feather', aClass: ''
         },
-
-        {
-            name: '链环', link: "#", children: [
-                // { name: '友達', link: "/friends/", children: [], liClass: '', rel: 'section', iClass: 'i-heart', aClass: '' },
-                { name: '网址', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
-            ], liClass: 'dropdown', rel: '', iClass: 'i-magic', aClass: ''
-        },
-        { name: '关于', link: "/about/", 
-        children: [
-          { name: '自设', link: "/about/qy", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }
-        ], liClass: 'dropdown', rel: 'section', iClass: 'i-user', aClass: '' },
-        { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
+        { name: '收藏', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
+        // {
+        //     name: '链环', link: "#", children: [
+        //         // { name: '友達', link: "/friends/", children: [], liClass: '', rel: 'section', iClass: 'i-heart', aClass: '' },
+        //         { name: '网址', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
+        //     ], liClass: 'dropdown', rel: '', iClass: 'i-magic', aClass: ''
+        // },
+        // { name: '关于', link: "/about/", 
+        // children: [
+        //   { name: '自设', link: "/about/qy", children: [], liClass: '', rel: 'section', iClass: 'i-cloud' }
+        // ], liClass: 'dropdown', rel: 'section', iClass: 'i-user', aClass: '' },
+        { name: '关于', link: "/about/", children: [], liClass: '', rel: 'section', iClass: 'i-cloud', aClass: '' },
+        // { name: '开往', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
+        { name: 'Github', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
+    ],
+    sideNav: [
+      { name: '首页', link: "/", children: [], liClass: 'active', rel: 'section', iClass: 'i-home', aClass: '' },
+      // i-feather
+      { name: '归档', link: "/archives/", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
+      { name: '标签', link: "/tags", children: [], liClass: '', rel: 'section', iClass: 'i-tags', aClass: '' },
+      { name: '收藏', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
+      { name: '关于', link: "/about/", children: [], liClass: '', rel: 'section', iClass: 'i-cloud', aClass: '' },
+      { name: 'Github', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
     ],
     sidebar: {
         avator,

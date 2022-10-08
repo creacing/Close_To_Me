@@ -4,11 +4,11 @@
       <slot name="content"></slot>
     </div>
     <Sidebar v-if="switchSidebar" />
-    <ArticleSidebar v-else />
+    <ArticleSidebar v-if="!switchSidebar" />
     <div class="dimmer"></div>
   </div>
 </template>
-  <script setup>
+<script setup>
 import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import ArticleSidebar from "@/components/ArticleSidebar.vue";
@@ -20,3 +20,8 @@ watch(() => route.path, (newPath, oldPath) => {
   switchSidebar.value = newPath.startsWith('/article/') ? false : true
 }, { immediate: true });
 </script>
+<style scoped>
+#main {
+  min-height: 100vh;
+}
+</style>

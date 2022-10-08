@@ -1,4 +1,5 @@
 <template>
+  <!-- <div class="bg--mask"></div> -->
   <div class="pace pace-inactive pace-inactive">
     <div
       class="pace-progress"
@@ -72,4 +73,8 @@ onMounted(() => {
 
 </script>
 <style lang="scss" scoped>
+.bg--mask {
+  background-color: hsla(268deg, 58%, 94%, 1);
+  z-index: -10;
+}
 </style>

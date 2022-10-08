@@ -50,8 +50,8 @@
                 <i class="ic" :class="link.icon"></i>
               </a>
             </div>
-            <!-- <ul class="menu">
-              <li class="item" v-for="link in nav" :class="link.liClass" :key="link">
+            <ul class="menu">
+              <li class="side--nav item" v-for="link in sideNav" :class="link.liClass" :key="link">
                 <router-link :to="link.link" v-if="link.children.length === 0">
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
@@ -60,16 +60,16 @@
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
                 </span>
-                <ul class="submenu" v-if="link.children.length > 0">
+                <!-- <ul class="submenu" v-if="link.children.length > 0">
                   <li class="item" v-for="subLink in link.children" :key="subLink">
                     <router-link :to="subLink.link" rel="section">
                       <i class="ic" :class="subLink.iClass"></i>
                       {{ subLink.name }}
                     </router-link>
                   </li>
-                </ul>
+                </ul>-->
               </li>
-            </ul>-->
+            </ul>
           </div>
         </div>
       </div>
@@ -97,7 +97,7 @@ import config from "../../public/config";
 import { store } from "@/stores/store.js";
 import anime from "animejs/lib/anime.es.js";
 import { RouterLink } from "vue-router";
-const { nav, sidebar } = config;
+const { sideNav, sidebar } = config;
 const state = store();
 const { isSidebar } = toRefs(state);
 </script>
@@ -125,5 +125,18 @@ const { isSidebar } = toRefs(state);
 }
 #sidebar > .inner > .panels > .inner {
   height: 100%;
+}
+.side--nav > a:hover {
+  color: var(--grey-0) !important;
+  // background-image: linear-gradient(
+  //   to right,
+  //   var(--color-pink) 0,
+  //   var(--color-orange) 100%
+  // );
+  // box-shadow: 0 0.125rem 0.75rem var(--color-pink-a3);
+  background-color: hsl(35deg 82% 52%);
+  box-shadow: 0 0.125rem 0.75rem hsl(35deg 80% 90%);
+  opacity: 0.9;
+  border-radius: 0.625rem;
 }
 </style>

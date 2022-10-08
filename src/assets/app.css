@@ -12,11 +12,29 @@
     background-color: currentColor
 }
 
-#nav .menu .submenu .item.active,#nav .menu .submenu .item:hover,#search-pagination .current .page-number,#sidebar .tab .item.active,#sidebar .tab .item:hover,.overview .menu .item.active,.pagination .next:hover,.pagination .page-number.current,.pagination .page-number:hover,.pagination .prev:hover {
-    color: var(--grey-0);
-    background-image: linear-gradient(to right,var(--color-pink) 0,var(--color-orange) 100%);
-    box-shadow: 0 0 .75rem var(--color-pink-a3)
+#nav .menu .submenu .item:first-child:hover{
+  border-radius: 0.625rem 0.625rem 0 0;
 }
+
+#nav .menu .submenu .item:last-child:hover{
+  border-radius: 0 0 0.625rem 0.625rem ;
+}
+
+#nav .menu .submenu .item.active,#nav .menu .submenu .item:hover,#search-pagination .current .page-number,#sidebar .tab .item.active,#sidebar .tab .item:hover,.overview .menu .item.active,.pagination .next:hover,.pagination .page-number.current,.pagination .page-number:hover,.pagination .prev:hover {
+  color: var(--grey-0);
+  /* background-image: linear-gradient(
+    to right,
+    var(--color-pink) 0,
+    var(--color-orange) 100%
+  );
+  box-shadow: 0 0.125rem 0.75rem var(--color-pink-a3); */
+  background-color: hsl(35deg 82% 52%);
+  box-shadow: 0 0.125rem 0.75rem hsl(35deg 80% 90%);
+  opacity: 0.9;
+  border-radius: 0.625rem;
+}
+
+
 
 #loading,#neko {
     position: fixed;
@@ -1897,7 +1915,8 @@ input,textarea {
 }
 
 main {
-    background: linear-gradient(to top,var(--body-bg-shadow) 0,var(--grey-1) 20%) no-repeat bottom
+  /* background-color: hsla(268deg, 58%, 94%, .3); */
+  background: linear-gradient(to top,var(--body-bg-shadow) 0,var(--grey-1) 20%) no-repeat bottom
 }
 
 main>.inner {
@@ -1923,6 +1942,7 @@ main>.inner {
     background: linear-gradient(to top,var(--grey-0) 0,var(--grey-1) 20%) no-repeat top;
     box-shadow: 0 1.25rem 1rem .3125rem var(--body-bg-shadow);
     width: calc(100% - 15.75rem);
+    /* width: 100%; */
     min-height: 37.5rem
 }
 
@@ -2231,7 +2251,7 @@ main>.inner {
 }
 
 #nav .menu .item.active:not(.dropdown) a::before,#nav .menu .item:not(.dropdown):hover a::before {
-    width: 70%
+    width: 80%
 }
 
 #nav .menu .submenu {
@@ -2244,7 +2264,8 @@ main>.inner {
     width: max-content;
     background-color: var(--grey-9-a5);
     box-shadow: 0 .3125rem 1.25rem -.25rem var(--grey-9-a1);
-    border-radius: .625rem 0
+    /* border-radius: .625rem 0 */
+    border-radius: .625rem
 }
 
 #nav .menu .submenu::before {
@@ -2263,14 +2284,16 @@ main>.inner {
 #nav .menu .submenu .item {
     display: block
 }
-
-#nav .menu .submenu .item:first-child {
+/* #nav .menu .submenu .item {
+  border-radius: .625rem 
+} */
+/* #nav .menu .submenu .item:first-child {
     border-radius: .625rem 0 0 0
 }
 
 #nav .menu .submenu .item:last-child {
     border-radius: 0 0 .625rem 0
-}
+} */
 
 #nav .menu .submenu .item a {
     display: inline-block;
@@ -2805,7 +2828,7 @@ main>.inner {
 }
 
 .overview .menu {
-    padding: 1.25rem;
+    padding: 1.25rem 0;
     margin: 0;
     background-color: transparent
 }
@@ -3147,7 +3170,7 @@ main>.inner {
 
 .state {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     line-height: 1.4;
     margin-top: .625rem;
     overflow: hidden;
@@ -3159,9 +3182,9 @@ main>.inner {
     padding: 0 .9375rem
 }
 
-.state .item:not(:first-child) {
+/* .state .item:not(:first-child) {
     border-left: .0625rem solid var(--grey-4)
-}
+} */
 
 .state .item a {
     border-bottom: none
