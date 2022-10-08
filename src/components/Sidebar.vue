@@ -51,7 +51,12 @@
               </a>
             </div>
             <ul class="menu">
-              <li class="side--nav item" v-for="link in sideNav" :class="link.liClass" :key="link">
+              <li
+                class="side--nav item"
+                v-for="link in sideNav"
+                :class="link.liClass"
+                :key="link"
+              >
                 <router-link :to="link.link" v-if="link.children.length === 0">
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}

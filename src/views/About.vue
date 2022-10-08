@@ -1,5 +1,6 @@
 <template>
   <div class="page wrap">
+<<<<<<< Updated upstream
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
       <link href="https://shoka.lostyu.me/about/" />
       <span hidden itemscope itemtype="http://schema.org/Person">
@@ -8,6 +9,27 @@
         <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
       <span hidden itemscope itemtype="http://schema.org/Organization">
+=======
+    <article
+      itemscope
+      itemtype="http://schema.org/Article"
+      class="post block"
+      lang="zh-CN"
+    >
+      <link href="https://shoka.lostyu.me/about/" />
+      <span hidden="author" itemscope itemtype="http://schema.org/Person">
+        <meta
+          content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
+        />
+        <meta content="Ruri Shimotsuki" />
+        <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+      </span>
+      <span
+        hidden="publisher"
+        itemscope
+        itemtype="http://schema.org/Organization"
+      >
+>>>>>>> Stashed changes
         <meta content="優萌初華" />
       </span>
       <div class="body md">
@@ -31,7 +53,8 @@
                     target="_blank"
                     class="exturl"
                     title="Mind"
-                  >Mind</a>
+                    >Mind</a
+                  >
                 </th>
                 <th>
                   <a
@@ -40,7 +63,8 @@
                     target="_blank"
                     class="exturl"
                     title="Energy"
-                  >Energy</a>
+                    >Energy</a
+                  >
                 </th>
                 <th>
                   <a
@@ -49,7 +73,8 @@
                     target="_blank"
                     class="exturl"
                     title="Nature"
-                  >Nature</a>
+                    >Nature</a
+                  >
                 </th>
                 <th>
                   <a
@@ -58,7 +83,8 @@
                     target="_blank"
                     class="exturl"
                     title="Tactics"
-                  >Tactics</a>
+                    >Tactics</a
+                  >
                 </th>
                 <th>
                   <a
@@ -67,7 +93,8 @@
                     target="_blank"
                     class="exturl"
                     title="Identity"
-                  >Identity</a>
+                    >Identity</a
+                  >
                 </th>
                 <th>Test taken</th>
               </tr>
@@ -82,7 +109,8 @@
                       target="_blank"
                       class="exturl"
                       title="Assertive Architect"
-                    >Assertive Architect</a>
+                      >Assertive Architect</a
+                    >
                     <br />(INTJ-A)
                   </p>
                 </td>
@@ -129,7 +157,8 @@
                       target="_blank"
                       class="exturl"
                       title="Assertive Advocate"
-                    >Assertive Advocate</a>
+                      >Assertive Advocate</a
+                    >
                     <br />(INFJ-A)
                   </p>
                 </td>
@@ -187,9 +216,7 @@
             <span class="label">💔</span>
           </li>
         </ul>
-        <h2 id="博客" class>
-          <a class="anchor" href="#博客">#</a> 博客
-        </h2>
+        <h2 id="博客" class><a class="anchor" href="#博客">#</a> 博客</h2>
         <ul>
           <li>
             <p>
@@ -211,7 +238,8 @@
                   target="_blank"
                   class="exturl"
                   title="Hexo"
-                >Hexo</a>
+                  >Hexo</a
+                >
               </li>
               <li>
                 文档渲染
@@ -221,7 +249,8 @@
                   target="_blank"
                   class="exturl"
                   title="Markdown-it"
-                >Markdown-it</a>
+                  >Markdown-it</a
+                >
               </li>
               <li>样式参考 Bear 熊掌记</li>
               <li>部署于 GitHub Pages</li>

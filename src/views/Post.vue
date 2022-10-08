@@ -1,26 +1,48 @@
 <template>
   <div class="article wrap">
-    <div class="breadcrumb" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <div class="breadcrumb">
       <i class="ic i-home"></i>
       <span>
         <a href="/">首页</a>
       </span>
       <i class="ic i-angle-right"></i>
+<<<<<<< Updated upstream
       <span itemscope itemtype="https://schema.org/ListItem">
         <a href="/categories/computer-science/" rel="index" title="分类于 计算机科学">
+=======
+      <span>
+        <a
+          href="/categories/computer-science/"
+          rel="index"
+          title="分类于 计算机科学"
+        >
+>>>>>>> Stashed changes
           <span>计算机科学</span>
         </a>
         <meta content="1" />
       </span>
       <i class="ic i-angle-right"></i>
+<<<<<<< Updated upstream
       <span itemscope itemtype="https://schema.org/ListItem">
         <a href="/categories/computer-science/note/" rel="index" title="分类于 二进制杂谈">
+=======
+      <span>
+        <a
+          href="/categories/computer-science/note/"
+          rel="index"
+          title="分类于 二进制杂谈"
+        >
+>>>>>>> Stashed changes
           <span>二进制杂谈</span>
         </a>
         <meta content="2" />
       </span>
       <i class="ic i-angle-right"></i>
+<<<<<<< Updated upstream
       <span class="current" itemscope itemtype="https://schema.org/ListItem">
+=======
+      <span class="current">
+>>>>>>> Stashed changes
         <a
           href="/categories/computer-science/note/theme-shoka-doc/"
           rel="index"
@@ -31,6 +53,7 @@
         <meta content="3" />
       </span>
     </div>
+<<<<<<< Updated upstream
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
       <!-- <link
         
@@ -432,6 +455,9 @@
           </a>
         </div>
       </div>-->
+=======
+    <article class="post block" lang="zh-CN">
+>>>>>>> Stashed changes
       <div v-html="articleContent"></div>
     </article>
   </div>
@@ -471,15 +497,18 @@
 <script setup>
 import { store } from "@/stores/store.js";
 import { ref, watch } from "vue";
-import { useRoute } from 'vue-router'
+import { useRoute } from "vue-router";
 const route = useRoute();
-const state = store()
-const articleContent = ref('')
+const state = store();
+const articleContent = ref("");
 
-watch(() => route.params, (newParams, oldParams) => {
-  const { type, path } = newParams
-  const matchPath = `/${type}/${path}`
-  articleContent.value = state.postsDic.get(matchPath).content
-
-}, { immediate: true });
+watch(
+  () => route.params,
+  (newParams, oldParams) => {
+    const { type, path } = newParams;
+    const matchPath = `/${type}/${path}`;
+    articleContent.value = state.postsDic.get(matchPath).content;
+  },
+  { immediate: true }
+);
 </script>

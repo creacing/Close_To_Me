@@ -1,5 +1,6 @@
 <template>
   <div class="page wrap">
+<<<<<<< Updated upstream
     <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
       <link href="https://shoka.lostyu.me/friends/" />
       <span hidden itemscope itemtype="http://schema.org/Person">
@@ -8,6 +9,27 @@
         <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
       <span hidden itemscope itemtype="http://schema.org/Organization">
+=======
+    <article
+      itemscope
+      itemtype="http://schema.org/Article"
+      class="post block"
+      lang="zh-CN"
+    >
+      <link href="https://shoka.lostyu.me/friends/" />
+      <span hidden="author" itemscope itemtype="http://schema.org/Person">
+        <meta
+          content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
+        />
+        <meta content="Ruri Shimotsuki" />
+        <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
+      </span>
+      <span
+        hidden="publisher"
+        itemscope
+        itemtype="http://schema.org/Organization"
+      >
+>>>>>>> Stashed changes
         <meta content="優萌初華" />
       </span>
       <div class="body md">
@@ -141,7 +163,8 @@
                 target="_blank"
                 class="exturl title"
                 title="水无月咲"
-              >水无月咲</a>
+                >水无月咲</a
+              >
               <p class="desc">一个以分享音乐、摘抄文字为主的博客</p>
             </div>
           </div>
@@ -164,7 +187,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Sorryfu"
-              >Sorryfu</a>
+                >Sorryfu</a
+              >
               <p class="desc">what a fucking life.</p>
             </div>
           </div>
@@ -185,7 +209,8 @@
                 target="_blank"
                 class="exturl title"
                 title="YOYLING."
-              >YOYLING.</a>
+                >YOYLING.</a
+              >
               <p class="desc">简单的人生笔记</p>
             </div>
           </div>
@@ -208,7 +233,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Ceil Profile"
-              >Ceil Profile</a>
+                >Ceil Profile</a
+              >
               <p class="desc">一个关于爱与正义的blog</p>
             </div>
           </div>
@@ -231,7 +257,8 @@
                 target="_blank"
                 class="exturl title"
                 title="异国迷宫的十字路口"
-              >异国迷宫的十字路口</a>
+                >异国迷宫的十字路口</a
+              >
               <p class="desc">一位弱鸡带学生的个人博客</p>
             </div>
           </div>
@@ -254,7 +281,8 @@
                 target="_blank"
                 class="exturl title"
                 title="大白萝卜の窝"
-              >大白萝卜の窝</a>
+                >大白萝卜の窝</a
+              >
               <p class="desc">一个花心大萝卜</p>
             </div>
           </div>
@@ -277,7 +305,8 @@
                 target="_blank"
                 class="exturl title"
                 title="YlovexLN"
-              >YlovexLN</a>
+                >YlovexLN</a
+              >
               <p class="desc">井底之蛙，虽不知大海之宽阔，却知晓天空之蓝！</p>
             </div>
           </div>
@@ -300,7 +329,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Lete乐特"
-              >Lete乐特</a>
+                >Lete乐特</a
+              >
               <p class="desc">人生只有一次，大胆的生活！！</p>
             </div>
           </div>
@@ -323,7 +353,8 @@
                 target="_blank"
                 class="exturl title"
                 title="M-GX"
-              >M-GX</a>
+                >M-GX</a
+              >
               <p class="desc">在头秃的路上越走越远~</p>
             </div>
           </div>
@@ -346,7 +377,8 @@
                 target="_blank"
                 class="exturl title"
                 title="kali’s blog"
-              >kali’s blog</a>
+                >kali’s blog</a
+              >
               <p class="desc">遇见更好的自己</p>
             </div>
           </div>
@@ -367,7 +399,8 @@
                 target="_blank"
                 class="exturl title"
                 title="十玖八柒"
-              >十玖八柒</a>
+                >十玖八柒</a
+              >
               <p class="desc">一个收藏回忆与分享技术的地方</p>
             </div>
           </div>
@@ -390,7 +423,8 @@
                 target="_blank"
                 class="exturl title"
                 title="闻语博客"
-              >闻语博客</a>
+                >闻语博客</a
+              >
               <p class="desc">浮生若梦 为欢几何</p>
             </div>
           </div>
@@ -413,7 +447,8 @@
                 target="_blank"
                 class="exturl title"
                 title="猫鼬的星球计划"
-              >猫鼬的星球计划</a>
+                >猫鼬的星球计划</a
+              >
               <p class="desc">一只小猫鼬用来刻录随想札记的黑匣子。</p>
             </div>
           </div>
@@ -436,7 +471,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Aoang's Blog"
-              >Aoang's Blog</a>
+                >Aoang's Blog</a
+              >
               <p class="desc">岁月在电波中流淌，人生在音乐中升华</p>
             </div>
           </div>
@@ -459,7 +495,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Bibooo"
-              >Bibooo</a>
+                >Bibooo</a
+              >
               <p class="desc">https://bibooo.top/</p>
             </div>
           </div>
@@ -482,7 +519,8 @@
                 target="_blank"
                 class="exturl title"
                 title="零奇部落阁"
-              >零奇部落阁</a>
+                >零奇部落阁</a
+              >
               <p class="desc">分享交流互联网技术</p>
             </div>
           </div>
@@ -505,7 +543,8 @@
                 target="_blank"
                 class="exturl title"
                 title="小康博客"
-              >小康博客</a>
+                >小康博客</a
+              >
               <p class="desc">一个收藏回忆与分享技术的地方！</p>
             </div>
           </div>
@@ -528,7 +567,8 @@
                 target="_blank"
                 class="exturl title"
                 title="hewith"
-              >hewith</a>
+                >hewith</a
+              >
               <p class="desc">曾梦想仗剑走天涯，无奈贫穷挡住了步伐</p>
             </div>
           </div>
@@ -551,7 +591,8 @@
                 target="_blank"
                 class="exturl title"
                 title="卓越科技的Blog"
-              >卓越科技的Blog</a>
+                >卓越科技的Blog</a
+              >
               <p class="desc">Remarkable life,for science and technology.</p>
             </div>
           </div>
@@ -572,7 +613,8 @@
                 target="_blank"
                 class="exturl title"
                 title="MuJin's Blog"
-              >MuJin's Blog</a>
+                >MuJin's Blog</a
+              >
               <p class="desc">君浅吟，叹落笔</p>
             </div>
           </div>
@@ -595,7 +637,8 @@
                 target="_blank"
                 class="exturl title"
                 title="黑石博客"
-              >黑石博客</a>
+                >黑石博客</a
+              >
               <p class="desc">人生在勤，不索何获。</p>
             </div>
           </div>
@@ -618,7 +661,8 @@
                 target="_blank"
                 class="exturl title"
                 title="iqia"
-              >iqia</a>
+                >iqia</a
+              >
               <p class="desc">iqia iqia i qia qia~</p>
             </div>
           </div>
@@ -641,8 +685,11 @@
                 target="_blank"
                 class="exturl title"
                 title="鑫酱笔记本"
-              >鑫酱笔记本</a>
-              <p class="desc">整天摸鱼，却妄想拯救世界的技术宅，不幸转身到异世界写下的博客。</p>
+                >鑫酱笔记本</a
+              >
+              <p class="desc">
+                整天摸鱼，却妄想拯救世界的技术宅，不幸转身到异世界写下的博客。
+              </p>
             </div>
           </div>
           <div class="item" title="乡树" style="--block-color: #b58a78">
@@ -664,7 +711,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Re Life"
-              >Re Life</a>
+                >Re Life</a
+              >
               <p class="desc">🌺花有重开日，人无再少年🏃</p>
             </div>
           </div>
@@ -687,7 +735,8 @@
                 target="_blank"
                 class="exturl title"
                 title="UTOPIA"
-              >UTOPIA</a>
+                >UTOPIA</a
+              >
               <p class="desc">散落在世界一角的故事</p>
             </div>
           </div>
@@ -710,7 +759,8 @@
                 target="_blank"
                 class="exturl title"
                 title="OXOX"
-              >OXOX</a>
+                >OXOX</a
+              >
               <p class="desc">f8972f56f293d83c</p>
             </div>
           </div>
@@ -733,8 +783,11 @@
                 target="_blank"
                 class="exturl title"
                 title="itsNekoDeng"
-              >itsNekoDeng</a>
-              <p class="desc">一只努力学习的十万伏特皮卡丘，梦想是世界和平，想要发光发热</p>
+                >itsNekoDeng</a
+              >
+              <p class="desc">
+                一只努力学习的十万伏特皮卡丘，梦想是世界和平，想要发光发热
+              </p>
             </div>
           </div>
           <div class="item" title="AzuSemisa" style="--block-color: #54cedc">
@@ -756,7 +809,8 @@
                 target="_blank"
                 class="exturl title"
                 title="AzuSemisa's Blog"
-              >AzuSemisa's Blog</a>
+                >AzuSemisa's Blog</a
+              >
               <p class="desc">一个 OI 蒟蒻的小窝</p>
             </div>
           </div>
@@ -779,7 +833,8 @@
                 target="_blank"
                 class="exturl title"
                 title="折腾男孩"
-              >折腾男孩</a>
+                >折腾男孩</a
+              >
               <p class="desc">世上无难事，只要肯放弃！</p>
             </div>
           </div>
@@ -802,7 +857,8 @@
                 target="_blank"
                 class="exturl title"
                 title="抵到烂"
-              >抵到烂</a>
+                >抵到烂</a
+              >
               <p class="desc">一个老前端的故事</p>
             </div>
           </div>
@@ -823,7 +879,8 @@
                 target="_blank"
                 class="exturl title"
                 title="ISLU"
-              >ISLU</a>
+                >ISLU</a
+              >
               <p class="desc">不断学习的00后小站博主的经历</p>
             </div>
           </div>
@@ -846,7 +903,8 @@
                 target="_blank"
                 class="exturl title"
                 title="MyBlog(MqyGalaxy|Blog)"
-              >MyBlog(MqyGalaxy|Blog)</a>
+                >MyBlog(MqyGalaxy|Blog)</a
+              >
               <p class="desc">爱好ACG的温馨小窝</p>
             </div>
           </div>
@@ -869,7 +927,8 @@
                 target="_blank"
                 class="exturl title"
                 title="旧时繁华"
-              >旧时繁华</a>
+                >旧时繁华</a
+              >
               <p class="desc">繁华似锦觅安宁,淡云流水度此生</p>
             </div>
           </div>
@@ -892,11 +951,16 @@
                 target="_blank"
                 class="exturl title"
                 title="柒比叁"
-              >柒比叁</a>
+                >柒比叁</a
+              >
               <p class="desc">救赎之道，就在其中</p>
             </div>
           </div>
-          <div class="item" title="远方有你伴余生" style="--block-color: #77d3dc">
+          <div
+            class="item"
+            title="远方有你伴余生"
+            style="--block-color: #77d3dc"
+          >
             <a
               href="https://www.glassysky.site"
               rel="noopener external nofollow noreferrer"
@@ -915,7 +979,8 @@
                 target="_blank"
                 class="exturl title"
                 title="远方有你伴余生の博客"
-              >远方有你伴余生の博客</a>
+                >远方有你伴余生の博客</a
+              >
               <p class="desc">没有伞的孩子要努力奔跑</p>
             </div>
           </div>
@@ -938,7 +1003,8 @@
                 target="_blank"
                 class="exturl title"
                 title="沿岸踱步"
-              >沿岸踱步</a>
+                >沿岸踱步</a
+              >
               <p class="desc">沿岸踱步 &amp; 成长日记</p>
             </div>
           </div>
@@ -961,7 +1027,8 @@
                 target="_blank"
                 class="exturl title"
                 title="小姜の博客"
-              >小姜の博客</a>
+                >小姜の博客</a
+              >
               <p class="desc">小姜天堂</p>
             </div>
           </div>
@@ -984,7 +1051,8 @@
                 target="_blank"
                 class="exturl title"
                 title="#Laihsiao"
-              >#Laihsiao</a>
+                >#Laihsiao</a
+              >
               <p class="desc">来萧的博客</p>
             </div>
           </div>
@@ -1007,7 +1075,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Haobo's Blog"
-              >Haobo's Blog</a>
+                >Haobo's Blog</a
+              >
               <p class="desc">始于兴趣，源于热爱，成于投入。</p>
             </div>
           </div>
@@ -1030,7 +1099,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Fusice's Blog"
-              >Fusice's Blog</a>
+                >Fusice's Blog</a
+              >
               <p class="desc">Stay curious, stay naive.</p>
             </div>
           </div>
@@ -1053,7 +1123,8 @@
                 target="_blank"
                 class="exturl title"
                 title="萌 Hz"
-              >萌 Hz</a>
+                >萌 Hz</a
+              >
               <p class="desc">一个随缘更新的 blog</p>
             </div>
           </div>
@@ -1076,7 +1147,8 @@
                 target="_blank"
                 class="exturl title"
                 title="An0nymou5"
-              >An0nymou5</a>
+                >An0nymou5</a
+              >
               <p class="desc">一个人的喃喃自语</p>
             </div>
           </div>
@@ -1099,11 +1171,16 @@
                 target="_blank"
                 class="exturl title"
                 title="JACK小桔子的小屋"
-              >JACK小桔子的小屋</a>
+                >JACK小桔子的小屋</a
+              >
               <p class="desc">一个分享科技/日常的网站</p>
             </div>
           </div>
-          <div class="item" title="hongsheng-xu" style="--block-color: rgba(138, 198, 209, 0.9)">
+          <div
+            class="item"
+            title="hongsheng-xu"
+            style="--block-color: rgba(138, 198, 209, 0.9)"
+          >
             <a
               href="http://honshen.xyz"
               rel="noopener external nofollow noreferrer"
@@ -1122,7 +1199,8 @@
                 target="_blank"
                 class="exturl title"
                 title="honshen"
-              >honshen</a>
+                >honshen</a
+              >
               <p class="desc">==别怕路长梦远,总有星河照耀==</p>
             </div>
           </div>
@@ -1145,7 +1223,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Silky Heart"
-              >Silky Heart</a>
+                >Silky Heart</a
+              >
               <p class="desc">Querying for a variable and seizing the time</p>
             </div>
           </div>
@@ -1168,7 +1247,8 @@
                 target="_blank"
                 class="exturl title"
                 title="萌’s 代码"
-              >萌’s 代码</a>
+                >萌’s 代码</a
+              >
               <p class="desc">个人博客 &amp; 个人网站</p>
             </div>
           </div>
@@ -1191,7 +1271,8 @@
                 target="_blank"
                 class="exturl title"
                 title="万物冬藏待春来"
-              >万物冬藏待春来</a>
+                >万物冬藏待春来</a
+              >
               <p class="desc">遗迹是曾经讴歌繁荣的生命留下的缺页的梦</p>
             </div>
           </div>
@@ -1214,7 +1295,8 @@
                 target="_blank"
                 class="exturl title"
                 title="墨染 の 博客"
-              >墨染 の 博客</a>
+                >墨染 の 博客</a
+              >
               <p class="desc">编程、渗透、CTF &amp;&amp; 网络搬运工。</p>
             </div>
           </div>
@@ -1237,7 +1319,8 @@
                 target="_blank"
                 class="exturl title"
                 title="山河"
-              >山河</a>
+                >山河</a
+              >
               <p class="desc">你喜欢我吗</p>
             </div>
           </div>
@@ -1260,11 +1343,16 @@
                 target="_blank"
                 class="exturl title"
                 title="刘超智 | 博客"
-              >刘超智 | 博客</a>
+                >刘超智 | 博客</a
+              >
               <p class="desc">学习、实践、分享</p>
             </div>
           </div>
-          <div class="item" title="Lunatic · Scarlet" style="--block-color: #ff1493">
+          <div
+            class="item"
+            title="Lunatic · Scarlet"
+            style="--block-color: #ff1493"
+          >
             <a
               href="https://thiefship.com"
               rel="noopener external nofollow noreferrer"
@@ -1281,7 +1369,8 @@
                 target="_blank"
                 class="exturl title"
                 title="贼ㄨ船"
-              >贼ㄨ船</a>
+                >贼ㄨ船</a
+              >
               <p class="desc">私人小站 - 随缘更新</p>
             </div>
           </div>
@@ -1304,7 +1393,8 @@
                 target="_blank"
                 class="exturl title"
                 title="雾雨霜星"
-              >雾雨霜星</a>
+                >雾雨霜星</a
+              >
               <p class="desc">雾间觉雨，霜空望星</p>
             </div>
           </div>
@@ -1327,7 +1417,8 @@
                 target="_blank"
                 class="exturl title"
                 title="卡布奇诺"
-              >卡布奇诺</a>
+                >卡布奇诺</a
+              >
               <p class="desc">世上无难事,只要肯放弃</p>
             </div>
           </div>
@@ -1350,7 +1441,8 @@
                 target="_blank"
                 class="exturl title"
                 title="lopponia's blog"
-              >lopponia's blog</a>
+                >lopponia's blog</a
+              >
               <p class="desc">lopponia的个人博客</p>
             </div>
           </div>
@@ -1373,7 +1465,8 @@
                 target="_blank"
                 class="exturl title"
                 title="GaoYuan’s Blog"
-              >GaoYuan’s Blog</a>
+                >GaoYuan’s Blog</a
+              >
               <p class="desc">生活就像海洋，只有意志将强的人才能到达彼岸</p>
             </div>
           </div>
@@ -1396,7 +1489,8 @@
                 target="_blank"
                 class="exturl title"
                 title="百品博客"
-              >百品博客</a>
+                >百品博客</a
+              >
               <p class="desc">未来属于我们！</p>
             </div>
           </div>
@@ -1419,7 +1513,8 @@
                 target="_blank"
                 class="exturl title"
                 title="檐下风铃"
-              >檐下风铃</a>
+                >檐下风铃</a
+              >
               <p class="desc">遇见即是上上签</p>
             </div>
           </div>
@@ -1442,7 +1537,8 @@
                 target="_blank"
                 class="exturl title"
                 title="摘星阁"
-              >摘星阁</a>
+                >摘星阁</a
+              >
               <p class="desc">致力于研究御剑术的普通人</p>
             </div>
           </div>
@@ -1463,7 +1559,8 @@
                 target="_blank"
                 class="exturl title"
                 title="liuliのsite"
-              >liuliのsite</a>
+                >liuliのsite</a
+              >
               <p class="desc">liuliの个人网站</p>
             </div>
           </div>
@@ -1486,7 +1583,8 @@
                 target="_blank"
                 class="exturl title"
                 title="昨夜星辰"
-              >昨夜星辰</a>
+                >昨夜星辰</a
+              >
               <p class="desc">日月之行，星汉灿烂</p>
             </div>
           </div>
@@ -1509,7 +1607,8 @@
                 target="_blank"
                 class="exturl title"
                 title="灵香轩"
-              >灵香轩</a>
+                >灵香轩</a
+              >
               <p class="desc">浩瀚众星，皆降为尘</p>
             </div>
           </div>
@@ -1532,7 +1631,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Linn’s Shoka"
-              >Linn’s Shoka</a>
+                >Linn’s Shoka</a
+              >
               <p class="desc">Linn 的笔记</p>
             </div>
           </div>
@@ -1555,7 +1655,8 @@
                 target="_blank"
                 class="exturl title"
                 title="失心耀"
-              >失心耀</a>
+                >失心耀</a
+              >
               <p class="desc">迷茫&amp;学习，渴望成功的18岁小屁孩</p>
             </div>
           </div>
@@ -1578,7 +1679,8 @@
                 target="_blank"
                 class="exturl title"
                 title="AquA Space"
-              >AquA Space</a>
+                >AquA Space</a
+              >
               <p class="desc">新的起点，新的开始</p>
             </div>
           </div>
@@ -1601,7 +1703,8 @@
                 target="_blank"
                 class="exturl title"
                 title="喵星趣学堂"
-              >喵星趣学堂</a>
+                >喵星趣学堂</a
+              >
               <p class="desc">K12 编程优质内容生产者</p>
             </div>
           </div>
@@ -1624,7 +1727,8 @@
                 target="_blank"
                 class="exturl title"
                 title="梦想小窝"
-              >梦想小窝</a>
+                >梦想小窝</a
+              >
               <p class="desc">个人博客，分享日常，随缘更新</p>
             </div>
           </div>
@@ -1647,7 +1751,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Honahecの神秘小屋"
-              >Honahecの神秘小屋</a>
+                >Honahecの神秘小屋</a
+              >
               <p class="desc">一个OIer的小屋</p>
             </div>
           </div>
@@ -1670,7 +1775,8 @@
                 target="_blank"
                 class="exturl title"
                 title="Maan Xlong"
-              >Maan Xlong</a>
+                >Maan Xlong</a
+              >
               <p class="desc">漫咖啡书架</p>
             </div>
           </div>
@@ -1693,7 +1799,8 @@
                 target="_blank"
                 class="exturl title"
                 title="MimosaのBlog"
-              >MimosaのBlog</a>
+                >MimosaのBlog</a
+              >
               <p class="desc">时空的网交织在一起，织成了天上的繁星</p>
             </div>
           </div>
@@ -1716,7 +1823,8 @@
                 target="_blank"
                 class="exturl title"
                 title="ReverseSacle-Blog"
-              >ReverseSacle-Blog</a>
+                >ReverseSacle-Blog</a
+              >
               <p class="desc">执着过去的人,无法迈向未来</p>
             </div>
           </div>
@@ -1739,7 +1847,8 @@
                 target="_blank"
                 class="exturl title"
                 title="OSAKANA"
-              >OSAKANA</a>
+                >OSAKANA</a
+              >
               <p class="desc">誰よりスキだから</p>
             </div>
           </div>
@@ -1762,7 +1871,8 @@
                 target="_blank"
                 class="exturl title"
                 title="WhiteFan's Blog"
-              >WhiteFan's Blog</a>
+                >WhiteFan's Blog</a
+              >
               <p class="desc">一个斜杠青年的碎碎念</p>
             </div>
           </div>
@@ -1771,7 +1881,12 @@
       </div>
       <footer>
         <div class="meta">
-          <span id="friends/" class="item leancloud_visitors" data-flag-title="友情链接" title="阅读次数">
+          <span
+            id="friends/"
+            class="item leancloud_visitors"
+            data-flag-title="友情链接"
+            title="阅读次数"
+          >
             <span class="icon">
               <i class="ic i-eye"></i>
             </span>
@@ -1781,9 +1896,7 @@
           </span>
         </div>
         <div class="reward">
-          <button>
-            <i class="ic i-heartbeat"></i> 赞赏
-          </button>
+          <button><i class="ic i-heartbeat"></i> 赞赏</button>
           <p>请我喝[茶]~(￣▽￣)~*</p>
           <div id="qr">
             <div>
