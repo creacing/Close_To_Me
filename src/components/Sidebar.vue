@@ -6,7 +6,7 @@
           <div class="contents panel pjax" data-title="文章目录"></div>
           <div class="related panel pjax" data-title="系列文章"></div>
           <div class="overview panel active" data-title="站点概览">
-            <div class="author">
+            <div class="author side--author--info">
               <img
                 class="image lozaded"
                 alt="Cheshire Cat"
@@ -16,7 +16,7 @@
               <p class="name">{{ sidebar.author }}</p>
               <div class="description">{{ sidebar.description }}</div>
             </div>
-            <nav class="state">
+            <nav class="state side--site--info">
               <div class="item posts">
                 <router-link to="/archives/">
                   <span class="count">{{ sidebar.articlesNum }}</span>
@@ -36,7 +36,7 @@
                 </router-link>
               </div>
             </nav>
-            <div class="social">
+            <div class="social side--social--link">
               <a
                 v-for="link of sidebar.socialLinks"
                 :key="link"
@@ -50,7 +50,7 @@
                 <i class="ic" :class="link.icon"></i>
               </a>
             </div>
-            <ul class="menu">
+            <ul class="menu side--menu">
               <li
                 class="side--nav item"
                 v-for="link in sideNav"
@@ -132,6 +132,7 @@ const { isSidebar } = toRefs(state);
   height: 100%;
 }
 .side--nav > a:hover {
+  transform: translateZ(2.5rem);
   color: var(--grey-0) !important;
   // background-image: linear-gradient(
   //   to right,
@@ -143,5 +144,20 @@ const { isSidebar } = toRefs(state);
   box-shadow: 0 0.125rem 0.75rem hsl(35deg 80% 90%);
   opacity: 0.9;
   border-radius: 0.625rem;
+}
+.side--nav {
+  border-radius: 0.625rem;
+}
+.side--author--info,
+.side--site--info,
+.side--social--link,
+.side--menu {
+  background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%)
+    no-repeat top;
+  box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
+  padding: 20px;
+}
+.side--menu {
+  margin-top: 0.625rem !important;
 }
 </style>

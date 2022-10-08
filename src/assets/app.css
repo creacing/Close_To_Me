@@ -2828,7 +2828,7 @@ main>.inner {
 }
 
 .overview .menu {
-    padding: 1.25rem 0;
+    padding: 1.25rem;
     margin: 0;
     background-color: transparent
 }
@@ -2865,7 +2865,7 @@ main>.inner {
 }
 
 .overview .menu .item.active:hover {
-    box-shadow: 0 0 .75rem var(--color-pink);
+    /* box-shadow: 0 0 .75rem var(--color-pink); */
     color: var(--grey-0)
 }
 

@@ -3,7 +3,11 @@
     <article class="item show" v-for="article in articles" :key="article">
       <div class="cover">
         <RouterLink :to="`article${article.path}`" :title="article.title">
-          <img :data-src="article.imgSrc" :src="article.imgSrc" class="lozaded" />
+          <img
+            :data-src="article.imgSrc"
+            :src="article.imgSrc"
+            class="lozaded"
+          />
         </RouterLink>
       </div>
       <div class="info">
@@ -29,7 +33,9 @@
           </span>-->
         </div>
         <h3>
-          <RouterLink :to="`article${article.path}`" :title="article.title">{{ article.title }}</RouterLink>
+          <RouterLink :to="`article${article.path}`" :title="article.title">{{
+            article.title
+          }}</RouterLink>
         </h3>
         <div class="excerpt">{{ article.description }}</div>
         <div class="meta footer">
@@ -40,21 +46,26 @@
             </RouterLink>
           </span>
         </div>
-        <RouterLink :to="`article${article.path}`" :title="article.title" class="btn">more...</RouterLink>
+        <RouterLink
+          :to="`article${article.path}`"
+          :title="article.title"
+          class="btn"
+          >more...</RouterLink
+        >
       </div>
     </article>
   </div>
 </template>
 
 <script setup>
-import { defineProps, toRefs } from 'vue'
+import { defineProps, toRefs } from "vue";
 import { RouterLink } from "vue-router";
 const props = defineProps({
   articles: {
     type: Array,
-    default: () => []
-  }
-})
+    default: () => [],
+  },
+});
 
-const { articles } = toRefs(props)
+const { articles } = toRefs(props);
 </script>

@@ -7,15 +7,11 @@
       篇文章。
       <small class="cheers">Practice makes perfect</small>
     </h2>
-<<<<<<< Updated upstream
-    <RouterLink :to="`/article${archive.path}`" v-for="archive in archiveList">
-=======
     <RouterLink
-      :to="{ name: 'article' }"
+      :to="`/article${archive.path}`"
       v-for="archive in archiveList"
       :key="archive"
     >
->>>>>>> Stashed changes
       <h3 class="item section">
         <span>{{ archive.date.split("-")[0] }} 年</span>
         <small>/</small>

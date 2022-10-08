@@ -1,15 +1,5 @@
 <template>
   <div class="page wrap">
-<<<<<<< Updated upstream
-    <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
-      <link href="https://shoka.lostyu.me/friends/" />
-      <span hidden itemscope itemtype="http://schema.org/Person">
-        <meta content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg" />
-        <meta content="Ruri Shimotsuki" />
-        <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
-      </span>
-      <span hidden itemscope itemtype="http://schema.org/Organization">
-=======
     <article
       itemscope
       itemtype="http://schema.org/Article"
@@ -17,19 +7,14 @@
       lang="zh-CN"
     >
       <link href="https://shoka.lostyu.me/friends/" />
-      <span hidden="author" itemscope itemtype="http://schema.org/Person">
+      <span hidden itemscope itemtype="http://schema.org/Person">
         <meta
           content="//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/images/avatar.jpg"
         />
         <meta content="Ruri Shimotsuki" />
         <meta content="有夢書架, 琉璃的医学 &amp; 编程笔记" />
       </span>
-      <span
-        hidden="publisher"
-        itemscope
-        itemtype="http://schema.org/Organization"
-      >
->>>>>>> Stashed changes
+      <span hidden itemscope itemtype="http://schema.org/Organization">
         <meta content="優萌初華" />
       </span>
       <div class="body md">
