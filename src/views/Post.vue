@@ -6,16 +6,16 @@
         <a href="/">首页</a>
       </span>
       <i class="ic i-angle-right"></i>
-
       <span class="current">
-        <a
-          href="/categories/computer-science/note/theme-shoka-doc/"
-          rel="index"
-          title="分类于 Theme Shoka Documentation"
-        >
-          <span>Theme Shoka Documentation</span>
-        </a>
-        <meta content="3" />
+        <span>
+          <span>{{articleTags}}</span>
+        </span>
+      </span>
+      <i class="ic i-angle-right"></i>
+      <span class="current">
+        <span>
+          <span>{{articleTitle}}</span>
+        </span>
       </span>
     </div>
     <article class="post block" lang="zh-CN">
@@ -30,13 +30,22 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const state = store();
 const articleContent = ref("");
+const articleTitle = ref('')
+const articleTags = ref('')
+
 
 watch(
   () => route.params,
   (newParams, oldParams) => {
     const { type, path } = newParams;
     const matchPath = `/${type}/${path}`;
-    articleContent.value = state.postsDic.get(matchPath).content;
+
+
+    const { content, title, tags } = state.postsDic.get(matchPath)
+    articleContent.value = content;
+    articleTitle.value = title;
+    articleTags.value = tags.join(' ');
+
   },
   { immediate: true }
 );

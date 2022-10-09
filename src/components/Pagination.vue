@@ -1,12 +1,8 @@
 <template>
   <nav class="pagination">
-    <span class="prev" @click="prePage" v-if="curPageList[0]>2">
+    <span class="prev" @click="prePage" v-show="curPageList[0] !==1">
       <i class="ic i-angle-left" aria-label="上一页"></i>
     </span>
-
-    <span class="page-number" :class="currentIndex === 1?'current':''" @click="toPage(1)">1</span>
-
-    <span class="space" v-if="curPageList[0]!==2">…</span>
 
     <span
       class="page-number"
@@ -16,15 +12,7 @@
       :class="currentIndex === index?'current':''"
     >{{index}}</span>
 
-    <span class="space" v-if="curPageList[2]!==pageNum">…</span>
-
-    <span
-      class="page-number"
-      :class="currentIndex === pageNum?'current':''"
-      @click="toPage(pageNum)"
-    >{{pageNum}}</span>
-
-    <span class="next" @click="nextPage" v-if="curPageList[2]<pageNum">
+    <span class="next" @click="nextPage" v-if="curPageList[curPageList.length-1] !==pageNum">
       <i class="ic i-angle-right" aria-label="下一页"></i>
     </span>
   </nav>
@@ -33,7 +21,7 @@
 import { defineProps, toRefs, defineEmits, ref } from 'vue'
 import { RouterLink } from "vue-router";
 
-const curPageList = ref([2, 3, 4])
+const curPageList = ref([])
 
 const currentIndex = ref(1)
 
@@ -44,22 +32,32 @@ const props = defineProps({
   }
 })
 
+
+
 const emits = defineEmits(['getCurIndex'])
 
 const { pageNum } = toRefs(props)
 
-const nextPage = () => {
-  const last = curPageList.value[2]
-  const temp = []
-  if (last + 1 > pageNum) {
+if (pageNum.value > 5) {
+  curPageList.value = [1, 2, 3, 4, 5]
+} else {
+  for (let i = 0; i < pageNum.value; i++) {
+    curPageList.value.push(i)
+  }
+}
 
-    for (let i = last + 1; i < pageNum; i++) {
+const nextPage = () => {
+  const last = curPageList.value[4]
+  const temp = []
+  if (last + 5 > pageNum.value) {
+
+    for (let i = last + 1; i <= pageNum.value; i++) {
       temp.push(i)
     }
     curPageList.value = temp
   } else {
 
-    curPageList.value = [last + 1, last + 2, last + 3]
+    curPageList.value = [last + 1, last + 2, last + 3, last + 4, last + 5]
   }
 
 
@@ -67,16 +65,8 @@ const nextPage = () => {
 const prePage = () => {
   const first = curPageList.value[0]
   const temp = []
-  if (first - 3 < 1) {
 
-    for (let i = 2; i < first; i++) {
-      temp.push(i)
-    }
-    curPageList.value = temp
-  } else {
-
-    curPageList.value = [first - 3, first - 2, first - 1]
-  }
+  curPageList.value = [first - 5, first - 4, first - 3, first - 2, first - 1]
 }
 const toPage = (pageIndex) => {
   currentIndex.value = pageIndex
