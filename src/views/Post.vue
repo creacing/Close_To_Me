@@ -8,13 +8,13 @@
       <i class="ic i-angle-right"></i>
       <span class="current">
         <span>
-          <span>{{articleTags}}</span>
+          <span>{{ articleTags }}</span>
         </span>
       </span>
       <i class="ic i-angle-right"></i>
       <span class="current">
         <span>
-          <span>{{articleTitle}}</span>
+          <span>{{ articleTitle }}</span>
         </span>
       </span>
     </div>
@@ -30,9 +30,8 @@ import { useRoute } from "vue-router";
 const route = useRoute();
 const state = store();
 const articleContent = ref("");
-const articleTitle = ref('')
-const articleTags = ref('')
-
+const articleTitle = ref("");
+const articleTags = ref("");
 
 watch(
   () => route.params,
@@ -40,12 +39,12 @@ watch(
     const { type, path } = newParams;
     const matchPath = `/${type}/${path}`;
 
-
-    const { content, title, tags } = state.postsDic.get(matchPath)
+    const { content, title, tags } = state.postsDic.get(matchPath);
     articleContent.value = content;
     articleTitle.value = title;
-    articleTags.value = tags.join(' ');
+    articleTags.value = tags.join(" ");
 
+    console.log(content.split("\n"));
   },
   { immediate: true }
 );

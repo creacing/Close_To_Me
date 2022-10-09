@@ -1,4 +1,4 @@
-import {globby} from "globby";
+import { globby } from "globby";
 import matter from "gray-matter";
 import fs from "fs-extra";
 import MarkdownIt from "markdown-it";
@@ -7,42 +7,42 @@ const md = new MarkdownIt();
 
 
 export async function getPosts() {
-    let paths = await getPostMDFilePaths();
-    let posts = await Promise.all(
-        paths.map(async (item) => {
-            const MDFileContent = await fs.readFile(item, "utf-8");
+  let paths = await getPostMDFilePaths();
+  let posts = await Promise.all(
+    paths.map(async (item) => {
+      const MDFileContent = await fs.readFile(item, "utf-8");
 
 
-            let { data, content} = matter(MDFileContent);
-            data.content =  md.render(content)
-            data.description = content.slice(0, 200)
-            data.description = data.description.replace(/[\`+\#+]/g ,'')
+      let { data, content } = matter(MDFileContent);
+      data.content = md.render(content)
+      data.description = content.slice(0, 200)
+      data.description = data.description.replace(/[\`+\#+]/g, '')
 
-            data.date = new Date(data.date).toJSON().split('T')[0]
-            data.filePath = `/${item.replace(".md", ".html")}`
+      data.date = new Date(data.date).toJSON().split('T')[0]
+      data.filePath = `/${item.replace(".md", ".html")}`
 
-            data.fontNum = content.length
-            data = myFrontMatter(data)
-            return data
-        })
-    );
-    posts.sort((a,b)=>  b.date.split('-').join('') - a.date.split('-').join('')) ;
-    // console.log('posts',posts[0]);
-    return posts;
+      data.fontNum = content.length
+      data = myFrontMatter(data)
+      return data
+    })
+  );
+  posts.sort((a, b) => b.date.split('-').join('') - a.date.split('-').join(''));
+  // console.log('posts',posts[0]);
+  return posts;
 }
 
 async function getPostMDFilePaths() {
-    //match global file globaly
-    let paths = await globby(["**.md"], {
-        ignore: ["node_modules", "README.md"],
-    });
+  //match global file globaly
+  let paths = await globby(["**.md"], {
+    ignore: ["node_modules", "README.md"],
+  });
 
-    return paths.filter((item) => {
-        return item.startsWith("posts")
-    });
+  return paths.filter((item) => {
+    return item.startsWith("posts")
+  });
 }
 
-function myFrontMatter(data){
+function myFrontMatter(data) {
   return {
     path: data.filePath,
     title: data.title,

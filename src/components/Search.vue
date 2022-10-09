@@ -31,7 +31,12 @@
                 title="Submit the search query."
                 hidden
               >
-                <svg class="ais-SearchBox-submitIcon" width="10" height="10" viewBox="0 0 40 40">
+                <svg
+                  class="ais-SearchBox-submitIcon"
+                  width="10"
+                  height="10"
+                  viewBox="0 0 40 40"
+                >
                   <path
                     d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"
                   />
@@ -43,7 +48,12 @@
                 title="Clear the search query."
                 hidden
               >
-                <svg class="ais-SearchBox-resetIcon" viewBox="0 0 20 20" width="10" height="10">
+                <svg
+                  class="ais-SearchBox-resetIcon"
+                  viewBox="0 0 20 20"
+                  width="10"
+                  height="10"
+                >
                   <path
                     d="M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z"
                   />
@@ -72,148 +82,16 @@
               <div class="ais-Hits">
                 <ol class="ais-Hits-list">
                   <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-510/week-12/" data-pjax-state>
+                    <a
+                      href="/computer-science/mse/itmd-510/week-12/"
+                      data-pjax-state
+                    >
                       <span>
                         计算机科学
                         <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMD 510.
-                        Object-Oriented App Develop
-                      </span>Week 12.
-                      <mark>J</mark>avaFx
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-510/week-11/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMD 510.
-                        Object-Oriented App Develop
-                      </span>Week 11.
-                      <mark>J</mark>ava Database Connectivity
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-510/week-1/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMD 510.
-                        Object-Oriented App Develop
-                      </span>Week 1.
-                      <mark>J</mark>ava Fundamental / Best programming
-                      practices
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-9/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 9.
-                      <mark>J</mark>avaScript - ES6 Module
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-5/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 5.
-                      <mark>J</mark>avaScript -
-                      <mark>J</mark>SON
-                      &amp; AJAX
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-4/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 4.
-                      <mark>J</mark>avaScript – ES6+ (ES 2015+)
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-3/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 3.
-                      <mark>J</mark>avaScript – Namespace
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-2/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 2.
-                      <mark>J</mark>avaScript – DOM Introduction and
-                      Selecting Elements
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-10/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 10. ReactJS -
-                      <mark>J</mark>avaScript library for
-                      building user interfaces
-                    </a>
-                  </li>
-                  <li class="ais-Hits-item item">
-                    <a href="/computer-science/mse/itmd-565/lecture-1/" data-pjax-state>
-                      <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering
-                        <i
-                          class="ic i-angle-right"
-                        ></i>ITMM 565.
-                        Rich Internet Applications
-                      </span>Lecture 1.
-                      <mark>J</mark>avaScript – Language and Syntax
+                        Engineering <i class="ic i-angle-right"></i>ITMD 510.
+                        Object-Oriented App Develop </span
+                      >Week 12. <mark>J</mark>avaFx
                     </a>
                   </li>
                 </ol>
@@ -224,37 +102,46 @@
             <div class="ais-Pagination pagination">
               <ul class="ais-Pagination-list">
                 <li
-                  class="ais-Pagination-item pagination-item ais-Pagination-item--previousPage ais-Pagination-item--disabled disabled-item"
+                  class="
+                    ais-Pagination-item
+                    pagination-item
+                    ais-Pagination-item--previousPage
+                    ais-Pagination-item--disabled
+                    disabled-item
+                  "
                 >
                   <span class="ais-Pagination-link page-number">
                     <i class="ic i-angle-left"></i>
                   </span>
                 </li>
                 <li
-                  class="ais-Pagination-item pagination-item ais-Pagination-item--page ais-Pagination-item--selected current"
+                  class="
+                    ais-Pagination-item
+                    pagination-item
+                    ais-Pagination-item--page ais-Pagination-item--selected
+                    current
+                  "
                 >
-                  <a class="ais-Pagination-link page-number" aria-label="1" href="#">1</a>
+                  <a
+                    class="ais-Pagination-link page-number"
+                    aria-label="1"
+                    href="#"
+                    >1</a
+                  >
                 </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--page">
-                  <a class="ais-Pagination-link page-number" aria-label="2" href="#">2</a>
-                </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--page">
-                  <a class="ais-Pagination-link page-number" aria-label="3" href="#">3</a>
-                </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--page">
-                  <a class="ais-Pagination-link page-number" aria-label="4" href="#">4</a>
-                </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--page">
-                  <a class="ais-Pagination-link page-number" aria-label="5" href="#">5</a>
-                </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--page">
-                  <a class="ais-Pagination-link page-number" aria-label="6" href="#">6</a>
-                </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--page">
-                  <a class="ais-Pagination-link page-number" aria-label="7" href="#">7</a>
-                </li>
-                <li class="ais-Pagination-item pagination-item ais-Pagination-item--nextPage">
-                  <a class="ais-Pagination-link page-number" aria-label="Next" href="#">
+
+                <li
+                  class="
+                    ais-Pagination-item
+                    pagination-item
+                    ais-Pagination-item--nextPage
+                  "
+                >
+                  <a
+                    class="ais-Pagination-link page-number"
+                    aria-label="Next"
+                    href="#"
+                  >
                     <i class="ic i-angle-right"></i>
                   </a>
                 </li>
