@@ -3,15 +3,10 @@
     <h2 class="item header">
       <RouterLink to>归档</RouterLink>
       <small>/</small>
-      目前共计 {{ articlesNum }}
-      篇文章。
-      <small class="cheers">Practice makes perfect</small>
+      {{ articlesNum }}
+      <!-- <small class="cheers">Practice makes perfect</small> -->
     </h2>
-    <RouterLink
-      :to="`/article${archive.path}`"
-      v-for="archive in archiveList"
-      :key="archive"
-    >
+    <RouterLink :to="`/article${archive.path}`" v-for="archive in archiveList" :key="archive">
       <h3 class="item section">
         <span>{{ archive.date.split("-")[0] }} 年</span>
         <small>/</small>

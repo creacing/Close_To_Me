@@ -1,17 +1,14 @@
 <template>
   <div class="pjax">
     <div class="page wrap">
-      <article
-        itemscope
-        itemtype="http://schema.org/Article"
-        class="post block"
-        lang="zh-CN"
-      >
+      <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
         <div class="body md">
-          <h1 id="二次元" class="active">
+          <!-- <h1 id="二次元" class="active">
             <a class="anchor" href="#二次元">#</a> 二次元
-          </h1>
-          <h2 id="图站"><a class="anchor" href="#图站">#</a> 图站</h2>
+          </h1>-->
+          <h2 id="sites">
+            <a class="anchor" href="#">#</a> 功能网站
+          </h2>
           <p></p>
           <div class="links">
             <div class="item" title="Zerochan" style="--block-color: #8f74fb">
@@ -33,8 +30,7 @@
                   target="_blank"
                   class="exturl title"
                   title="Zerochan"
-                  >Zerochan</a
-                >
+                >Zerochan</a>
                 <p class="desc">HQ Anime Image Board</p>
               </div>
             </div>
@@ -57,8 +53,7 @@
                   target="_blank"
                   class="exturl title"
                   title="yande.re"
-                  >yande.re</a
-                >
+                >yande.re</a>
                 <p class="desc">萌妹</p>
               </div>
             </div>
@@ -81,16 +76,11 @@
                   target="_blank"
                   class="exturl title"
                   title="Danbooru"
-                  >Danbooru</a
-                >
+                >Danbooru</a>
                 <p class="desc">Anime Image Board</p>
               </div>
             </div>
-            <div
-              class="item"
-              title="Anime-Pictures"
-              style="--block-color: #538994"
-            >
+            <div class="item" title="Anime-Pictures" style="--block-color: #538994">
               <a
                 href="https://anime-pictures.net/"
                 rel="noopener external nofollow noreferrer"
@@ -109,16 +99,11 @@
                   target="_blank"
                   class="exturl title"
                   title="Anime-Pictures"
-                  >Anime-Pictures</a
-                >
+                >Anime-Pictures</a>
                 <p class="desc">免费的动漫图片和壁纸</p>
               </div>
             </div>
-            <div
-              class="item"
-              title="Wallpaper Abyss"
-              style="--block-color: #327fc8"
-            >
+            <div class="item" title="Wallpaper Abyss" style="--block-color: #327fc8">
               <a
                 href="https://wall.alphacoders.com/"
                 rel="noopener external nofollow noreferrer"
@@ -137,16 +122,11 @@
                   target="_blank"
                   class="exturl title"
                   title="Wallpaper Abyss"
-                  >Wallpaper Abyss</a
-                >
+                >Wallpaper Abyss</a>
                 <p class="desc">HD Wallpapers, Background Images</p>
               </div>
             </div>
-            <div
-              class="item"
-              title="Wallpaperboys"
-              style="--block-color: #525252"
-            >
+            <div class="item" title="Wallpaperboys" style="--block-color: #525252">
               <a
                 href="https://wallpaperboys.com/"
                 rel="noopener external nofollow noreferrer"
@@ -165,8 +145,7 @@
                   target="_blank"
                   class="exturl title"
                   title="Wallpaperboys"
-                  >Wallpaperboys</a
-                >
+                >Wallpaperboys</a>
                 <p class="desc">iPhone アニメ壁紙</p>
               </div>
             </div>
@@ -189,16 +168,11 @@
                   target="_blank"
                   class="exturl title"
                   title="Tsundora"
-                  >Tsundora</a
-                >
+                >Tsundora</a>
                 <p class="desc">高解像度・高画質なアニメ＆ゲーム壁紙</p>
               </div>
             </div>
-            <div
-              class="item"
-              title="アニメ壁紙ネット"
-              style="--block-color: #000"
-            >
+            <div class="item" title="アニメ壁紙ネット" style="--block-color: #000">
               <a
                 href="http://anihonetwallpaper.com/"
                 rel="noopener external nofollow noreferrer"
@@ -217,8 +191,7 @@
                   target="_blank"
                   class="exturl title"
                   title="アニメ壁紙ネット"
-                  >アニメ壁紙ネット</a
-                >
+                >アニメ壁紙ネット</a>
                 <p class="desc">PC・Android・iPhone壁紙・画像</p>
               </div>
             </div>

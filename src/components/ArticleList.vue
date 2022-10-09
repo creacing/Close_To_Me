@@ -1,16 +1,12 @@
 <template>
-  <div class="segments posts">
-    <article class="item show" v-for="article in articles" :key="article">
-      <div class="cover">
+  <div class="segments posts article">
+    <article class="item show article--content" v-for="article in articles" :key="article">
+      <!-- <div class="cover">
         <RouterLink :to="`article${article.path}`" :title="article.title">
-          <img
-            :data-src="article.imgSrc"
-            :src="article.imgSrc"
-            class="lozaded"
-          />
+          <img :data-src="article.imgSrc" :src="article.imgSrc" class="lozaded" />
         </RouterLink>
-      </div>
-      <div class="info">
+      </div>-->
+      <div class="info article--info">
         <div class="meta">
           <span class="item" :title="article.date">
             <span class="icon">
@@ -25,17 +21,13 @@
             <span>{{ article.fontNum }}</span>
             <span class="text">字</span>
           </span>
-          <!-- <span class="item" title="阅读时长">
-            <span class="icon">
-              <i class="ic i-clock"></i>
-            </span>
-            <span>{{ article.readTime }}</span>
-          </span>-->
         </div>
         <h3>
-          <RouterLink :to="`article${article.path}`" :title="article.title">{{
+          <RouterLink :to="`article${article.path}`" :title="article.title">
+            {{
             article.title
-          }}</RouterLink>
+            }}
+          </RouterLink>
         </h3>
         <div class="excerpt">{{ article.description }}</div>
         <div class="meta footer">
@@ -49,9 +41,8 @@
         <RouterLink
           :to="`article${article.path}`"
           :title="article.title"
-          class="btn"
-          >more...</RouterLink
-        >
+          class="btn article--btn"
+        >more...</RouterLink>
       </div>
     </article>
   </div>
@@ -69,3 +60,41 @@ const props = defineProps({
 
 const { articles } = toRefs(props);
 </script>
+
+<style scoped lang='scss'>
+.article > .article--content:nth-child(even) .article--btn {
+  transform: translate(-1rem, -0.5rem);
+}
+
+.article > .article--content:nth-child(odd) .article--btn {
+  transform: translate(1rem, -0.5rem);
+}
+.article > .article--content:nth-child(even) .article--btn::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  left: 0;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 0 0 1rem 1rem;
+  border-color: transparent;
+  border-bottom-color: var(--color-orange);
+  filter: brightness(0.9);
+}
+.article > .article--content:nth-child(odd) .article--btn::after {
+  content: "";
+  position: absolute;
+  top: -1rem;
+  right: 0;
+  width: 0;
+  height: 0;
+  background-color: transparent;
+  border-style: solid;
+  border-width: 1rem 0 0 1rem;
+  border-color: transparent;
+  border-left-color: var(--color-orange);
+  filter: brightness(0.9);
+}
+</style>

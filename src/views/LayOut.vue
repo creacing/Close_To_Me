@@ -28,5 +28,6 @@ watch(
 <style scoped>
 #main {
   min-height: 100vh;
+  flex: auto;
 }
 </style>

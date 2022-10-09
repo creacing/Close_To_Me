@@ -3,8 +3,7 @@
     <h2 class="item title">
       <RouterLink to="/">分类</RouterLink>
       <small>/</small>
-      目前共计 {{categoryNum}}
-      个分类
+      {{categoryNum}}
     </h2>
     <div v-for="category in categories" :key="category">
       <h2 class="item header">

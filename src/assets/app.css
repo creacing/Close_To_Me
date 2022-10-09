@@ -20,16 +20,10 @@
   border-radius: 0 0 0.625rem 0.625rem ;
 }
 
-#nav .menu .submenu .item.active,#nav .menu .submenu .item:hover,#search-pagination .current .page-number,#sidebar .tab .item.active,#sidebar .tab .item:hover,.overview .menu .item.active,.pagination .next:hover,.pagination .page-number.current,.pagination .page-number:hover,.pagination .prev:hover {
+#nav .menu .submenu .item.active,#nav .menu .submenu .item:hover,#search-pagination .current .page-number,#sidebar .tab .item.active,#sidebar .tab .item:hover,.overview .menu .item.active {
   color: var(--grey-0);
-  /* background-image: linear-gradient(
-    to right,
-    var(--color-pink) 0,
-    var(--color-orange) 100%
-  );
-  box-shadow: 0 0.125rem 0.75rem var(--color-pink-a3); */
-  background-color: hsl(35deg 82% 52%);
-  box-shadow: 0 0.125rem 0.75rem hsl(35deg 80% 90%);
+  background-color: var(--color-young-blue);
+  box-shadow: 0 0.125rem 0.75rem var(--color-young-blue);
   opacity: 0.9;
   border-radius: 0.625rem;
 }
@@ -72,6 +66,7 @@
     --color-green: #0a7426;
     --color-aqua: #3e999f;
     --color-blue: #38a1db;
+    --color-young-blue: hsl(209deg 100% 62%);
     --color-purple: #9d5b8b;
     --color-grey: #869194;
     --color-red-a1: rgba(233,84,107,0.1);
@@ -1756,57 +1751,9 @@ input,textarea {
     top: -.3125rem
 }
 
-.pagination .next,.pagination .page-number,.pagination .prev,.pagination .space {
-    display: inline-block;
-    margin: 0 .5rem;
-    padding: 0 .75rem;
-    position: relative;
-    border-radius: .3125rem
-}
 
-@media (max-width: 767px) {
-    .pagination .next,.pagination .page-number,.pagination .prev,.pagination .space {
-        margin:0 .3125rem
-    }
-}
 
-.pagination {
-    width: 100%;
-    padding: 1.25rem 3.125rem;
-    text-align: center;
-    display: inline-block;
-    color: var(--grey-5)
-}
-
-@media (max-width: 767px) {
-    .pagination {
-        padding:1.25rem .625rem
-    }
-}
-
-.pagination .inner {
-    width: auto;
-    border-radius: .9375rem
-}
-
-.pagination .next,.pagination .page-number,.pagination .prev {
-    transition: all .2s ease-in-out 0s
-}
-
-.pagination .space {
-    margin: 0;
-    padding: 0
-}
-
-.pagination .prev {
-    margin-left: 0
-}
-
-.pagination .next {
-    margin-right: 0
-}
-
-#search-pagination .current .page-number:hover,.pagination .page-number.current:hover {
+#search-pagination .current .page-number:hover {
     box-shadow: 0 0 .3125rem var(--primary-color)
 }
 
@@ -1931,12 +1878,12 @@ main>.inner {
         width:72.5rem
     }
 }
-
+/* 
 @media (min-width: 1600px) {
     main>.inner {
         width:73%
     }
-}
+} */
 
 #main {
     background: linear-gradient(to top,var(--grey-0) 0,var(--grey-1) 20%) no-repeat top;
@@ -2192,11 +2139,11 @@ main>.inner {
     }
 }
 
-@media (min-width: 1600px) {
+/* @media (min-width: 1600px) {
     #nav .inner {
         width:73%
     }
-}
+} */
 
 #nav .toggle {
     display: none
@@ -2732,7 +2679,7 @@ main>.inner {
 
 .panels .panel {
     display: none;
-    padding: .875rem .9375rem 2rem
+    padding: 0 .9375rem 2rem
 }
 
 .dimmer {
@@ -3221,11 +3168,11 @@ main>.inner {
     }
 }
 
-@media (min-width: 1600px) {
+/* @media (min-width: 1600px) {
     #footer .inner {
         width:73%
     }
-}
+} */
 
 @media (max-width: 991px) {
     #footer .inner {
@@ -3909,7 +3856,8 @@ main>.inner {
     bottom: 0;
     right: 0;
     padding: .3rem 1rem;
-    border-radius: 1rem 0;
+    /* border-radius: 1rem 0; */
+    border-radius: 0.25rem 0;
     color: var(--grey-0);
     background-image: linear-gradient(to right,var(--color-pink) 0,var(--color-orange) 100%)
 }
@@ -3925,10 +3873,6 @@ main>.inner {
     top: .8rem;
     box-shadow: 0 0 .6rem .6rem var(--color-pink-a3);
     background-color: var(--color-pink-a3)
-}
-
-.index.wrap .btn:hover {
-    transform: translateZ(2.5rem)
 }
 
 .index.wrap .btn:hover::before {
@@ -4181,8 +4125,10 @@ main>.inner {
 
 .segments .info {
     position: relative;
-    width: 50%;
-    padding: 1rem 1.5rem 3rem 0;
+    /* width: 50%; */
+    width: 100%;
+    /* padding: 1rem 1.5rem 3rem 0; */
+    padding: 1rem 1.5rem 3rem !important;
     perspective: 62.5rem
 }
 
@@ -4269,7 +4215,8 @@ main>.inner {
 .segments>.item:nth-child(even) .btn {
     left: 0;
     right: auto;
-    border-radius: 0 1rem;
+    /* border-radius: 0 1rem; */
+    border-radius: 0 0.25rem;
     background-image: linear-gradient(to right,var(--color-orange) 0,var(--color-pink) 100%)
 }
 

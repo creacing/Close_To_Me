@@ -26,7 +26,7 @@ export async function getPosts() {
             return data
         })
     );
-    posts.sort((a,b)=>a.date.split('-').join('') - b.date.split('-').join(''));
+    posts.sort((a,b)=>  b.date.split('-').join('') - a.date.split('-').join('')) ;
     // console.log('posts',posts[0]);
     return posts;
 }

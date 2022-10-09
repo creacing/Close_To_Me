@@ -1,7 +1,7 @@
 <template>
   <div class="random--articles">
     <div class="random--content">
-      <h2>随机文章</h2>
+      <h2>最新文章</h2>
       <ul class="random--list">
         <li class="random--item" v-for="post in randomPosts">
           <div class="random--bread">
@@ -38,6 +38,12 @@ const posts = state.posts
 const randomPosts = posts.slice(0, 10) || [];
 </script>
 <style lang="scss" scoped>
+@media (min-width: 1200px) {
+  .random--articles {
+    width: 72.5rem;
+  }
+}
+
 .random--content {
   width: 100%;
   padding: 1rem;
@@ -83,12 +89,6 @@ const randomPosts = posts.slice(0, 10) || [];
 @media (min-width: 1200px) {
   .random--articles {
     width: 72.5rem;
-  }
-}
-
-@media (min-width: 1600px) {
-  .random--articles {
-    width: 73%;
   }
 }
 </style>

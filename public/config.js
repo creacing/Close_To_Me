@@ -33,7 +33,7 @@ const config = {
         { name: 'Github', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
     ],
     sideNav: [
-        { name: '首页', link: "/", children: [], liClass: 'active', rel: 'section', iClass: 'i-home', aClass: '' },
+        { name: '首页', link: "/", children: [], liClass: '', rel: 'section', iClass: 'i-home', aClass: '' },
         // i-feather
         { name: '归档', link: "/archives/", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
         { name: '标签', link: "/tags", children: [], liClass: '', rel: 'section', iClass: 'i-tags', aClass: '' },

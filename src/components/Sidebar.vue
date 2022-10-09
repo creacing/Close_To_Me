@@ -51,12 +51,7 @@
               </a>
             </div>
             <ul class="menu side--menu">
-              <li
-                class="side--nav item"
-                v-for="link in sideNav"
-                :class="link.liClass"
-                :key="link"
-              >
+              <li class="side--nav item" v-for="link in sideNav" :class="link.liClass" :key="link">
                 <router-link :to="link.link" v-if="link.children.length === 0">
                   <i class="ic" :class="link.iClass" v-if="link.iClass"></i>
                   {{ link.name }}
@@ -109,7 +104,7 @@ const { isSidebar } = toRefs(state);
 
 <style lang='scss' scoped>
 .panels {
-  padding-top: 0.625rem;
+  padding-top: 0;
 }
 
 @media (min-width: 991px) {
@@ -132,16 +127,9 @@ const { isSidebar } = toRefs(state);
   height: 100%;
 }
 .side--nav > a:hover {
-  transform: translateZ(2.5rem);
   color: var(--grey-0) !important;
-  // background-image: linear-gradient(
-  //   to right,
-  //   var(--color-pink) 0,
-  //   var(--color-orange) 100%
-  // );
-  // box-shadow: 0 0.125rem 0.75rem var(--color-pink-a3);
-  background-color: hsl(35deg 82% 52%);
-  box-shadow: 0 0.125rem 0.75rem hsl(35deg 80% 90%);
+  background-color: var(--color-young-blue);
+  box-shadow: 0 0.125rem 0.75rem var(--color-young-blue);
   opacity: 0.9;
   border-radius: 0.625rem;
 }
@@ -159,5 +147,11 @@ const { isSidebar } = toRefs(state);
 }
 .side--menu {
   margin-top: 0.625rem !important;
+}
+.side--social--link {
+  margin-top: 0.625rem;
+}
+.side--nav {
+  position: relative;
 }
 </style>

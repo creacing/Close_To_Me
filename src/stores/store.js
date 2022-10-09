@@ -37,7 +37,7 @@ export const store = defineStore('main', {
       isSidebar: false,
       postsDic:getPostsDic(),
       tags: getTags(),
-      currentArticle: {},
+      pageSize: 6,
       posts,
       postLen,
       isSun: 1

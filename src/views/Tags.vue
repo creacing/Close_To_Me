@@ -3,7 +3,7 @@
     <h2 class="item title">
       <RouterLink to="/">标签</RouterLink>
       <small>/</small>
-      目前共计 {{ tagsNum }}
+      {{ tagsNum }}
     </h2>
     <div class="tag cloud">
       <RouterLink
@@ -13,14 +13,13 @@
         :style="{
           'font-size':
             tag.articlesNum > 20
-              ? '20px'
+              ? '40px'
               : tag.articlesNum < 14
-              ? '14px'
-              : `${tag.articlesNum}px`,
+              ? '24px'
+              : `${tag.articlesNum*2}px`,
           color: cloudColorList[tag.articlesNum % cloudColorList.length],
         }"
-        >{{ tag.name }}</RouterLink
-      >
+      >{{ tag.name }}</RouterLink>
     </div>
   </div>
 </template>
