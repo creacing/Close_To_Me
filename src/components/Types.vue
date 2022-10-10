@@ -51,16 +51,22 @@ const onMouseOut = () => {
   mouseOverFlag.value = false
 }
 const Cards = [{
-  backgroundImage: "//cdn.jsdelivr.net/gh/amehime/shoka@30732f13/computer-science/note/cover.jpg",
-  title: "二进制杂谈",
-  subTitle: '计算机科学',
-  typePath: '/categories/computer-science/note/',
+  backgroundImage: "demo",
+  title: "demo",
+  subTitle: 'demo',
+  typePath: 'demo',
   posts: [
-    { title: 'Theme Shoka Documentation', postPath: "/categories/computer-science/note/theme-shoka-doc/" },
-    { title: 'V2Yume配置记录', postPath: "/computer-science/note/v2yume-setup-log/" },
+    {
+      title: 'demo',
+      postPath: "demo"
+    },
+    {
+      title: 'demo',
+      postPath: "demo"
+    },
   ],
-  subTitlePath: '/categories/computer-science/',
-  childrenNum: '1',
-  articlesNum: '6'
+  subTitlePath: 'demo',
+  childrenNum: 'demo',
+  articlesNum: 'demo'
 }]
 </script>

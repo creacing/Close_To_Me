@@ -1,11 +1,6 @@
 <template>
   <div class="segments posts article">
     <article class="item show article--content" v-for="article in articles" :key="article">
-      <!-- <div class="cover">
-        <RouterLink :to="`article${article.path}`" :title="article.title">
-          <img :data-src="article.imgSrc" :src="article.imgSrc" class="lozaded" />
-        </RouterLink>
-      </div>-->
       <div class="info article--info">
         <div class="meta">
           <span class="item" :title="article.date">

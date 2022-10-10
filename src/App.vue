@@ -1,5 +1,4 @@
 <template>
-  <!-- <div class="bg--mask"></div> -->
   <div class="pace pace-inactive pace-inactive">
     <div
       class="pace-progress"
@@ -11,7 +10,7 @@
     </div>
     <div class="pace-activity"></div>
   </div>
-  <!-- <Loading :showLoading="showLoading" /> -->
+
   <div id="container">
     <!-- 头部 -->
     <header id="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -45,7 +44,7 @@ import { onMounted, ref } from "vue";
 
 import initAnime from "@/utils/clickAnime.js";
 const showLoading = ref(false)
-
+// register global animation
 onMounted(() => {
   document.addEventListener(
     "click",
@@ -54,27 +53,9 @@ onMounted(() => {
     },
     false
   );
-
-  // document.addEventListener('visibilitychange', () => {
-  //   switch (document.visibilityState) {
-  //     case 'hidden':
-  //       showLoading.value = true
-  //       break;
-  //     case 'visible':
-  //       setTimeout(function () {
-  //         showLoading.value = false
-  //       }, 2000);
-  //       break;
-  //   }
-  // });
-
 });
 
 
 </script>
 <style lang="scss" scoped>
-.bg--mask {
-  background-color: hsla(268deg, 58%, 94%, 1);
-  z-index: -10;
-}
 </style>

@@ -41,7 +41,6 @@
     </nav>
   </div>
   <BgImage />
-  <!-- <PlayMusic /> -->
   <Search :showSearch="showSearch" @close="closeSearchDialog" />
 </template>
 <script setup>
@@ -51,10 +50,11 @@ import Search from "./Search.vue";
 import config from "./../../public/config.js";
 import Brand from "./Brand.vue";
 import BgImage from "./BgImage.vue";
-// import PlayMusic from "./PlayMusic.vue";
 import { onMounted, ref, onUnmounted, toRefs, nextTick } from "vue";
 import { store } from "@/stores/store.js";
 import anime from "animejs/lib/anime.es.js";
+
+
 const { nav } = config;
 const state = store();
 

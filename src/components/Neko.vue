@@ -1,5 +1,5 @@
 <template>
-  <div id="neko" :class="[isSun ? 'dark' : '', isShow ? 'show--cartoon' : '']">
+  <div id="neko" :class="[isSun ? 'dark' : '', isShow ? 'show' : '']">
     <div class="planet">
       <div class="sun"></div>
       <div class="moon"></div>
@@ -23,7 +23,7 @@ const props = defineProps({ isSun: Boolean, isShow: Boolean });
 const { isSun, isShow } = toRefs(props);
 </script>
 <style scoped lang="scss">
-.show--cartoon {
+.show {
   opacity: 1;
   display: block !important;
 }

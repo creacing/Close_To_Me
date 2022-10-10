@@ -127,7 +127,6 @@ const searchForArticles = (inputValue) => {
   height: 100%;
   padding: 1.25rem;
   z-index: 999;
-  display: none;
 }
 
 #search > .inner {
