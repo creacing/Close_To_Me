@@ -2,7 +2,7 @@
   <div id="sidebar" :class="isSidebar ? 'on' : ''">
     <div class="inner panels">
       <div class="overview panel active" data-title="站点概览">
-        <div class="author side--author--info">
+        <!-- <div class="author side--author--info">
           <img
             class="image lozaded"
             alt="Cheshire Cat"
@@ -11,7 +11,7 @@
           />
           <p class="name">{{ sidebar.author }}</p>
           <div class="description">{{ sidebar.description }}</div>
-        </div>
+        </div> -->
         <nav class="state side--site--info">
           <div class="item posts">
             <router-link to="/archives">
@@ -68,7 +68,8 @@ const { isSidebar } = toRefs(state);
 
 @media (min-width: 991px) {
   #sidebar {
-    position: sticky;
+    position: fixed;
+    left: 0;
     top: 0;
     transform: translateX(0) !important;
     opacity: 1 !important;
@@ -79,9 +80,9 @@ const { isSidebar } = toRefs(state);
 #sidebar > .inner {
   min-height: 100vh;
 
-  background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%)
-    no-repeat top;
-  box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
+  // background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%)
+  //   no-repeat top;
+  // box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
 }
 .side--nav > a:hover {
   color: var(--grey-0) !important;
@@ -97,6 +98,8 @@ const { isSidebar } = toRefs(state);
 .side--site--info,
 .side--social--link,
 .side--menu {
+  display: flex;
+  flex-direction: column;
   padding: 10px;
 }
 .side--menu {

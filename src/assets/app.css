@@ -1861,7 +1861,8 @@ main>.inner {
     width: calc(100% - .625rem);
     align-items: flex-start;
     display: flex;
-    justify-content: space-between
+    /* justify-content: space-between */
+    justify-content: center;
 }
 
 @media (min-width: 1200px) {
