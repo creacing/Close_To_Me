@@ -1,7 +1,7 @@
 <template>
   <div class="pjax">
     <div class="page wrap">
-      <article itemscope itemtype="http://schema.org/Article" class="post block" lang="zh-CN">
+      <article class="post block" lang="zh-CN">
         <div class="body md">
           <h2 id="sites">
             <a class="anchor" href="#">#</a> 功能网站

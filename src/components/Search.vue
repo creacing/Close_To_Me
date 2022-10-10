@@ -1,63 +1,52 @@
 <template>
   <div id="search" :class="[showSearch ? 'show--search' : '']" v-show="showSearch">
-    <div class="inner search-inner">
+    <div class="search--content">
       <div class="header">
         <span class="icon">
           <i class="ic i-search"></i>
         </span>
-        <div class="search-input-container">
-          <div class="ais-SearchBox">
-            <form action role="search" class="ais-SearchBox-form" novalidate>
-              <input
-                class="ais-SearchBox-input search-input"
-                type="search"
-                placeholder="文章搜索"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                spellcheck="false"
-                maxlength="512"
-                @input="searchForArticles"
-                v-model="inputVal"
-              />
-            </form>
-          </div>
+        <div class="search--input">
+          <form role="search" novalidate>
+            <input
+              class="search-input"
+              type="search"
+              placeholder="文章搜索"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+              maxlength="512"
+              @input="searchForArticles"
+              v-model="inputVal"
+            />
+          </form>
         </div>
         <span class="close-btn" @click="closeSearchDialog">
           <i class="ic i-times-circle"></i>
         </span>
       </div>
       <div class="results">
-        <div class="inner">
-          <div id="search-stats">
-            <div class="ais-Stats">
-              <span class="ais-Stats-text">
-                找到 {{searchResult.length}} 条结果
-                <span class="algolia-powered"></span>
-                <hr />
-              </span>
-            </div>
-          </div>
-          <div id="search-hits">
-            <div>
-              <div class="ais-Hits">
-                <ol class="ais-Hits-list">
-                  <li class="ais-Hits-item item" v-for="res in searchResult" :key="res">
-                    <RouterLink :to="`article${res.path}`">
-                      <span>
-                        {{res.tags.join(' ')}}
-                        <i class="ic i-angle-right"></i>
-                        {{res.title}}
-                        <i class="ic i-angle-right"></i>
-                        {{res.description}}
-                      </span>
-                      {{res.date}}
-                    </RouterLink>
-                  </li>
-                </ol>
-              </div>
-            </div>
-          </div>
+        <div class="results--content">
+          <span>
+            找到 {{searchResult.length}} 条结果
+            <span class="algolia-powered"></span>
+            <hr />
+          </span>
+
+          <ol id="search--res">
+            <li class="item" v-for="res in searchResult" :key="res">
+              <RouterLink :to="`article${res.path}`">
+                <span>
+                  {{res.tags.join(' ')}}
+                  <i class="ic i-angle-right"></i>
+                  {{res.title}}
+                  <i class="ic i-angle-right"></i>
+                  {{res.description}}
+                </span>
+                {{res.date}}
+              </RouterLink>
+            </li>
+          </ol>
         </div>
       </div>
     </div>
@@ -81,7 +70,7 @@ const closeSearchDialog = () => {
 onMounted(() => {
   const dialog = document.getElementById("search");
   const btn = document.getElementsByClassName("item search")[0];
-  const content = document.getElementsByClassName("search-inner")[0];
+  const content = document.getElementsByClassName("search--content")[0];
 
   dialog.addEventListener("click", (e) => {
     emits("close", false);
@@ -129,7 +118,7 @@ const searchForArticles = (inputValue) => {
   z-index: 999;
 }
 
-#search > .inner {
+#search > .search--content {
   border-radius: 0;
   height: 100%;
   margin: 0 auto;
@@ -138,27 +127,27 @@ const searchForArticles = (inputValue) => {
 }
 
 @media (max-width: 767px) {
-  #search > .inner {
+  #search > .search--content {
     width: 100%;
   }
 }
 
-#search > .inner .close-btn,
-#search > .inner .icon {
+#search > .search--content .close-btn,
+#search > .search--content .icon {
   color: var(--grey-5);
   font-size: 1.125rem;
   padding: 0 0.625rem;
 }
 
-#search > .inner .close-btn {
+#search > .search--content .close-btn {
   cursor: pointer;
 }
 
-#search > .inner .close-btn:hover i {
+#search > .search--content .close-btn:hover i {
   color: var(--grey-7);
 }
 
-#search > .inner .header {
+#search > .search--content .header {
   display: flex;
   background: var(--color-morandi-purple);
   padding: 0.5rem 1.5rem;
@@ -167,22 +156,22 @@ const searchForArticles = (inputValue) => {
   align-items: center;
 }
 
-#search > .inner .search-input-container {
+#search > .search--content .search--input {
   flex-grow: 1;
 }
 
-#search > .inner .search-input-container form {
+#search > .search--content .search--input form {
   padding: 0.125rem;
 }
 
-#search > .inner .search-input {
+#search > .search--content .search-input {
   background: 0 0;
   border: 0;
   outline: 0;
   width: 100%;
 }
 
-#search > .inner .search-input::-webkit-search-cancel-button {
+#search > .search--content .search-input::-webkit-search-cancel-button {
   display: none;
 }
 
@@ -195,7 +184,7 @@ const searchForArticles = (inputValue) => {
   color: var(--text-color);
 }
 
-#search .results .inner {
+#search .results .results--content {
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -214,31 +203,31 @@ const searchForArticles = (inputValue) => {
   margin: 0.5rem auto;
 }
 
-#search-hits {
+#search--res {
   overflow-y: scroll;
   height: calc(100% - 8.125rem);
 }
 
-#search-hits ol {
+#search--res ol {
   padding: 0;
 }
 
-#search-hits .item {
+#search--res .item {
   margin: 0.9375rem 0;
 }
 
-#search-hits .item a {
+#search--res .item a {
   border-bottom: 0.0625rem dashed var(--grey-4);
   display: block;
   transition: all 0.2s ease-in-out 0s;
 }
 
-#search-hits .item span {
+#search--res .item span {
   font-size: 70%;
   display: block;
 }
 
-#search-hits .item span i {
+#search--res .item span i {
   color: var(--grey-4);
   margin: 0 0.3125rem;
 }

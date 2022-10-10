@@ -2,7 +2,7 @@ import avator from './../public/images/avator.jpg'
 const author = 'Cheshire Cat'
 const config = {
     author,
-    title: '柴郡猫',
+    CNName: '柴郡猫',
     description: 'Wonderland',
     nav: [
         { name: author, link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },

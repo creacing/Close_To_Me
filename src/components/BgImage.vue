@@ -11,7 +11,7 @@ const { isSun } = storeToRefs(store())
 </script>
 <style scoped lang='scss'>
 .brand--image--white {
-  background-image: linear-gradient(#55efc4, #a29bfe);
+  background-image: linear-gradient(hsl(195deg, 100%, 78%), #a29bfe);
 }
 .brand--image--dark {
   background-image: linear-gradient(#040706, #a29bfe);

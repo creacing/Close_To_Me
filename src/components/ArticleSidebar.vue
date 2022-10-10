@@ -1,26 +1,24 @@
 <template>
   <div id="sidebar">
-    <div class="inner">
-      <div class="contents item active">
-        <h2>文章目录</h2>
-      </div>
+    <div class="contents item active">
+      <h2>文章目录</h2>
+    </div>
 
-      <div class="panels">
-        <div class="inner">
-          <div class="contents panel pjax active" data-title="文章目录">
-            <ol class="toc">
-              <li
-                class="toc-item toc-level-1 active current"
-                v-for="(item, index) in sideIndex"
-                :key="item"
-              >
-                <a class="toc-link" href="#">
-                  <!-- <span class="toc-number">{{ index + 1 }}.</span> -->
-                  <span class="toc-text" v-html="item"></span>
-                </a>
-              </li>
-            </ol>
-          </div>
+    <div class="panels">
+      <div class="inner">
+        <div class="contents panel pjax active" data-title="文章目录">
+          <ol class="toc">
+            <li
+              class="toc-item toc-level-1 active current"
+              v-for="(item, index) in sideIndex"
+              :key="item"
+            >
+              <a class="toc-link" href="#">
+                <!-- <span class="toc-number">{{ index + 1 }}.</span> -->
+                <span class="toc-text" v-html="item"></span>
+              </a>
+            </li>
+          </ol>
         </div>
       </div>
     </div>

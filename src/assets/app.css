@@ -28,17 +28,6 @@
   border-radius: 0.625rem;
 }
 
-
-
-#loading,#neko {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    z-index: 9999
-}
-
 :root {
     --grey-0: #fff;
     --grey-1: #fdfdfd;
@@ -873,14 +862,7 @@ template {
     background-image: linear-gradient(45deg,var(--grey-1-a5) 25%,transparent 0,transparent 50%,var(--grey-1-a5) 0,var(--grey-1-a5) 75%,transparent 0,transparent)
 }
 
-body.loaded::-webkit-scrollbar {
-    width: .5rem;
-    height: .5rem
-}
 
-body.loaded::-webkit-scrollbar-thumb {
-    background-color: var(--color-pink-light)
-}
 
 .page .body h1 .anchor::before,.rotate {
     -webkit-animation: rotate 6s linear infinite;
@@ -932,7 +914,7 @@ body.loaded::-webkit-scrollbar-thumb {
     animation: slideUpIn .3s
 }
 
-.posts>.item.show,.slide-up-big-in,body.loaded #main .wrap,body.loaded #sidebar .panel.active {
+.posts>.item.show,.slide-up-big-in {
     -webkit-animation: slideUpBigIn .5s;
     animation: slideUpBigIn .5s
 }
@@ -947,7 +929,7 @@ body.loaded::-webkit-scrollbar-thumb {
     animation: slideLeftIn .3s
 }
 
-.overview .menu .item .submenu,.slide-down-in,body.loaded #brand .pjax {
+.overview .menu .item .submenu,.slide-down-in {
     -webkit-animation: slideDownIn .3s;
     animation: slideDownIn .3s
 }
@@ -1462,6 +1444,20 @@ body {
     line-height: 2;
     -webkit-font-smoothing: antialiased;
     overflow: hidden
+}
+
+body.loaded #main .wrap,body.loaded #sidebar .panel.active {
+  -webkit-animation: slideUpBigIn .5s;
+  animation: slideUpBigIn .5s
+}
+
+body.loaded::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem
+}
+
+body.loaded::-webkit-scrollbar-thumb {
+  background-color: var(--color-pink-light)
 }
 
 body.loaded {
@@ -2283,141 +2279,6 @@ main>.inner {
 
 #nav .right .i-sun {
     font-size: 1.125em
-}
-
-#brand {
-    position: fixed;
-    padding: 3rem 5rem 0;
-    text-align: center;
-    width: 100%;
-    height: 50vh;
-    min-height: 10rem;
-}
-
-#brand.affix {
-    z-index: -1
-}
-
-#brand,#brand .pjax {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center
-}
-
-#brand .artboard {
-    font-family: 'Fredericka the Great',Mulish,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
-    font-size: 3.5em;
-    line-height: 1.2
-}
-
-#brand h1 {
-    font-size: 2.5em;
-    letter-spacing: .125rem
-}
-
-#brand .artboard+h1 {
-    margin: .625rem 0
-}
-
-#brand .sticky {
-    font-size: .75em;
-    display: inline-block;
-    transform: rotate(30deg);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden
-}
-
-#brand .meta {
-    display: flex;
-    font-size: .875em;
-    margin: 0
-}
-
-#brand .meta .item+.item {
-    margin-left: .625rem
-}
-
-@media (min-width: 768px) and (max-width:991px) {
-    #brand .meta {
-        font-size:.8125em
-    }
-}
-
-@media (max-width: 767px) {
-    #brand {
-        padding:3rem .5rem 0
-    }
-
-    #brand h1 {
-        font-size: 1.5em
-    }
-
-    #brand .meta {
-        font-size: .75em
-    }
-
-    #brand .meta .text {
-        display: none
-    }
-}
-
-@media (max-width: 413px) {
-    #brand .artboard {
-        font-size:2.5em
-    }
-}
-
-.waves {
-    width: 100%;
-    height: 15vh;
-    margin-bottom: -.6875rem;
-    min-height: 3.125rem;
-    max-height: 9.375rem;
-    position: relative
-}
-
-@media (max-width: 767px) {
-    .waves {
-        height:10vh
-    }
-}
-
-.parallax>use {
-    -webkit-animation: wave 25s cubic-bezier(.55,.5,.45,.5) infinite;
-    animation: wave 25s cubic-bezier(.55,.5,.45,.5) infinite
-}
-
-.parallax>use:nth-child(1) {
-    -webkit-animation-delay: -2s;
-    animation-delay: -2s;
-    -webkit-animation-duration: 7s;
-    animation-duration: 7s;
-    fill: var(--grey-1-a7)
-}
-
-.parallax>use:nth-child(2) {
-    -webkit-animation-delay: -3s;
-    animation-delay: -3s;
-    -webkit-animation-duration: 10s;
-    animation-duration: 10s;
-    fill: var(--grey-1-a5)
-}
-
-.parallax>use:nth-child(3) {
-    -webkit-animation-delay: -4s;
-    animation-delay: -4s;
-    -webkit-animation-duration: 13s;
-    animation-duration: 13s;
-    fill: var(--grey-1-a3)
-}
-
-.parallax>use:nth-child(4) {
-    -webkit-animation-delay: -5s;
-    animation-delay: -5s;
-    -webkit-animation-duration: 20s;
-    animation-duration: 20s;
-    fill: var(--grey-1)
 }
 
 @-webkit-keyframes wave {
@@ -3889,28 +3750,6 @@ main>.inner {
     color: var(--color-orange)
 }
 
-.pace {
-    pointer-events: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none
-}
-
-.pace-inactive {
-    display: none
-}
-
-.pace .pace-progress {
-    background: var(--primary-color);
-    position: fixed;
-    z-index: 2000;
-    top: 0;
-    right: 100%;
-    width: 100%;
-    height: .125rem
-}
-
 #loading {
     background-color: var(--grey-1)
 }
@@ -4321,161 +4160,6 @@ main>.inner {
     100% {
         transform: rotate(-10deg)
     }
-}
-
-#neko {
-    display: none;
-    background: linear-gradient(to top,#fddb92 0,#d1fdff 80%)
-}
-
-#neko .planet {
-    position: fixed;
-    left: -50%;
-    top: -50%;
-    width: 200%;
-    height: 200%;
-    -webkit-animation: rotate 2s cubic-bezier(.7,0,0,1);
-    animation: rotate 2s cubic-bezier(.7,0,0,1);
-    transform-origin: center bottom
-}
-
-#neko:before {
-    content: "";
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    opacity: 0;
-    background: linear-gradient(to top,#30cfd0 0,#330867 100%);
-    transition: 2s ease all
-}
-
-#neko .moon,#neko .sun {
-    position: absolute;
-    border-radius: 100%;
-    left: 55%;
-    top: 32%
-}
-
-#neko .sun {
-    height: 40px;
-    width: 40px;
-    background: #ffee94;
-    box-shadow: 0 0 40px #ffee94;
-    opacity: 1
-}
-
-#neko .moon {
-    height: 24px;
-    width: 24px;
-    background: #eee;
-    box-shadow: 0 0 20px #fff;
-    opacity: 0
-}
-
-#neko .body {
-    display: block;
-    position: absolute;
-    bottom: -20px;
-    height: 140px;
-    width: 135px;
-    left: 50%;
-    margin-left: -100px;
-    background: #777;
-    transition: all .25s ease-in-out;
-    -webkit-animation: slideUpBigIn 1s;
-    animation: slideUpBigIn 1s
-}
-
-#neko .body:after,#neko .body:before {
-    position: absolute;
-    content: "";
-    width: 0;
-    height: 0;
-    border-bottom: 20px solid #777;
-    top: -20px;
-    transition: all .25s ease-in-out
-}
-
-#neko .body:before {
-    border-left: 0 solid transparent;
-    border-right: 30px solid transparent;
-    left: 0
-}
-
-#neko .body:after {
-    border-right: 0 solid transparent;
-    border-left: 30px solid transparent;
-    right: 0
-}
-
-#neko .body .eyes {
-    display: block;
-    position: absolute;
-    background: #ffee94;
-    height: 40px;
-    width: 40px;
-    border-radius: 100%;
-    bottom: 80px
-}
-
-#neko .body .eyes.left {
-    left: 12px
-}
-
-#neko .body .eyes.right {
-    right: 12px
-}
-
-#neko .body .eyes .pupil,#neko .body .nose {
-    display: block;
-    position: relative;
-    background: #ffb399;
-    border-radius: 100%;
-    margin: 0 auto
-}
-
-#neko .body .eyes .pupil {
-    height: 100%;
-    width: 5px;
-    transition: width 1s .5s ease-in-out
-}
-
-#neko .body .nose {
-    top: 45px;
-    height: 10px;
-    width: 10px
-}
-
-#neko.dark:before {
-    opacity: 1
-}
-
-#neko.dark .sun {
-    opacity: 0
-}
-
-#neko.dark .moon {
-    opacity: 1
-}
-
-#neko.dark .body {
-    background: #444
-}
-
-#neko.dark .body:before {
-    border-bottom: 20px solid #444
-}
-
-#neko.dark .body:after {
-    border-bottom: 20px solid #444
-}
-
-#neko.dark .body .eyes .pupil {
-    height: 90%;
-    width: 34px;
-    margin: 5% auto
 }
 
 .widgets {

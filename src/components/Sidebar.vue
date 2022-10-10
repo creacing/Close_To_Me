@@ -65,8 +65,7 @@ const { isSidebar } = toRefs(state);
 .panels {
   padding-top: 0;
 }
-#sidebar {
-}
+
 @media (min-width: 991px) {
   #sidebar {
     position: sticky;
@@ -79,6 +78,10 @@ const { isSidebar } = toRefs(state);
 
 #sidebar > .inner {
   min-height: 100vh;
+
+  background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%)
+    no-repeat top;
+  box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
 }
 .side--nav > a:hover {
   color: var(--grey-0) !important;
@@ -94,10 +97,7 @@ const { isSidebar } = toRefs(state);
 .side--site--info,
 .side--social--link,
 .side--menu {
-  background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%)
-    no-repeat top;
-  box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
-  padding: 20px;
+  padding: 10px;
 }
 .side--menu {
   margin-top: 0.625rem !important;
