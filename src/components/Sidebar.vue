@@ -1,54 +1,50 @@
 <template>
-  <div id="sidebar" :class="isSidebar ? 'on sidebar-show' : ''">
-    <div class="inner">
-      <div class="panels">
-        <div class="inner">
-          <div class="overview panel active" data-title="站点概览">
-            <div class="author side--author--info">
-              <img
-                class="image lozaded"
-                alt="Cheshire Cat"
-                :data-src="sidebar.avator"
-                :src="sidebar.avator"
-              />
-              <p class="name">{{ sidebar.author }}</p>
-              <div class="description">{{ sidebar.description }}</div>
-            </div>
-            <nav class="state side--site--info">
-              <div class="item posts">
-                <router-link to="/archives/">
-                  <span class="count">{{ sidebar.articlesNum }}</span>
-                  <span class="name">文章</span>
-                </router-link>
-              </div>
-              <div class="item categories">
-                <router-link to="/categories/">
-                  <span class="count">{{ sidebar.categoriesNum }}</span>
-                  <span class="name">分类</span>
-                </router-link>
-              </div>
-              <div class="item tags">
-                <router-link to="/tags/">
-                  <span class="count">{{ sidebar.tagsNum }}</span>
-                  <span class="name">标签</span>
-                </router-link>
-              </div>
-            </nav>
-            <div class="social side--social--link">
-              <a
-                v-for="link of sidebar.socialLinks"
-                :key="link"
-                :href="link.url"
-                rel="noopener external nofollow noreferrer"
-                target="_blank"
-                class="exturl item"
-                :class="link.name"
-                :title="link.url"
-              >
-                <i class="ic" :class="link.icon"></i>
-              </a>
-            </div>
+  <div id="sidebar" :class="isSidebar ? 'on' : ''">
+    <div class="inner panels">
+      <div class="overview panel active" data-title="站点概览">
+        <div class="author side--author--info">
+          <img
+            class="image lozaded"
+            alt="Cheshire Cat"
+            :data-src="sidebar.avator"
+            :src="sidebar.avator"
+          />
+          <p class="name">{{ sidebar.author }}</p>
+          <div class="description">{{ sidebar.description }}</div>
+        </div>
+        <nav class="state side--site--info">
+          <div class="item posts">
+            <router-link to="/archives">
+              <span class="count">{{ sidebar.articlesNum }}</span>
+              <span class="name">文章</span>
+            </router-link>
           </div>
+          <div class="item categories">
+            <router-link to="/categories">
+              <span class="count">{{ sidebar.categoriesNum }}</span>
+              <span class="name">分类</span>
+            </router-link>
+          </div>
+          <div class="item tags">
+            <router-link to="/tags">
+              <span class="count">{{ sidebar.tagsNum }}</span>
+              <span class="name">标签</span>
+            </router-link>
+          </div>
+        </nav>
+        <div class="social side--social--link">
+          <a
+            v-for="link of sidebar.socialLinks"
+            :key="link"
+            :href="link.url"
+            rel="noopener external nofollow noreferrer"
+            target="_blank"
+            class="exturl item"
+            :class="link.name"
+            :title="link.url"
+          >
+            <i class="ic" :class="link.icon"></i>
+          </a>
         </div>
       </div>
     </div>
@@ -69,7 +65,8 @@ const { isSidebar } = toRefs(state);
 .panels {
   padding-top: 0;
 }
-
+#sidebar {
+}
 @media (min-width: 991px) {
   #sidebar {
     position: sticky;
@@ -79,12 +76,9 @@ const { isSidebar } = toRefs(state);
     display: block !important;
   }
 }
-#sidebar > .inner {
-  height: 100%;
-}
 
-#sidebar > .inner > .panels > .inner {
-  height: 100%;
+#sidebar > .inner {
+  min-height: 100vh;
 }
 .side--nav > a:hover {
   color: var(--grey-0) !important;

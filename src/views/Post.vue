@@ -1,7 +1,7 @@
 <template>
   <div class="article wrap">
     <div class="breadcrumb">
-      <i class="ic i-home"></i>
+      <i class="ic i-feather"></i>
       <span>
         <a href="/">首页</a>
       </span>

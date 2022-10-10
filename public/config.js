@@ -6,7 +6,7 @@ const config = {
     description: 'Wonderland',
     nav: [
         { name: author, link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },
-        { name: '首页', link: "/", children: [], liClass: '', rel: 'section', iClass: 'i-home', aClass: '' },
+        { name: '首页', link: "/", children: [], liClass: '', rel: 'section', iClass: 'i-feather', aClass: '' },
         { name: '归档', link: "/archives/", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
         { name: '标签', link: "/tags", children: [], liClass: '', rel: 'section', iClass: 'i-tags', aClass: '' },
         { name: '收藏', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
@@ -15,6 +15,7 @@ const config = {
     ],
     sidebar: {
         avator,
+        author,
         description: '一个专注于前端的web爱好者',
         articlesNum: '0',
         categoriesNum: '0',
