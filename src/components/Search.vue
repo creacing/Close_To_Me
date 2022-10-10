@@ -1,10 +1,5 @@
 <template>
-  <div
-    id="search"
-    :class="[showSearch ? 'show--search' : '']"
-    v-show="showSearch"
-    ref="searchDialog"
-  >
+  <div id="search" :class="[showSearch ? 'show--search' : '']" v-show="showSearch">
     <div class="inner search-inner">
       <div class="header">
         <span class="icon">
@@ -25,40 +20,6 @@
                 @input="searchForArticles"
                 v-model="inputVal"
               />
-              <button
-                class="ais-SearchBox-submit"
-                type="submit"
-                title="Submit the search query."
-                hidden
-              >
-                <svg
-                  class="ais-SearchBox-submitIcon"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 40 40"
-                >
-                  <path
-                    d="M26.804 29.01c-2.832 2.34-6.465 3.746-10.426 3.746C7.333 32.756 0 25.424 0 16.378 0 7.333 7.333 0 16.378 0c9.046 0 16.378 7.333 16.378 16.378 0 3.96-1.406 7.594-3.746 10.426l10.534 10.534c.607.607.61 1.59-.004 2.202-.61.61-1.597.61-2.202.004L26.804 29.01zm-10.426.627c7.323 0 13.26-5.936 13.26-13.26 0-7.32-5.937-13.257-13.26-13.257C9.056 3.12 3.12 9.056 3.12 16.378c0 7.323 5.936 13.26 13.258 13.26z"
-                  />
-                </svg>
-              </button>
-              <button
-                class="ais-SearchBox-reset"
-                type="reset"
-                title="Clear the search query."
-                hidden
-              >
-                <svg
-                  class="ais-SearchBox-resetIcon"
-                  viewBox="0 0 20 20"
-                  width="10"
-                  height="10"
-                >
-                  <path
-                    d="M8.114 10L.944 2.83 0 1.885 1.886 0l.943.943L10 8.113l7.17-7.17.944-.943L20 1.886l-.943.943-7.17 7.17 7.17 7.17.943.944L18.114 20l-.943-.943-7.17-7.17-7.17 7.17-.944.943L0 18.114l.943-.943L8.113 10z"
-                  />
-                </svg>
-              </button>
             </form>
           </div>
         </div>
@@ -71,7 +32,7 @@
           <div id="search-stats">
             <div class="ais-Stats">
               <span class="ais-Stats-text">
-                3 ms 内找到 94 条结果
+                找到 {{searchResult.length}} 条结果
                 <span class="algolia-powered"></span>
                 <hr />
               </span>
@@ -81,71 +42,20 @@
             <div>
               <div class="ais-Hits">
                 <ol class="ais-Hits-list">
-                  <li class="ais-Hits-item item">
-                    <a
-                      href="/computer-science/mse/itmd-510/week-12/"
-                      data-pjax-state
-                    >
+                  <li class="ais-Hits-item item" v-for="res in searchResult" :key="res">
+                    <RouterLink :to="`article${res.path}`">
                       <span>
-                        计算机科学
-                        <i class="ic i-angle-right"></i>Master of Software
-                        Engineering <i class="ic i-angle-right"></i>ITMD 510.
-                        Object-Oriented App Develop </span
-                      >Week 12. <mark>J</mark>avaFx
-                    </a>
+                        {{res.tags.join(' ')}}
+                        <i class="ic i-angle-right"></i>
+                        {{res.title}}
+                        <i class="ic i-angle-right"></i>
+                        {{res.description}}
+                      </span>
+                      {{res.date}}
+                    </RouterLink>
                   </li>
                 </ol>
               </div>
-            </div>
-          </div>
-          <div id="search-pagination">
-            <div class="ais-Pagination pagination">
-              <ul class="ais-Pagination-list">
-                <li
-                  class="
-                    ais-Pagination-item
-                    pagination-item
-                    ais-Pagination-item--previousPage
-                    ais-Pagination-item--disabled
-                    disabled-item
-                  "
-                >
-                  <span class="ais-Pagination-link page-number">
-                    <i class="ic i-angle-left"></i>
-                  </span>
-                </li>
-                <li
-                  class="
-                    ais-Pagination-item
-                    pagination-item
-                    ais-Pagination-item--page ais-Pagination-item--selected
-                    current
-                  "
-                >
-                  <a
-                    class="ais-Pagination-link page-number"
-                    aria-label="1"
-                    href="#"
-                    >1</a
-                  >
-                </li>
-
-                <li
-                  class="
-                    ais-Pagination-item
-                    pagination-item
-                    ais-Pagination-item--nextPage
-                  "
-                >
-                  <a
-                    class="ais-Pagination-link page-number"
-                    aria-label="Next"
-                    href="#"
-                  >
-                    <i class="ic i-angle-right"></i>
-                  </a>
-                </li>
-              </ul>
             </div>
           </div>
         </div>
@@ -158,6 +68,7 @@
 import { defineProps, toRefs, defineEmits, onMounted, ref } from "vue";
 import { store } from "@/stores/store.js";
 import { debounce } from "@/utils/util.js";
+import { RouterLink } from 'vue-router'
 const state = store();
 const posts = state.postsDic;
 const props = defineProps({ showSearch: Boolean });
@@ -192,6 +103,7 @@ const query = () => {
       searchResult.value.push(value);
     }
   }
+
 };
 const db = debounce(query, 500);
 
@@ -206,71 +118,162 @@ const searchForArticles = (inputValue) => {
   display: block !important;
 }
 
-.pagination .next:hover,
-.pagination .page-number.current,
-.pagination .page-number:hover,
-.pagination .prev:hover {
-  color: var(--grey-0);
-  background-color: var(--color-young-blue);
-  box-shadow: 0 0.125rem 0.75rem var(--color-young-blue);
-  opacity: 0.9;
-  border-radius: 0.625rem;
-}
-
-.pagination .next,
-.pagination .page-number,
-.pagination .prev,
-.pagination .space {
-  display: inline-block;
-  margin: 0 0.5rem;
-  padding: 0 0.75rem;
-  position: relative;
-  border-radius: 0.3125rem;
-}
-
-@media (max-width: 767px) {
-  .pagination .next,
-  .pagination .page-number,
-  .pagination .prev,
-  .pagination .space {
-    margin: 0 0.3125rem;
-  }
-}
-
-.pagination {
+#search {
+  position: fixed;
+  background: var(--nav-morandi-bg);
+  left: 0;
+  top: 0;
   width: 100%;
-  padding: 1.25rem 3.125rem;
-  text-align: center;
-  display: inline-block;
-  color: var(--grey-5);
+  height: 100%;
+  padding: 1.25rem;
+  z-index: 999;
+  display: none;
+}
+
+#search > .inner {
+  border-radius: 0;
+  height: 100%;
+  margin: 0 auto;
+  /* width: 43.75rem; */
+  text-shadow: none;
 }
 
 @media (max-width: 767px) {
-  .pagination {
-    padding: 1.25rem 0.625rem;
+  #search > .inner {
+    width: 100%;
   }
 }
 
-.pagination .next,
-.pagination .page-number,
-.pagination .prev {
-  transition: all 0.2s ease-in-out 0s;
+#search > .inner .close-btn,
+#search > .inner .icon {
+  color: var(--grey-5);
+  font-size: 1.125rem;
+  padding: 0 0.625rem;
 }
 
-.pagination .space {
-  margin: 0;
+#search > .inner .close-btn {
+  cursor: pointer;
+}
+
+#search > .inner .close-btn:hover i {
+  color: var(--grey-7);
+}
+
+#search > .inner .header {
+  display: flex;
+  background: var(--color-morandi-purple);
+  padding: 0.5rem 1.5rem;
+  margin-bottom: 1.25rem;
+  font-size: 1.125em;
+  align-items: center;
+}
+
+#search > .inner .search-input-container {
+  flex-grow: 1;
+}
+
+#search > .inner .search-input-container form {
+  padding: 0.125rem;
+}
+
+#search > .inner .search-input {
+  background: 0 0;
+  border: 0;
+  outline: 0;
+  width: 100%;
+}
+
+#search > .inner .search-input::-webkit-search-cancel-button {
+  display: none;
+}
+
+#search .results {
+  height: calc(100% - 6.25rem);
+  padding: 1.875rem 1.875rem 0.3125rem;
+  border-radius: 0.3125rem;
+  background: var(--color-morandi-purple) url(../../public/images/search.png)
+    no-repeat bottom right;
+  color: var(--text-color);
+}
+
+#search .results .inner {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+#search .results hr {
+  margin: 0.625rem 0;
+}
+
+.algolia-powered {
+  float: right;
+  background: url(../images/algolia_logo.svg) no-repeat;
+  display: inline-block;
+  height: 1.125rem;
+  width: 4.25rem;
+  margin: 0.5rem auto;
+}
+
+#search-hits {
+  overflow-y: scroll;
+  height: calc(100% - 8.125rem);
+}
+
+#search-hits ol {
   padding: 0;
 }
 
-.pagination .prev {
-  margin-left: 0;
+#search-hits .item {
+  margin: 0.9375rem 0;
 }
 
-.pagination .next {
-  margin-right: 0;
+#search-hits .item a {
+  border-bottom: 0.0625rem dashed var(--grey-4);
+  display: block;
+  transition: all 0.2s ease-in-out 0s;
 }
 
-.pagination .page-number.current:hover {
-  box-shadow: 0 0 0.3125rem var(--primary-color);
+#search-hits .item span {
+  font-size: 70%;
+  display: block;
+}
+
+#search-hits .item span i {
+  color: var(--grey-4);
+  margin: 0 0.3125rem;
+}
+
+#search-pagination ul {
+  padding: 0;
+  margin: 1.25rem 0;
+}
+
+#search-pagination .pagination {
+  opacity: 1;
+  padding: 0;
+}
+
+#search-pagination .pagination-item {
+  display: inline-block;
+}
+
+#search-pagination .page-number {
+  transition: all 0.2s ease-in-out 0s;
+}
+
+#search-pagination .current .page-number {
+  cursor: default;
+}
+
+#search-pagination .disabled-item {
+  color: var(--grey-4);
+  cursor: default;
+}
+
+#search-pagination .disabled-item .page-number:hover {
+  color: var(--grey-4);
+  background: 0 0;
+  box-shadow: none;
 }
 </style>

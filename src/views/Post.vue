@@ -24,6 +24,7 @@
   </div>
 </template>
 <script setup>
+
 import { store } from "@/stores/store.js";
 import { ref, watch } from "vue";
 import { useRoute } from "vue-router";
@@ -39,12 +40,11 @@ watch(
     const { type, path } = newParams;
     const matchPath = `/${type}/${path}`;
 
-    const { content, title, tags } = state.postsDic.get(matchPath);
+    const { content, title, tags, index } = state.postsDic.get(matchPath);
     articleContent.value = content;
     articleTitle.value = title;
     articleTags.value = tags.join(" ");
-
-    console.log(content.split("\n"));
+    state.sideIndex = index
   },
   { immediate: true }
 );

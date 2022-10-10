@@ -1,7 +1,7 @@
 <template>
   <div class="inner">
     <Sidebar v-if="switchSidebar" />
-    <ArticleSidebar v-if="!switchSidebar" />
+    <ArticleSidebar v-if="!switchSidebar" :sideIndex="sideIndex" />
     <div id="main" class="pjax">
       <slot name="content"></slot>
     </div>
@@ -13,14 +13,27 @@
 import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import ArticleSidebar from "@/components/ArticleSidebar.vue";
+import { store } from '@/stores/store.js'
+
 import { useRoute } from "vue-router";
 import { ref, watch } from "vue";
 const route = useRoute();
 const switchSidebar = ref(true);
+const sideIndex = ref([])
+const state = store()
+
 watch(
   () => route.path,
   (newPath, oldPath) => {
     switchSidebar.value = newPath.startsWith("/article/") ? false : true;
+  },
+  { immediate: true }
+);
+
+watch(
+  () => state.sideIndex,
+  (newIndex, oldIndex) => {
+    sideIndex.value = newIndex
   },
   { immediate: true }
 );

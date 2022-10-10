@@ -128,8 +128,8 @@ const { isSidebar } = toRefs(state);
 }
 .side--nav > a:hover {
   color: var(--grey-0) !important;
-  background-color: var(--color-young-blue);
-  box-shadow: 0 0.125rem 0.75rem var(--color-young-blue);
+  background-color: var(--color-morandi-blue);
+  box-shadow: 0 0.125rem 0.75rem var(--color-morandi-blue);
   opacity: 0.9;
   border-radius: 0.625rem;
 }

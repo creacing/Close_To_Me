@@ -22,8 +22,8 @@
 
 #nav .menu .submenu .item.active,#nav .menu .submenu .item:hover,#search-pagination .current .page-number,#sidebar .tab .item.active,#sidebar .tab .item:hover,.overview .menu .item.active {
   color: var(--grey-0);
-  background-color: var(--color-young-blue);
-  box-shadow: 0 0.125rem 0.75rem var(--color-young-blue);
+  background-color: var(--color-morandi-blue);
+  box-shadow: 0 0.125rem 0.75rem var(--color-morandi-blue);
   opacity: 0.9;
   border-radius: 0.625rem;
 }
@@ -66,7 +66,6 @@
     --color-green: #0a7426;
     --color-aqua: #3e999f;
     --color-blue: #38a1db;
-    --color-young-blue: hsl(209deg 100% 62%);
     --color-purple: #9d5b8b;
     --color-grey: #869194;
     --color-red-a1: rgba(233,84,107,0.1);
@@ -80,7 +79,14 @@
     --text-color: var(--grey-7);
     --header-text-color: var(--grey-0);
     --primary-color: var(--color-red);
-    --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%)
+
+    --color-morandi-blue: hsl(209deg 100% 62%);
+    --color-morandi-purple: hsl(270deg 31% 86%);
+    --color-morandi-purple-light: hsl(238deg 35% 80%);
+
+    --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
+    --nav-morandi-bg: linear-gradient(-225deg, var(--color-morandi-purple-light) 0, var(--color-pink-light) 100%);
+   
 }
 
 .primary {
@@ -4828,165 +4834,6 @@ main>.inner {
     100% {
         transform: rotate(-10deg)
     }
-}
-
-#search {
-    position: fixed;
-    background: var(--nav-bg);
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: 1.25rem;
-    z-index: 999;
-    display: none
-}
-
-#search>.inner {
-    border-radius: 0;
-    height: 100%;
-    margin: 0 auto;
-    width: 43.75rem;
-    text-shadow: none
-}
-
-@media (max-width: 767px) {
-    #search>.inner {
-        width:100%
-    }
-}
-
-#search>.inner .close-btn,#search>.inner .icon {
-    color: var(--grey-5);
-    font-size: 1.125rem;
-    padding: 0 .625rem
-}
-
-#search>.inner .close-btn {
-    cursor: pointer
-}
-
-#search>.inner .close-btn:hover i {
-    color: var(--grey-7)
-}
-
-#search>.inner .header {
-    display: flex;
-    background: var(--grey-1-a5);
-    border-radius: 3rem;
-    padding: .5rem 1.5rem;
-    margin-bottom: 1.25rem;
-    border: .0625rem solid var(--grey-5);
-    font-size: 1.125em;
-    align-items: center
-}
-
-#search>.inner .search-input-container {
-    flex-grow: 1
-}
-
-#search>.inner .search-input-container form {
-    padding: .125rem
-}
-
-#search>.inner .search-input {
-    background: 0 0;
-    border: 0;
-    outline: 0;
-    width: 100%
-}
-
-#search>.inner .search-input::-webkit-search-cancel-button {
-    display: none
-}
-
-#search .results {
-    height: calc(100% - 6.25rem);
-    padding: 1.875rem 1.875rem .3125rem;
-    border-radius: .3125rem;
-    background: var(--grey-1-a7) url(../../public/images/search.png) no-repeat bottom right;
-    color: var(--text-color)
-}
-
-#search .results .inner {
-    position: relative;
-    height: 100%;
-    overflow: hidden
-}
-
-#search .results hr {
-    margin: .625rem 0
-}
-
-.algolia-powered {
-    float: right;
-    background: url(../images/algolia_logo.svg) no-repeat;
-    display: inline-block;
-    height: 1.125rem;
-    width: 4.25rem;
-    margin: .5rem auto
-}
-
-#search-hits {
-    overflow-y: scroll;
-    height: calc(100% - 8.125rem)
-}
-
-#search-hits ol {
-    padding: 0
-}
-
-#search-hits .item {
-    margin: .9375rem 0
-}
-
-#search-hits .item a {
-    border-bottom: .0625rem dashed var(--grey-4);
-    display: block;
-    transition: all .2s ease-in-out 0s
-}
-
-#search-hits .item span {
-    font-size: 70%;
-    display: block
-}
-
-#search-hits .item span i {
-    color: var(--grey-4);
-    margin: 0 .3125rem
-}
-
-#search-pagination ul {
-    padding: 0;
-    margin: 1.25rem 0
-}
-
-#search-pagination .pagination {
-    opacity: 1;
-    padding: 0
-}
-
-#search-pagination .pagination-item {
-    display: inline-block
-}
-
-#search-pagination .page-number {
-    transition: all .2s ease-in-out 0s
-}
-
-#search-pagination .current .page-number {
-    cursor: default
-}
-
-#search-pagination .disabled-item {
-    color: var(--grey-4);
-    cursor: default
-}
-
-#search-pagination .disabled-item .page-number:hover {
-    color: var(--grey-4);
-    background: 0 0;
-    box-shadow: none
 }
 
 #neko {

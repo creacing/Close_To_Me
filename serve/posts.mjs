@@ -2,7 +2,7 @@ import { globby } from "globby";
 import matter from "gray-matter";
 import fs from "fs-extra";
 import MarkdownIt from "markdown-it";
-
+import  parseIndex from './parseIndex.mjs'
 const md = new MarkdownIt();
 
 
@@ -12,8 +12,9 @@ export async function getPosts() {
     paths.map(async (item) => {
       const MDFileContent = await fs.readFile(item, "utf-8");
 
-
+      
       let { data, content } = matter(MDFileContent);
+      data.index = parseIndex(content)
       data.content = md.render(content)
       data.description = content.slice(0, 200)
       data.description = data.description.replace(/[\`+\#+]/g, '')
@@ -28,6 +29,7 @@ export async function getPosts() {
   );
   posts.sort((a, b) => b.date.split('-').join('') - a.date.split('-').join(''));
   // console.log('posts',posts[0]);
+
   return posts;
 }
 
@@ -44,6 +46,7 @@ async function getPostMDFilePaths() {
 
 function myFrontMatter(data) {
   return {
+    index: data.index,
     path: data.filePath,
     title: data.title,
     date: data.date,
