@@ -29,12 +29,11 @@
         <div class="results--content">
           <span>
             找到 {{searchResult.length}} 条结果
-            <span class="algolia-powered"></span>
             <hr />
           </span>
 
           <ol id="search--res">
-            <li class="item" v-for="res in searchResult" :key="res">
+            <li class="item" v-for="res in searchResult" :key="res" @click="closeSearchDialog">
               <RouterLink :to="`article${res.path}`">
                 <span>
                   {{res.tags.join(' ')}}
@@ -192,15 +191,6 @@ const searchForArticles = (inputValue) => {
 
 #search .results hr {
   margin: 0.625rem 0;
-}
-
-.algolia-powered {
-  float: right;
-  background: url(../images/algolia_logo.svg) no-repeat;
-  display: inline-block;
-  height: 1.125rem;
-  width: 4.25rem;
-  margin: 0.5rem auto;
 }
 
 #search--res {

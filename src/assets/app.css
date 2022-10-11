@@ -68,15 +68,24 @@
     --text-color: var(--grey-7);
     --header-text-color: var(--grey-0);
     --primary-color: var(--color-red);
+    --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
 
     --color-morandi-blue: hsl(209deg 100% 62%);
     --color-morandi-purple: hsl(270deg 31% 86%);
     --color-morandi-purple-light: hsl(238deg 35% 80%);
     --color-morandi-purple-dark: hsl(289deg 25% 71%);
-
-    --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
     --nav-morandi-bg: linear-gradient(-225deg, var(--color-morandi-purple-light) 0, var(--color-morandi-purple-dark) 100%);
    
+    --color-could1: #747bff;
+    --color-could2: #646cff;
+    --color-could3: #cf9baa;
+    --color-could4: #de8293;
+    --color-could5: #5b93b1;
+    --color-could6: #1b5489;
+    --color-could7: #7690b8;
+    --color-could8: #cfd8e0;
+    --color-could9: #6896b7;
+    --color-could10: #db8ea6;
 }
 
 .primary {
@@ -487,7 +496,7 @@
     content: "\e6c1"
 }
 
-.i-star:before,.page .body h3 .anchor::before {
+.i-star:before, .anchor::before {
     content: "\f0d4"
 }
 
@@ -875,7 +884,7 @@ template {
     animation: beat 1.33s ease-in-out infinite
 }
 
-.flash,.page .body h3 .anchor::before {
+.flash, .anchor::before {
     animation: flash 6s cubic-bezier(.22,.61,.36,1) infinite
 }
 
@@ -1574,53 +1583,6 @@ input,textarea {
     font-size: 1.33333em;
     line-height: .75em;
     vertical-align: -.0667em
-}
-
-.table-container {
-    overflow: auto
-}
-
-.table-container table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    font-size: .875em;
-    margin: 0 0 1.25rem 0;
-    width: 100%;
-    overflow: auto
-}
-
-.table-container table tbody tr:nth-of-type(even) {
-    background: var(--grey-0)
-}
-
-.table-container table tbody tr:hover {
-    background: var(--grey-2)
-}
-
-.table-container table caption,.table-container table td,.table-container table th {
-    font-weight: 400;
-    padding: .5rem;
-    text-align: left;
-    vertical-align: middle
-}
-
-.table-container table td,.table-container table th {
-    border: .0625rem solid var(--grey-3);
-    border-bottom: .1875rem solid var(--grey-3)
-}
-
-.table-container table th {
-    font-weight: 700;
-    padding-bottom: .625rem;
-    text-align: center
-}
-
-.table-container table td {
-    border-bottom-width: .0625rem
-}
-
-.table-container table td .highlight:last-child,.table-container table td p:last-child,.table-container table td pre:last-child {
-    margin: 0
 }
 
 .button {
@@ -2612,10 +2574,6 @@ main>.inner {
 }
 
 @media (max-width: 567px) {
-    .post.block {
-        padding:initial!important
-    }
-
     .md h1,.md h2,.md h3,.md h4,.md h5,.md h6 {
         padding-left: 1.25rem
     }
@@ -2635,10 +2593,6 @@ main>.inner {
     .post .eof {
         margin: 2.5rem auto 1.25rem!important
     }
-}
-
-.post.block {
-    padding: 0 2rem
 }
 
 .md {
@@ -3455,7 +3409,7 @@ main>.inner {
     color: var(--color-pink)
 }
 
-.page .body h3 .anchor::before {
+.anchor::before {
     font-size: .75em;
     color: var(--color-orange)
 }
@@ -4553,85 +4507,7 @@ main>.inner {
     top: .25rem
 }
 
-.links {
-    display: flex;
-    flex-wrap: wrap;
-    font-size: .9rem
-}
 
-.links .item {
-    position: relative;
-    display: inline-flex;
-    justify-self: center;
-    align-items: center;
-    line-height: 1.5;
-    width: calc(50% - 2rem);
-    padding: .5rem 1rem;
-    margin: 1rem;
-    transition: all .2s ease-in-out 0s;
-    border-radius: .5rem;
-    border: .0625rem solid var(--grey-2);
-    box-shadow: 0 .625rem 1.875rem -.9375rem var(--box-bg-shadow);
-    --bg-color: var(--block-color, #666)
-}
-
-.links .item .image {
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    border-radius: .9375rem;
-    background: var(--grey-1) center no-repeat;
-    background-size: contain;
-    flex-shrink: 0;
-    border: none
-}
-
-.links .item .info {
-    padding-left: 1rem
-}
-
-.links .item .title {
-    margin: .5rem 0;
-    font-family: Mulish,'Noto Serif JP','Noto Serif SC',Mulish,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
-    font-weight: 700;
-    color: var(--bg-color);
-    border: none
-}
-
-.links .item .title .ic {
-    display: none
-}
-
-.links .item .desc {
-    font-size: .75em;
-    margin: .5rem 0
-}
-
-.links .item:hover {
-    color: var(--header-text-color);
-    background-color: var(--bg-color);
-    box-shadow: 0 .125rem 1.25rem var(--bg-color);
-    border-color: var(--bg-color)
-}
-
-.links .item:hover .image {
-    mix-blend-mode: normal;
-    background-color: var(--bg-color)
-}
-
-.links .item:hover .title {
-    color: var(--header-text-color)
-}
-
-@media (max-width: 767px) {
-    .links {
-        font-size:1em
-    }
-
-    .links .item {
-        width: calc(100% - 2rem)
-    }
-}
 
 .md .note {
     border-radius: .1875rem;

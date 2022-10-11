@@ -28,13 +28,19 @@ const config = {
             { url: 'https://t.me/', name: 'telegram', icon: "i-paper-plane" },
         ],
         localPath:[
-          {url:'/' ,icon:'i-feather',name: 'normal',},
-          {url:'/archives',icon:'i-list-alt',name: 'normal',},
-          {url:'/tags',icon:'i-tags',name: 'normal',},
-          {url:'/WebSites',icon:'i-star',name: 'normal',},
-          {url:'/about',icon:'i-cloud',name: 'normal',}
+          {url:'/' ,icon:'i-feather',name: 'could1',},
+          {url:'/archives',icon:'i-list-alt',name: 'could2',},
+          {url:'/tags',icon:'i-tags',name: 'could3',},
+          {url:'/WebSites',icon:'i-star',name: 'could4',},
+          {url:'/about',icon:'i-cloud',name: 'could5',}
         ]
     },
+    sites:[
+      {url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'},
+      {url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'},
+      {url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'},{url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'},{url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'},{url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'},
+      {url:"http://www.sortablejs.com/",title:"sortablejs",color:"",description:'功能强大的javascript拖拽库'}
+    ],
     //colud color
     cloudColorList: [
         '#747bff',

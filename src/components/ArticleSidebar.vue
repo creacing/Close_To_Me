@@ -9,7 +9,7 @@
         <li class="index-item" v-for="(item, index) in sideIndex" :key="item">
           <a href="#">
             <!-- <span>{{ index + 1 }}.</span> -->
-            <span v-html="item"></span>
+            <span v-html="item" class="index--title"></span>
           </a>
         </li>
       </ol>

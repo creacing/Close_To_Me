@@ -39,16 +39,15 @@ const { isSidebar } = toRefs(state);
 </script>
 
 <style lang='scss' scoped>
-#sidebar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 @media (min-width: 991px) {
   #sidebar {
     position: fixed;
     left: 0;
     top: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -100,14 +99,50 @@ const { isSidebar } = toRefs(state);
   left: -10%;
 }
 
-.side--links .link.normal::before {
+.side--links .link.could::before {
   background-color: var(--color-morandi-purple);
 }
 
-.side--links .link.normal i {
+.side--links .link.could i {
   color: var(--color-morandi-purple);
 }
 
+.side--links .link.could1::before {
+  background-color: var(--color-could1);
+}
+
+.side--links .link.could1 i {
+  color: var(--color-could1);
+}
+.side--links .link.could2::before {
+  background-color: var(--color-could2);
+}
+
+.side--links .link.could2 i {
+  color: var(--color-could2);
+}
+.side--links .link.could3::before {
+  background-color: var(--color-could3);
+}
+
+.side--links .link.could3 i {
+  color: var(--color-could3);
+}
+.side--links .link.could4::before {
+  background-color: var(--color-could4);
+}
+
+.side--links .link.could4 i {
+  color: var(--color-could4);
+}
+
+.side--links .link.could5::before {
+  background-color: var(--color-could5);
+}
+
+.side--links .link.could5 i {
+  color: var(--color-could5);
+}
 .side--links .link.github::before {
   background-color: #191717;
 }
