@@ -29,63 +29,78 @@
 }
 
 :root {
-    --grey-0: #fff;
-    --grey-1: #fdfdfd;
-    --grey-2: #f7f7f7;
-    --grey-3: #eff2f3;
-    --grey-4: #ccc;
-    --grey-5: #999;
-    --grey-6: #666;
-    --grey-7: #333;
-    --grey-8: #222;
-    --grey-9: #000;
-    --grey-1-a0: rgba(253,253,253,0);
-    --grey-1-a7: rgba(253,253,253,0.7);
-    --grey-1-a5: rgba(253,253,253,0.5);
-    --grey-1-a3: rgba(253,253,253,0.3);
-    --grey-9-a1: rgba(0,0,0,0.1);
-    --grey-9-a5: rgba(0,0,0,0.5);
-    --grey-2-a0: rgba(247,247,247,0);
-    --color-pink-light: #ffe6fa;
-    --color-cyan-light: #e3fdf5;
-    --color-red: #e9546b;
-    --color-pink: #ed6ea0;
-    --color-orange: #ec8c69;
-    --color-yellow: #eab700;
-    --color-green: #0a7426;
-    --color-aqua: #3e999f;
-    --color-blue: #38a1db;
-    --color-purple: #9d5b8b;
-    --color-grey: #869194;
-    --color-red-a1: rgba(233,84,107,0.1);
-    --color-red-a3: rgba(233,84,107,0.3);
-    --color-pink-a3: rgba(237,110,160,0.3);
-    --color-pink-light-a3: rgba(255,230,250,0.3);
-    --color-pink-light-a5: rgba(255,230,250,0.5);
-    --color-pink-light-a7: rgba(255,230,250,0.7);
-    --body-bg-shadow: var(--grey-2);
-    --box-bg-shadow: var(--grey-9-a1);
-    --text-color: var(--grey-7);
-    --header-text-color: var(--grey-0);
-    --primary-color: var(--color-red);
-    --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
+  --grey-0: hsl(0deg 0% 100%);
+  --grey-1: hsl(0deg 0% 99%);
+  --grey-2: hsl(0deg 0% 97%);
+  --grey-3: hsl(195deg 14% 95%);
+  --grey-4: hsl(0deg 0% 80%);
+  --grey-5: hsl(0deg 0% 60%);
+  --grey-6: hsl(0deg 0% 40%);
+  --grey-7: hsl(0deg 0% 20%);
+  --grey-8: hsl(0deg 0% 13%);
+  --grey-9: hsl(0deg 0% 0%);
+  --grey-1-a0: hsl(0deg 0% 99% / 0%);
+  --grey-1-a7: hsl(0deg 0% 99% / 70%);
+  --grey-1-a5: hsl(0deg 0% 99% / 50%);
+  --grey-1-a3: hsl(0deg 0% 99% / 30%);
+  --grey-9-a1: hsl(0deg 0% 0% / 10%);
+  --grey-9-a5: hsl(0deg 0% 0% / 50%);
+  --grey-2-a0: hsl(0deg 0% 97% / 0%);
+  --color-pink-light: hsl(312deg 100% 95%);
+  --color-cyan-light: hsl(162deg 87% 94%);
+  --color-red: hsl(351deg 77% 62%);
+  --color-pink: hsl(336deg 78% 68%);
+  --color-orange: hsl(16deg 78% 67%);
+  --color-yellow: hsl(47deg 100% 46%);
+  --color-green: hsl(136deg 84% 25%);
+  --color-aqua: hsl(184deg 44% 43%);
+  --color-blue: hsl(201deg 69% 54%);
+  --color-purple: hsl(316deg 27% 49%);
+  --color-grey: hsl(193deg 6% 55%);
+  --color-red-a1: hsl(351deg 77% 62% / 10%);
+  --color-red-a3: hsl(351deg 77% 62% / 30%);
+  --color-pink-a3: hsl(336deg 78% 68% / 30%);
+  --color-pink-light-a3: hsl(312deg 100% 95% / 30%);
+  --color-pink-light-a5: hsl(312deg 100% 95% / 50%);
+  --color-pink-light-a7: hsl(312deg 100% 95% / 70%);
+  --body-bg-shadow: var(--grey-2);
+  --box-bg-shadow: var(--grey-9-a1);
+  --text-color: var(--grey-7);
+  --header-text-color: var(--grey-0);
 
-    --color-morandi-blue: hsl(209deg 100% 62%);
-    --color-morandi-purple: hsl(270deg 31% 86%);
-    --color-morandi-purple-light: hsl(238deg 35% 80%);
-    --color-morandi-purple-dark: hsl(289deg 25% 71%);
-    --nav-morandi-bg: linear-gradient(-225deg, var(--color-morandi-purple-light) 0, var(--color-morandi-purple-dark) 100%);
+  --primary-color: var(--color-red);
+  --nav-bg: linear-gradient(-225deg, var(--color-cyan-light) 0, var(--color-pink-light) 100%);
+  --color-morandi-blue: hsl(209deg 100% 62%);
+  --color-morandi-purple: hsl(270deg 31% 86%);
+  --color-morandi-purple-light: hsl(238deg 35% 80%);
+  --color-morandi-purple-dark: hsl(289deg 25% 71%);
+  --nav-morandi-bg: linear-gradient(-225deg, var(--color-morandi-purple-light) 0, var(--color-morandi-purple-dark) 100%);
    
-    --color-could1: #747bff;
-    --color-could2: #646cff;
-    --color-could3: #cf9baa;
-    --color-could4: #de8293;
-    --color-could5: #5b93b1;
-    --color-could6: #1b5489;
-    --color-could7: #7690b8;
-    --color-could8: #cfd8e0;
-    --color-could9: #6896b7;
-    --color-could10: #db8ea6;
+    --color-could1: hsl(237deg 100% 73%);
+    --color-could2: hsl(237deg 100% 70%);
+    --color-could3: hsl(343deg 35% 71%);
+    --color-could4: hsl(349deg 58% 69%);
+    --color-could5: hsl(201deg 36% 53%);
+    --color-could6: hsl(209deg 67% 32%);
+    --color-could7: hsl(216deg 32% 59%);
+    --color-could8: hsl(208deg 22% 85%);
+    --color-could9: hsl(205deg 35% 56%);
+    --color-could10: hsl(341deg 52% 71%);
+    --color-could11: hsl(89deg 20% 48%);
+    --color-could12: hsl(199deg 39% 38%);
+    --color-could13: hsl(349deg 40% 54%);
+    --color-could14: hsl(353deg 55% 70%);
+    --color-could15: hsl(17deg 86% 67%);
+    --color-could16: hsl(32deg 100% 63%);
+    --color-could17: hsl(230deg 20% 44%);
+    --color-could18: hsl(246deg 27% 31%);
+    --color-could19: hsl(332deg 71% 60%);
+    --color-could20: hsl(205deg 58% 60%);
+    --color-could21: hsl(213deg 25% 59%);
+    --color-could22: hsl(207deg 44% 43%);
+    --color-could23: hsl(25deg 69% 53%);
+    --color-could24: hsl(27deg 100% 65%);
+    --color-could25: hsl(200deg 35% 32%);
 }
 
 .primary {
@@ -4209,337 +4224,6 @@ main>.inner {
     color: var(--color-purple)
 }
 
-.md li {
-    position: relative;
-    margin: .2rem 0
-}
-
-.md li:before {
-    transition: all .2s ease-in-out 0s
-}
-
-.md li p {
-    margin: 0
-}
-
-.md dl,.md ol,.md ul {
-    margin: .5em 0 .5em;
-    padding: .1em .2em .1em 1.4em
-}
-
-.md dl dt::before,.md ul>li::before {
-    content: "";
-    position: absolute;
-    width: .4em;
-    height: .4em;
-    background: var(--primary-color);
-    border-radius: 50%;
-    top: .85em;
-    left: -1em
-}
-
-.md dl dt:hover::before,.md ul>li:hover::before {
-    background: var(--color-pink)
-}
-
-.md ol:not([start]) {
-    counter-reset: counter
-}
-
-.md ol>li::before {
-    counter-increment: counter;
-    content: counter(counter);
-    position: absolute;
-    width: 1.4em;
-    height: 1.4em;
-    border-radius: 50%;
-    text-align: center;
-    font-size: .8em;
-    line-height: 1.4;
-    top: .5em;
-    left: -1.8em;
-    background: var(--primary-color);
-    color: var(--grey-1);
-    cursor: pointer
-}
-
-.md ol>li:hover::before {
-    color: var(--grey-1);
-    background: var(--color-pink)
-}
-
-.md dl dt {
-    position: relative
-}
-
-.md dl dd {
-    padding-left: .9375em
-}
-
-.md ul li.nodot::before {
-    width: auto;
-    height: auto;
-    background: 0 0!important;
-    border: none!important;
-    position: relative;
-    top: 0!important;
-    left: 0!important
-}
-
-.md ul li.task-list-item::before {
-    width: auto;
-    height: auto;
-    background: 0 0!important;
-    border: none!important;
-    position: relative;
-    top: 0!important;
-    left: 0!important
-}
-
-.md ul li.task-list-item input[type=checkbox] {
-    display: none
-}
-
-.md ul li.task-list-item input[type=checkbox]+label::before {
-    font-family: ic;
-    font-weight: 400;
-    color: var(--grey-4);
-    display: inline-block;
-    margin-right: .625em
-}
-
-.md ul li.task-list-item input[type=checkbox]:checked+label::before {
-    color: var(--note-text,var(--primary-color))
-}
-
-.md li ul>li::before {
-    background: var(--grey-1);
-    border: 1px solid var(--primary-color)
-}
-
-.md dd ol>li::before,.md li ol>li::before {
-    content: counter(counter) ".";
-    background: 0 0;
-    color: var(--primary-color);
-    font-size: 1em;
-    line-height: 1;
-    width: auto
-}
-
-.md dd ol>li:hover::before,.md li ol>li:hover::before {
-    background: 0 0;
-    color: var(--color-pink)
-}
-
-.md ol>li.quiz.show.true::before,.md ol>li.quiz>ul.options li.right::before {
-    color: var(--color-green)
-}
-
-.md ol>li.quiz.show.true::after,.md ol>li.quiz>ul.options li.right::after {
-    color: var(--color-green);
-    -webkit-animation: fadeIn .5s;
-    animation: fadeIn .5s
-}
-
-.md ol>li.quiz.show.false::before,.md ol>li.quiz>ul.options li.wrong::before {
-    color: var(--color-red)
-}
-
-.md ol>li.quiz.show.false::after,.md ol>li.quiz>ul.options li.wrong::after {
-    color: var(--color-red);
-    -webkit-animation: fadeIn .5s;
-    animation: fadeIn .5s
-}
-
-.md ol>li.quiz {
-    margin: .625rem 0
-}
-
-.md ol>li.quiz::before {
-    counter-increment: counter;
-    content: counter(counter) ".";
-    position: absolute;
-    color: var(--primary-color);
-    text-align: right;
-    width: 2rem;
-    left: -2.2rem;
-    height: auto;
-    background: 0 0!important;
-    border: none!important;
-    font-size: 1em
-}
-
-.md ol>li.quiz>p {
-    margin: 0;
-    cursor: pointer
-}
-
-.md ol>li.quiz>p:first-child::before {
-    content: "[" attr(data-type) "]";
-    font-size: .75em;
-    color: var(--grey-4);
-    margin: auto .3125rem
-}
-
-.md ol>li.quiz.mistake>p:first-child::before {
-    color: var(--primary-color)
-}
-
-.md ol>li.quiz .gap {
-    display: inline-block;
-    min-width: 2.5rem;
-    text-align: center;
-    padding: 0 .625rem;
-    text-indent: -624.9375rem
-}
-
-.md ol>li.quiz .gap::after {
-    display: block;
-    content: "";
-    background: var(--text-color);
-    width: calc(100% + 1.25rem);
-    height: .0625rem;
-    margin-bottom: -.0625rem;
-    margin-left: -.625rem
-}
-
-.md ol>li.quiz.show.fill .gap {
-    text-indent: 0
-}
-
-.md ol>li.quiz::after,.md ol>li.quiz::before {
-    transition: all .2s ease-in-out 0s
-}
-
-.md ol>li.quiz blockquote {
-    display: none
-}
-
-.md ol>li.quiz blockquote .mistake {
-    display: block;
-    border: .1875rem dashed var(--grey-4);
-    padding: .625rem 1.25rem;
-    background: var(--grey-3);
-    margin: .3125rem
-}
-
-.md ol>li.quiz blockquote .mistake::before {
-    display: block;
-    content: "[" attr(data-type) "]";
-    font-size: .8125em;
-    color: var(--grey-4)
-}
-
-.md ol>li.quiz .note {
-    display: none;
-    padding: 0;
-    margin: 0;
-    background: 0 0;
-    border: none;
-    border-radius: inherit;
-    color: unset;
-    font-size: inherit;
-    filter: unset
-}
-
-.md ol>li.quiz.show .note,.md ol>li.quiz.show blockquote {
-    display: block
-}
-
-.md ol>li.quiz ul.options {
-    -webkit-padding-start: .625rem;
-    padding-inline-start:.625rem}
-
-.md ol>li.quiz ul.options li::before {
-    color: var(--color-grey);
-    margin-right: .625rem;
-    transition: all .2s ease-in-out 0s;
-    width: auto;
-    height: auto;
-    background: 0 0!important;
-    border: none!important;
-    position: relative;
-    top: 0!important;
-    left: 0!important
-}
-
-.md ol>li.quiz ul.options li:nth-child(1)::before {
-    content: "A."
-}
-
-.md ol>li.quiz ul.options li:nth-child(2)::before {
-    content: "B."
-}
-
-.md ol>li.quiz ul.options li:nth-child(3)::before {
-    content: "C."
-}
-
-.md ol>li.quiz ul.options li:nth-child(4)::before {
-    content: "D."
-}
-
-.md ol>li.quiz ul.options li:nth-child(5)::before {
-    content: "E."
-}
-
-.md ol>li.quiz>ul.options li {
-    cursor: pointer
-}
-
-.md ol>li.quiz>ul.options li::after {
-    font-family: ic;
-    font-weight: 400;
-    position: absolute;
-    left: -1.5625rem;
-    top: 0
-}
-
-.md ol>li.quiz.show.false::before,.md ol>li.quiz.show.true::before {
-    visibility: hidden
-}
-
-.md ol>li.quiz.show.false::after,.md ol>li.quiz.show.true::after {
-    font-family: ic;
-    font-weight: 400;
-    position: absolute;
-    left: -1.2rem;
-    top: .25rem
-}
-
-
-
-.md .note {
-    border-radius: .1875rem;
-    margin: 1rem 0;
-    padding: 1rem;
-    position: relative;
-    background: var(--note-bg,var(--grey-2));
-    color: var(--grey-6);
-    border-left: .25rem solid var(--note-border,var(--grey-4));
-    font-size: .875em;
-    padding-left: 2.5rem;
-    --primary-color: var(--note-text)
-}
-
-.md .note::before {
-    position: absolute;
-    left: .5rem;
-    top: calc(50% - 1.5rem);
-    font-family: ic;
-    font-weight: 400;
-    font-size: 1.5rem;
-    color: var(--note-text,var(--grey-6))
-}
-
-.md .note.no-icon {
-    padding-left: 1rem
-}
-
-.md .note.no-icon::before {
-    content: none
-}
-
 ::-webkit-details-marker {
     display: none
 }
@@ -4622,39 +4306,4 @@ span.label {
     background: var(--note-bg,var(--grey-2));
     border-color: var(--note-border,var(--grey-4));
     color: var(--note-text,var(--grey-6))
-}
-
-.md .note h2,.md .note h3,.md .note h4,.md .note h5,.md .note h6,.md details h2,.md details h3,.md details h4,.md details h5,.md details h6 {
-    margin-top: .1875rem;
-    border-bottom: initial;
-    margin-bottom: 0;
-    padding-top: 0
-}
-
-.md .note p,.md details p {
-    line-height: 1.8
-}
-
-.md .note a:not(.btn),.md details a:not(.btn) {
-    color: var(--note-hover);
-    border-bottom: .0625rem dashed var(--note-text)
-}
-
-.md .note a:not(.btn):hover,.md details a:not(.btn):hover {
-    color: var(--note-text);
-    border-bottom-color: var(--note-text)
-}
-
-.md .note ul li::before,.md details ul li::before {
-    background: var(--note-text)
-}
-
-.md .note ol li:before,.md details ol li:before {
-    background: var(--note-text,var(--primary-color))!important;
-    width: .8rem;
-    height: .8rem;
-    font-size: .45rem;
-    line-height: .8rem;
-    top: .4rem;
-    left: -1.2rem
 }
