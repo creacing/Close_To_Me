@@ -221,37 +221,4 @@ const searchForArticles = (inputValue) => {
   color: var(--grey-4);
   margin: 0 0.3125rem;
 }
-
-#search-pagination ul {
-  padding: 0;
-  margin: 1.25rem 0;
-}
-
-#search-pagination .pagination {
-  opacity: 1;
-  padding: 0;
-}
-
-#search-pagination .pagination-item {
-  display: inline-block;
-}
-
-#search-pagination .page-number {
-  transition: all 0.2s ease-in-out 0s;
-}
-
-#search-pagination .current .page-number {
-  cursor: default;
-}
-
-#search-pagination .disabled-item {
-  color: var(--grey-4);
-  cursor: default;
-}
-
-#search-pagination .disabled-item .page-number:hover {
-  color: var(--grey-4);
-  background: 0 0;
-  box-shadow: none;
-}
 </style>

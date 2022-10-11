@@ -13,14 +13,16 @@
         :style="{
           'font-size':
             tag.articlesNum > 20
-              ? '40px'
+              ? '30px'
               : tag.articlesNum < 14
-              ? '24px'
-              : `${tag.articlesNum*2}px`,
+              ? '20px'
+              : `${tag.articlesNum*1.5}px`,
           color: cloudColorList[tag.articlesNum % cloudColorList.length],
         }"
       >{{ tag.name }}</RouterLink>
     </div>
+
+    <div>xxxxxxxxxxxxxxxxxx</div>
   </div>
 </template>
 <script setup>
