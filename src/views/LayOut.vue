@@ -2,11 +2,9 @@
   <div class="inner">
     <Sidebar v-if="switchSidebar" />
     <ArticleSidebar v-if="!switchSidebar" :sideIndex="sideIndex" />
-    <div id="main" class="pjax">
+    <div id="main">
       <slot name="content"></slot>
     </div>
-
-    <div class="dimmer"></div>
   </div>
 </template>
 <script setup>

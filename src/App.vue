@@ -38,4 +38,9 @@ onMounted(() => {
 });
 </script>
 <style lang="scss" scoped>
+#footer {
+  color: var(--grey-5);
+  font-size: 0.875em;
+  background: var(--body-bg-shadow);
+}
 </style>

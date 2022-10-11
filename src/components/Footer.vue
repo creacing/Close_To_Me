@@ -13,7 +13,7 @@ import Copyright from "@/components/Copyright.vue";
 
 @media (min-width: 1200px) {
   .footer {
-    width: 72.5rem;
+    width: 65rem;
   }
 }
 </style>

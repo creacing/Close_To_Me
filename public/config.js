@@ -7,11 +7,11 @@ const config = {
     nav: [
         { name: author, link: "/", children: [], liClass: 'title', rel: 'start', iClass: '', aClass: '' },
         { name: '首页', link: "/", children: [], liClass: '', rel: 'section', iClass: 'i-feather', aClass: '' },
-        { name: '归档', link: "/archives/", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
+        { name: '归档', link: "/archives", children: [], liClass: '', rel: 'section', iClass: 'i-list-alt', aClass: '' },
         { name: '标签', link: "/tags", children: [], liClass: '', rel: 'section', iClass: 'i-tags', aClass: '' },
-        { name: '收藏', link: "/WebSites/", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
-        { name: '关于', link: "/about/", children: [], liClass: '', rel: 'section', iClass: 'i-cloud', aClass: '' },
-        { name: 'Github', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: 'exturl' }
+        { name: '收藏', link: "/WebSites", children: [], liClass: '', rel: 'section', iClass: 'i-star', aClass: '' },
+        { name: '关于', link: "/about", children: [], liClass: '', rel: 'section', iClass: 'i-cloud', aClass: '' },
+        { name: 'Github', link: "#", children: [], liClass: '', rel: 'noopener external nofollow noreferrer', iClass: 'i-paper-plane', aClass: '' }
     ],
     sidebar: {
         avator,
@@ -26,6 +26,13 @@ const config = {
             { url: 'https://www.zhihu.com/people/', name: 'zhihu', icon: "i-zhihu" },
             { url: 'https://music.163.com/', name: 'music', icon: "i-cloud-music" },
             { url: 'https://t.me/', name: 'telegram', icon: "i-paper-plane" },
+        ],
+        localPath:[
+          {url:'/' ,icon:'i-feather',name: 'normal',},
+          {url:'/archives',icon:'i-list-alt',name: 'normal',},
+          {url:'/tags',icon:'i-tags',name: 'normal',},
+          {url:'/WebSites',icon:'i-star',name: 'normal',},
+          {url:'/about',icon:'i-cloud',name: 'normal',}
         ]
     },
     //colud color
