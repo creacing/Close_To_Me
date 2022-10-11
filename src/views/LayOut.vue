@@ -1,16 +1,18 @@
 <template>
   <div class="inner">
     <Sidebar v-if="switchSidebar" />
-    <ArticleSidebar v-if="!switchSidebar" :sideIndex="sideIndex" />
+    <Index v-if="!switchSidebar" :sideIndex="sideIndex" />
     <div id="main">
-      <slot name="content"></slot>
+      <div class="g--animation g--content">
+        <slot name="content"></slot>
+      </div>
     </div>
   </div>
 </template>
 <script setup>
 import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
-import ArticleSidebar from "@/components/ArticleSidebar.vue";
+import Index from "@/components/Index.vue";
 import { store } from '@/stores/store.js'
 
 import { useRoute } from "vue-router";

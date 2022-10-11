@@ -1,23 +1,21 @@
 <template>
-  <div class="g--animation sites">
-    <article>
-      <h2>收藏网站</h2>
-      <div class="links">
-        <div class="item" :title="site.title" v-for="site in sites" :key="site">
-          <div class="info">
-            <a
-              :href="site.url"
-              :title="site.title"
-              rel="noopener external nofollow noreferrer"
-              target="_blank"
-              class="title"
-            >{{site.title}}</a>
-            <p class="desc">{{site.description}}</p>
-          </div>
+  <article>
+    <h2>收藏网站</h2>
+    <div class="links">
+      <div class="item" :title="site.title" v-for="site in sites" :key="site">
+        <div class="info">
+          <a
+            :href="site.url"
+            :title="site.title"
+            rel="noopener external nofollow noreferrer"
+            target="_blank"
+            class="title"
+          >{{site.title}}</a>
+          <p class="desc">{{site.description}}</p>
         </div>
       </div>
-    </article>
-  </div>
+    </div>
+  </article>
 </template>
 <script setup>
 import config from "../../public/config";
@@ -25,10 +23,6 @@ const { sites } = config
 </script>
 
 <style lang="scss" scoped>
-.sites {
-  padding: 1.25rem;
-  position: relative;
-}
 .links {
   display: flex;
   flex-wrap: wrap;

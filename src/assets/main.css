@@ -1,0 +1,8 @@
+.g--content{
+  padding: 1.25rem;
+  position: relative;
+}
+
+.g--animation{
+  animation: slideUpBigIn 0.5s;
+}

@@ -1,5 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap"); */
-
+@import "./main.css";
 #nav .menu .item:not(.title) a::before {
     content: "";
     position: absolute;
@@ -697,9 +696,6 @@
 
 .i-cloud-music:before {
     content: "\e76a"
-}
-.g--animation{
-  animation: slideUpBigIn 0.5s;
 }
 
 html {

@@ -1,10 +1,6 @@
 <template>
   <div class="posts article">
-    <article
-      class="item show article--content"
-      v-for="article in articles"
-      :key="article"
-    >
+    <article class="item show article--content" v-for="article in articles" :key="article">
       <div class="info article--info">
         <div class="meta">
           <span class="item" :title="article.date">
@@ -22,9 +18,7 @@
           </span>
         </div>
         <h3>
-          <RouterLink :to="`article${article.path}`" :title="article.title">
-            {{ article.title }}
-          </RouterLink>
+          <RouterLink :to="`article${article.path}`" :title="article.title">{{ article.title }}</RouterLink>
         </h3>
         <div class="excerpt">{{ article.description }}</div>
         <div class="meta footer">
@@ -39,8 +33,7 @@
           :to="`article${article.path}`"
           :title="article.title"
           class="btn article--btn"
-          >more...</RouterLink
-        >
+        >more...</RouterLink>
       </div>
     </article>
   </div>
