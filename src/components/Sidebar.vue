@@ -1,5 +1,5 @@
 <template>
-  <div id="sidebar" :class="isSidebar ? 'on' : ''">
+  <div id="sideTool" :class="isSidebar ? 'on' : ''">
     <div class="side--links g--animation" data-title="站点概览">
       <router-link
         class="link"
@@ -40,14 +40,16 @@ const { isSidebar } = toRefs(state);
 
 <style lang='scss' scoped>
 @media (min-width: 991px) {
-  #sidebar {
+  #sideTool {
     position: fixed;
     left: 0;
-    top: 0;
+    top: 50%;
+    transform: translateY(-50%);
 
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 0.2s ease-in-out 0s;
   }
 }
 

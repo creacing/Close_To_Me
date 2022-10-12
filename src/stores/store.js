@@ -4,23 +4,23 @@ import * as data from './../../serve/data.json'
 const posts = data.default
 const postLen = posts.length
 
-function getPostsDic(){
+function getPostsDic() {
   const postsDic = new Map()
-  for(const post of posts){
-    postsDic.set(post.path,post)
+  for (const post of posts) {
+    postsDic.set(post.path, post)
   }
 
   return postsDic
 }
 
-function getTags(){
+function getTags() {
   const result = {}
   // const tags = new Set()
-  for(const post of posts){
-    for(const tag of post.tags){
-      if(!result[tag]){
+  for (const post of posts) {
+    for (const tag of post.tags) {
+      if (!result[tag]) {
         result[tag] = []
-      } 
+      }
       result[tag].push(post)
     }
     // tags.add(...post.tags)
@@ -35,9 +35,9 @@ export const store = defineStore('main', {
   state: () => {
     return {
       isSidebar: false,
-      postsDic:getPostsDic(),
+      postsDic: getPostsDic(),
       tags: getTags(),
-      pageSize: 6,
+      pageSize: 10,
       posts,
       postLen,
       isSun: 1,

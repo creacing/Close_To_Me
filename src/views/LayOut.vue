@@ -1,11 +1,9 @@
 <template>
-  <div class="inner">
-    <Sidebar v-if="switchSidebar" />
-    <Index v-if="!switchSidebar" :sideIndex="sideIndex" />
-    <div id="main">
-      <div class="g--animation g--content">
-        <slot name="content"></slot>
-      </div>
+  <div class="layout">
+    <Sidebar />
+    <Index :sideIndex="sideIndex" v-if="isShow" />
+    <div id="main" class="g--animation g--content">
+      <slot name="content"></slot>
     </div>
   </div>
 </template>
@@ -13,19 +11,19 @@
 import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import Index from "@/components/Index.vue";
-import { store } from '@/stores/store.js'
-
 import { useRoute } from "vue-router";
 import { ref, watch } from "vue";
-const route = useRoute();
-const switchSidebar = ref(true);
-const sideIndex = ref([])
-const state = store()
+import { store } from "@/stores/store.js";
+const state = store();
 
+const route = useRoute();
+
+const sideIndex = ref([]);
+const isShow = ref(false);
 watch(
   () => route.path,
   (newPath, oldPath) => {
-    switchSidebar.value = newPath.startsWith("/article/") ? false : true;
+    isShow.value = newPath.startsWith("/article/") ? true : false;
   },
   { immediate: true }
 );
@@ -33,14 +31,56 @@ watch(
 watch(
   () => state.sideIndex,
   (newIndex, oldIndex) => {
-    sideIndex.value = newIndex
+    sideIndex.value = newIndex;
   },
   { immediate: true }
 );
 </script>
 <style scoped>
+.layout {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+@media (min-width: 1200px) {
+  .layout {
+    width: 65rem;
+  }
+}
+
 #main {
+  background: linear-gradient(to top, var(--grey-0) 0, var(--grey-1) 20%)
+    no-repeat top;
+  box-shadow: 0 1.25rem 1rem 0.3125rem var(--body-bg-shadow);
+  width: calc(100% - 15.75rem);
   min-height: 100vh;
   flex: auto;
+}
+
+#main .wrap {
+  position: relative;
+  padding: 1.25rem;
+}
+
+#main .wrap:nth-child(1) {
+  margin-bottom: 1.25rem;
+}
+
+@media (max-width: 991px) {
+  #main {
+    width: 100%;
+  }
+
+  #main .wrap {
+    padding: 0.625rem;
+  }
+}
+
+@media (max-width: 767px) {
+  #main .wrap {
+    padding: 0.5rem;
+  }
 }
 </style>

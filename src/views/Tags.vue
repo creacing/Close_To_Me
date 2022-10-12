@@ -16,13 +16,14 @@
               ? '30px'
               : tag.articlesNum < 14
               ? '20px'
-              : `${tag.articlesNum*1.5}px`,
+              : `${tag.articlesNum * 1.5}px`,
           color: cloudColorList[tag.articlesNum % cloudColorList.length],
         }"
-      >{{ tag.name }}</RouterLink>
+        >{{ tag.name }}</RouterLink
+      >
     </div>
 
-    <div>xxxxxxxxxxxxxxxxxx</div>
+    <!-- <div>content</div> -->
   </div>
 </template>
 <script setup>

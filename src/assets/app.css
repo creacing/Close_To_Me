@@ -1,4 +1,8 @@
 @import "./main.css";
+#header a:hover {
+    color: currentColor;
+}
+
 #nav .menu .item:not(.title) a::before {
     content: "";
     position: absolute;
@@ -707,9 +711,7 @@ body {
     margin: 0
 }
 
-main {
-    display: block
-}
+
 
 h1 {
     font-size: 2em;
@@ -1427,83 +1429,14 @@ input,textarea {
     backdrop-filter: blur(.625rem)
 }
 
-#container {
-    min-height: 100%;
-    min-width: 100%;
-    position: relative;
-    display: flex;
-    flex-direction: column
-}
+
 
 .inner {
     margin: 0 auto;
     width: 100%
 }
 
-main {
-  /* background-color: hsla(268deg, 58%, 94%, .3); */
-  background: linear-gradient(to top,var(--body-bg-shadow) 0,var(--grey-1) 20%) no-repeat bottom
-}
 
-main>.inner {
-    width: calc(100% - .625rem);
-    align-items: flex-start;
-    display: flex;
-    /* justify-content: space-between */
-    justify-content: center;
-}
-
-@media (min-width: 1200px) {
-    main>.inner {
-      width:65rem
-    }
-}
-
-#main {
-    background: linear-gradient(to top,var(--grey-0) 0,var(--grey-1) 20%) no-repeat top;
-    box-shadow: 0 1.25rem 1rem .3125rem var(--body-bg-shadow);
-    width: calc(100% - 15.75rem);
-    /* width: 100%; */
-    min-height: 37.5rem
-}
-
-#main .wrap {
-    position: relative;
-    padding: 1.25rem
-}
-
-#main .wrap:nth-child(1) {
-    margin-bottom: 1.25rem
-}
-
-@media (max-width: 991px) {
-    #main {
-        width:100%
-    }
-
-    #main .wrap {
-        padding: .625rem
-    }
-}
-
-@media (max-width: 767px) {
-    #main .wrap {
-        padding:.5rem
-    }
-}
-
-#header {
-    margin: 0 auto;
-    position: relative;
-    width: 100%;
-    height: 50vh;
-    text-shadow: 0 .2rem .3rem rgba(0,0,0,.5);
-    color: var(--header-text-color)
-}
-
-#header a:hover {
-    color: currentColor
-}
 
 #imgs {
     display: block;
@@ -1950,158 +1883,10 @@ main>.inner {
     padding-top: .625rem
 }
 
-@media (max-width: 567px) {
-    .post .eof {
-        margin: 2.5rem auto 1.25rem!important
-    }
-}
-
-.breadcrumb {
-    display: inline-flex;
-    font-size: .8125em;
-    align-items: center;
-    margin: 1.25rem 0;
-    flex-wrap: wrap
-}
-
-.breadcrumb .ic {
-    margin: 0 .125rem;
-    color: var(--grey-4)
-}
-
-.breadcrumb .ic:nth-child(1) {
-    margin-left: 0;
-    margin-right: .3125rem
-}
-
-.breadcrumb span {
-    white-space: pre
-}
-
-.breadcrumb span.current {
-    background-color: var(--color-red-a1);
-    border-radius: .625rem;
-    padding: 0 .625rem;
-    transition: all .2s ease-in-out 0s
-}
-
-.breadcrumb span.current span {
-    white-space: normal
-}
-
-.breadcrumb span.current a {
-    color: var(--primary-color)
-}
-
-.breadcrumb span.current:hover {
-    background-color: var(--color-red-a3)
-}
-
-.post header {
-    font-size: 1.125em;
-    margin-bottom: .625rem
-}
-
-.post header .title {
-    font-size: 1.5em;
-    margin: initial;
-    text-align: center;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    padding-bottom: .625rem
-}
-
-.post header .link {
-    display: inline-block;
-    position: relative;
-    vertical-align: top
-}
-
-.post header .link .i-link-alt {
-    font-size: .875em;
-    margin-left: .3125rem
-}
-
-.post header .meta {
-    text-align: center;
-    border-top: .0625rem dashed var(--grey-9-a1);
-    font-family: Mulish,-apple-system,"PingFang SC","Microsoft YaHei",sans-serif
-}
-
-.post .meta {
-    color: var(--grey-5);
-    font-size: .75em;
-    text-align: right
-}
-
-.post .meta .item {
-    display: inline-block;
-    margin-right: .625rem
-}
-
-.post .meta .icon {
-    margin-right: .1875rem
-}
-
-@media (max-width: 991px) {
-    .post .meta .icon {
-        display:inline-block
-    }
-}
-
 @keyframes rainbow {
     to {
         background-position: -2000vw
     }
-}
-
-.post footer::before {
-    content: "";
-    width: 100%;
-    height: .0625rem;
-    background: var(--grey-3);
-    display: block;
-    margin: 1.25rem auto 0
-}
-
-.post .tags {
-    text-align: left;
-    margin-top: .625rem;
-    font-size: .75em
-}
-
-.post .tags a {
-    display: inline-block;
-    position: relative;
-    padding: 0 .3125rem;
-    border-radius: .3125rem;
-    background: var(--note-bg);
-    color: var(--note-text)
-}
-
-.post .tags a:not(:last-child) {
-    margin-right: .625rem
-}
-
-.post .tags a:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    height: 100%;
-    width: 0;
-    right: 0;
-    background: var(--color-red-a1);
-    border-radius: .25rem;
-    transition: all .2s ease-in-out 0s
-}
-
-.post .tags a:hover {
-    color: var(--primary-color)
-}
-
-.post .tags a:hover:before {
-    width: 104%;
-    left: -2%
 }
 
 .index.wrap .btn {

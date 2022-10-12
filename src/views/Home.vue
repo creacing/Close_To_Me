@@ -5,24 +5,29 @@
   <Pagination :pageNum="pageNum" @getCurIndex="getCurIndex" />
 </template>
 <script setup>
-import ArticleList from '@/components/ArticleList.vue'
-import Pagination from '@/components/Pagination.vue'
+import ArticleList from "@/components/ArticleList.vue";
+import Pagination from "@/components/Pagination.vue";
 import { store } from "@/stores/store.js";
-import { ref, watch } from 'vue'
-
+import { ref } from "vue";
 
 const { posts, postLen, pageSize } = store();
-const articles = ref([])
-const pageNum = postLen / pageSize
-let pageIndex = 1
+const articles = ref([]);
+const pageNum = postLen / pageSize;
+let pageIndex = 1;
 
-
-articles.value = posts.slice((pageIndex - 1) * pageSize, (pageIndex - 1) * pageSize + pageSize)
+articles.value = posts.slice(
+  (pageIndex - 1) * pageSize,
+  (pageIndex - 1) * pageSize + pageSize
+);
 
 const getCurIndex = (pageIndex) => {
-  articles.value = posts.slice((pageIndex - 1) * pageSize, (pageIndex - 1) * pageSize + pageSize)
-}
-
+  articles.value = posts.slice(
+    (pageIndex - 1) * pageSize,
+    (pageIndex - 1) * pageSize + pageSize
+  );
+};
 </script>
+<style lang="scss" scoped>
+</style>
 
 
