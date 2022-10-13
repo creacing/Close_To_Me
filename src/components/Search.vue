@@ -36,13 +36,10 @@
             <li class="item" v-for="res in searchResult" :key="res" @click="closeSearchDialog">
               <RouterLink :to="`article${res.path}`">
                 <span>
-                  {{res.tags.join(' ')}}
-                  <i class="ic i-angle-right"></i>
                   {{res.title}}
                   <i class="ic i-angle-right"></i>
-                  {{res.description}}
+                  {{res.date}}
                 </span>
-                {{res.date}}
               </RouterLink>
             </li>
           </ol>
@@ -196,6 +193,8 @@ const searchForArticles = (inputValue) => {
 #search--res {
   overflow-y: scroll;
   height: calc(100% - 8.125rem);
+  font-size: 1.25rem;
+  color: rgb(109, 104, 104);
 }
 
 #search--res ol {

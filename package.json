@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "animejs": "^3.2.1",
+    "echarts": "^5.4.0",
     "fs-extra": "^10.1.0",
     "globby": "^13.1.2",
     "gray-matter": "^4.0.3",
