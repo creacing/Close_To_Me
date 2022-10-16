@@ -33,6 +33,12 @@ const { sideIndex } = toRefs(props);
   width: 15rem !important;
 }
 
+// @media (max-width: 991px) {
+#sidebar .index-item {
+  padding: 0 2rem;
+}
+// }
+
 .content .index-item {
   font-size: 1em;
   line-height: 1.8;

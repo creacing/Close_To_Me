@@ -1,7 +1,8 @@
 <template>
   <div class="layout">
     <Sidebar />
-    <Index :sideIndex="sideIndex" v-if="isShow" />
+    <Sidebar :class="showIndex ? 'on' : ''" v-if="showIndex" />
+    <Index :sideIndex="sideIndex" v-if="isShow" class="sideIndex" />
     <div id="main" class="g--animation g--content">
       <slot name="content"></slot>
     </div>
@@ -12,9 +13,11 @@ import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import Index from "@/components/Index.vue";
 import { useRoute } from "vue-router";
-import { ref, watch } from "vue";
+import { ref, watch, toRefs } from "vue";
 import { store } from "@/stores/store.js";
+
 const state = store();
+const { showIndex } = toRefs(state);
 
 const route = useRoute();
 
@@ -81,6 +84,12 @@ watch(
 @media (max-width: 767px) {
   #main .wrap {
     padding: 0.5rem;
+  }
+}
+
+@media (max-width: 991px) {
+  .sideIndex {
+    display: none;
   }
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div id="sideTool" :class="showIndex ? 'on' : ''" v-if="showIndex">
+  <div id="sideTool">
     <div class="side--links g--animation" data-title="站点概览">
       <router-link
         class="link"
@@ -27,15 +27,16 @@
       </a>
     </div>
 
-    <!-- <Index :sideIndex="sideIndex" /> -->
+    <Index :sideIndex="sideIndex" class="sideIndex" />
   </div>
 </template>
 <script setup>
 import { toRefs, watch, ref } from "vue";
 import config from "../../public/config";
-import { store } from "@/stores/store.js";
-// import Index from "@/components/Index.vue";
+import Index from "@/components/Index.vue";
 import { RouterLink, useRoute } from "vue-router";
+import { store } from "@/stores/store.js";
+
 const { sidebar } = config;
 
 const state = store();
@@ -63,6 +64,11 @@ const { showIndex } = toRefs(state);
 </script>
 
 <style lang='scss' scoped>
+@media (min-width: 991px) {
+  .sideIndex {
+    display: none;
+  }
+}
 @media (min-width: 991px) {
   #sideTool {
     display: flex;
