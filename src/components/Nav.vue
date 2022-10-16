@@ -8,11 +8,7 @@
       :class="navBottom === 2 ? '' : navBottom === 1 ? 'show down' : 'show up'"
     >
       <div class="inner">
-        <div
-          class="toggle"
-          :class="isSidebar ? 'close' : ''"
-          @click.stop="showSidebar"
-        >
+        <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
           <div class="lines" aria-label="切换导航栏">
             <span class="line"></span>
             <span class="line"></span>
@@ -161,60 +157,63 @@ onUnmounted(() => {
   window.removeEventListener("scroll", scrollTop);
 });
 
-const { isSidebar } = toRefs(state);
-const showSidebar = () => {
-  isSidebar.value = true;
+const { showIndex } = toRefs(state);
+const showSide = () => {
+  showIndex.value = !showIndex.value;
 
-  const sidebar = document.getElementById("sidebar");
-  const animation = {
-    begin: function (anim) {
-      sidebar.style.display = "block";
-    },
-    translateX: [100, 0],
-    opacity: [0, 1],
-  };
+  // const side = document.getElementById("sidebar");
+  // const sidebar = side ? side : document.getElementById("sideTool");
 
-  anime(
-    Object.assign(
-      {
-        targets: sidebar,
-        duration: 400,
-        easing: "linear",
-      },
-      animation
-    )
-  ).finished.then(function () {
-    sidebar.style.display = "block";
-  });
-  const hiddenSidebar = (e) => {
-    isSidebar.value = false;
+  // const animation = {
+  //   begin: function (anim) {
+  //     sidebar.style.display = "block";
+  //   },
+  //   translateX: [100, 0],
+  //   opacity: [0, 1],
+  // };
 
-    const animation = {
-      begin: function (anim) {},
-      translateX: [0, 100],
-      opacity: [1, 0],
-    };
+  // anime(
+  //   Object.assign(
+  //     {
+  //       targets: sidebar,
+  //       duration: 400,
+  //       easing: "linear",
+  //     },
+  //     animation
+  //   )
+  // ).finished.then(function () {
+  //   sidebar.style.display = "block";
+  // });
 
-    anime(
-      Object.assign(
-        {
-          targets: sidebar,
-          duration: 200,
-          easing: "linear",
-        },
-        animation
-      )
-    ).finished.then(function () {
-      sidebar.style.display = "none";
-    });
+  // const hiddenSidebar = (e) => {
+  //   showIndex.value = false;
 
-    window.removeEventListener("click", hiddenSidebar);
-  };
-  const preventHidden = (e) => {
-    e.stopPropagation();
-  };
-  window.addEventListener("click", hiddenSidebar);
-  sidebar.addEventListener("click", preventHidden);
+  //   const animation = {
+  //     begin: function (anim) {},
+  //     translateX: [0, 100],
+  //     opacity: [1, 0],
+  //   };
+
+  //   anime(
+  //     Object.assign(
+  //       {
+  //         targets: sidebar,
+  //         duration: 200,
+  //         easing: "linear",
+  //       },
+  //       animation
+  //     )
+  //   ).finished.then(function () {
+  //     sidebar.style.display = "none";
+  //   });
+
+  //   // window.removeEventListener("click", hiddenSidebar);
+  // };
+  // const preventHidden = (e) => {
+  //   e.stopPropagation();
+  // };
+  // window.addEventListener("click", hiddenSidebar);
+  // sidebar.addEventListener("click", preventHidden);
 };
 </script>
 

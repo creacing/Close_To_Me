@@ -1,5 +1,5 @@
 <template>
-  <div id="sideTool" :class="isSidebar ? 'on' : ''">
+  <div id="sideTool" :class="showIndex ? 'on' : ''" v-if="showIndex">
     <div class="side--links g--animation" data-title="站点概览">
       <router-link
         class="link"
@@ -26,21 +26,46 @@
         <i class="ic" :class="link.icon"></i>
       </a>
     </div>
+
+    <!-- <Index :sideIndex="sideIndex" /> -->
   </div>
 </template>
 <script setup>
-import { toRefs } from "vue";
+import { toRefs, watch, ref } from "vue";
 import config from "../../public/config";
 import { store } from "@/stores/store.js";
-import { RouterLink } from "vue-router";
+// import Index from "@/components/Index.vue";
+import { RouterLink, useRoute } from "vue-router";
 const { sidebar } = config;
+
 const state = store();
-const { isSidebar } = toRefs(state);
+
+// const route = useRoute();
+// const sideIndex = ref([]);
+// const isShow = ref(false);
+const { showIndex } = toRefs(state);
+
+// watch(
+//   () => state.sideIndex,
+//   (newIndex, oldIndex) => {
+//     sideIndex.value = newIndex;
+//   },
+//   { immediate: true }
+// );
+
+// watch(
+//   () => route.path,
+//   (newPath, oldPath) => {
+//     isShow.value = newPath.startsWith("/article/") ? true : false;
+//   },
+//   { immediate: true }
+// );
 </script>
 
 <style lang='scss' scoped>
 @media (min-width: 991px) {
   #sideTool {
+    display: flex;
     position: fixed;
     left: 0;
     top: 50%;

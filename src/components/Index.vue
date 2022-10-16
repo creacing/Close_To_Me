@@ -1,7 +1,7 @@
 <template>
   <div id="sidebar">
     <div>
-      <h2>文章目录</h2>
+      <h2 class="title">文章目录</h2>
     </div>
 
     <div class="content g--animation" data-title="文章目录">
@@ -22,12 +22,11 @@ import { defineProps, toRefs } from "vue";
 const props = defineProps({
   sideIndex: {
     type: Array,
-    default: () => []
-  }
-})
+    default: () => [],
+  },
+});
 
-const { sideIndex } = toRefs(props)
-
+const { sideIndex } = toRefs(props);
 </script>
 <style scoped lang='scss'>
 #sidebar {
@@ -39,6 +38,19 @@ const { sideIndex } = toRefs(props)
   line-height: 1.8;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  // white-space: nowrap;
+}
+
+#sidebar .title {
+  text-align: center;
+}
+#sidebar .content .index-item {
+  display: flex;
+  // width: 100%;
+  // flex-wrap: wrap;
+}
+
+.index--title {
+  font-size: 0.7rem !important;
 }
 </style>

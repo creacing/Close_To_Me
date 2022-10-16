@@ -1765,6 +1765,18 @@ input,textarea {
         box-shadow: 0 .375rem .9375rem .3125rem rgba(0,0,0,.2);
         z-index: 99
     }
+    #sideTool{
+        top: 0;
+        right: 0;
+        z-index: 99;
+        position: fixed;
+        background-color: hsla(0deg, 0%, 100%, 1);
+        height: 100%;
+        max-width: 15rem;
+    }
+    .side--links{
+        display: inline-block !important;
+    }
 }
 
 #sidebar.affix>.inner {
