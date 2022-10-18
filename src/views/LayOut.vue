@@ -1,14 +1,15 @@
 <template>
   <div class="layout">
     <Sidebar class="full-side" />
-    <!-- <Sidebar :class="showIndex ? 'on' : ''" v-if="showIndex" /> -->
     <Index :sideIndex="sideIndex" v-if="isShow" class="sideIndex full-side" />
+    <MobileSide v-show="showIndex" :sideIndex="sideIndex" />
     <div id="main" class="g--animation g--content">
       <slot name="content"></slot>
     </div>
   </div>
 </template>
 <script setup>
+import MobileSide from "@/components/MobileSide.vue";
 import Pagination from "@/components/Pagination.vue";
 import Sidebar from "@/components/Sidebar.vue";
 import Index from "@/components/Index.vue";
@@ -98,3 +99,6 @@ watch(
   }
 }
 </style>
+
+
+

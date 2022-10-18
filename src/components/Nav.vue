@@ -157,9 +157,8 @@ onUnmounted(() => {
   window.removeEventListener("scroll", scrollTop);
 });
 
-const { showIndex } = toRefs(state);
 const showSide = () => {
-  showIndex.value = !showIndex.value;
+  state.showIndex = !state.showIndex;
 
   // const side = document.getElementById("sidebar");
   // const sidebar = side ? side : document.getElementById("sideTool");

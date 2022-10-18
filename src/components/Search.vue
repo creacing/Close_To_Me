@@ -155,7 +155,7 @@ const searchForArticles = (inputValue) => {
   display: flex;
   // background: var(--color-morandi-purple);
   padding: 0.5rem 1.5rem;
-  margin-bottom: 1.25rem;
+  // margin-bottom: 1.25rem;
   font-size: 1.125em;
   align-items: center;
 }
