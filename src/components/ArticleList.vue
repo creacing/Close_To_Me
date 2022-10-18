@@ -1,6 +1,10 @@
 <template>
   <div class="posts article">
-    <article class="item show article--content" v-for="article in articles" :key="article">
+    <article
+      class="item show article--content"
+      v-for="article in articles"
+      :key="article"
+    >
       <div class="info article--info">
         <div class="meta">
           <span class="item" :title="article.date">
@@ -18,7 +22,9 @@
           </span>
         </div>
         <h3>
-          <RouterLink :to="`article${article.path}`" :title="article.title">{{ article.title }}</RouterLink>
+          <RouterLink :to="`article${article.path}`" :title="article.title">{{
+            article.title
+          }}</RouterLink>
         </h3>
         <div class="excerpt">{{ article.description }}</div>
         <div class="meta footer">
@@ -33,7 +39,8 @@
           :to="`article${article.path}`"
           :title="article.title"
           class="btn article--btn"
-        >more...</RouterLink>
+          >more...</RouterLink
+        >
       </div>
     </article>
   </div>
@@ -54,7 +61,7 @@ const { articles } = toRefs(props);
 
 <style scoped lang='scss'>
 .article > .article--content + .article--content {
-  margin-top: 0.5rem;
+  margin-top: 0.625rem;
 }
 .article > .article--content:nth-child(even) .article--btn {
   transform: translate(-1rem, -0.5rem);

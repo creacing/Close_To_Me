@@ -1,8 +1,8 @@
 <template>
   <div class="layout">
-    <Sidebar />
-    <Sidebar :class="showIndex ? 'on' : ''" v-if="showIndex" />
-    <Index :sideIndex="sideIndex" v-if="isShow" class="sideIndex" />
+    <Sidebar class="full-side" />
+    <!-- <Sidebar :class="showIndex ? 'on' : ''" v-if="showIndex" /> -->
+    <Index :sideIndex="sideIndex" v-if="isShow" class="sideIndex full-side" />
     <div id="main" class="g--animation g--content">
       <slot name="content"></slot>
     </div>
@@ -89,6 +89,11 @@ watch(
 
 @media (max-width: 991px) {
   .sideIndex {
+    display: none;
+  }
+}
+@media (max-width: 767px) {
+  .full-side {
     display: none;
   }
 }

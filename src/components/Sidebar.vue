@@ -27,7 +27,7 @@
       </a>
     </div>
 
-    <Index :sideIndex="sideIndex" class="sideIndex" />
+    <!-- <Index :sideIndex="sideIndex" class="sideIndex" /> -->
   </div>
 </template>
 <script setup>

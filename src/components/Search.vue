@@ -1,5 +1,9 @@
 <template>
-  <div id="search" :class="[showSearch ? 'show--search' : '']" v-show="showSearch">
+  <div
+    id="search"
+    :class="[showSearch ? 'show--search' : '']"
+    v-show="showSearch"
+  >
     <div class="search--content">
       <div class="header">
         <span class="icon">
@@ -28,17 +32,22 @@
       <div class="results">
         <div class="results--content">
           <span>
-            找到 {{searchResult.length}} 条结果
+            找到 {{ searchResult.length }} 条结果
             <hr />
           </span>
 
           <ol id="search--res">
-            <li class="item" v-for="res in searchResult" :key="res" @click="closeSearchDialog">
+            <li
+              class="item"
+              v-for="res in searchResult"
+              :key="res"
+              @click="closeSearchDialog"
+            >
               <RouterLink :to="`article${res.path}`">
                 <span>
-                  {{res.title}}
+                  {{ res.title }}
                   <i class="ic i-angle-right"></i>
-                  {{res.date}}
+                  {{ res.date }}
                 </span>
               </RouterLink>
             </li>
@@ -53,7 +62,7 @@
 import { defineProps, toRefs, defineEmits, onMounted, ref } from "vue";
 import { store } from "@/stores/store.js";
 import { debounce } from "@/utils/util.js";
-import { RouterLink } from 'vue-router'
+import { RouterLink } from "vue-router";
 const state = store();
 const posts = state.postsDic;
 const props = defineProps({ showSearch: Boolean });
@@ -88,7 +97,6 @@ const query = () => {
       searchResult.value.push(value);
     }
   }
-
 };
 const db = debounce(query, 500);
 
@@ -105,7 +113,7 @@ const searchForArticles = (inputValue) => {
 
 #search {
   position: fixed;
-  background: var(--nav-morandi-bg);
+  background: var(--nav-bg);
   left: 0;
   top: 0;
   width: 100%;
@@ -145,7 +153,7 @@ const searchForArticles = (inputValue) => {
 
 #search > .search--content .header {
   display: flex;
-  background: var(--color-morandi-purple);
+  // background: var(--color-morandi-purple);
   padding: 0.5rem 1.5rem;
   margin-bottom: 1.25rem;
   font-size: 1.125em;
@@ -175,8 +183,8 @@ const searchForArticles = (inputValue) => {
   height: calc(100% - 6.25rem);
   padding: 1.875rem 1.875rem 0.3125rem;
   border-radius: 0.3125rem;
-  background: var(--color-morandi-purple) url(../../public/images/search.png)
-    no-repeat bottom right;
+  // background: var(--color-morandi-purple) url(../../public/images/search.png)
+  //   no-repeat bottom right;
   color: var(--text-color);
 }
 
@@ -192,7 +200,7 @@ const searchForArticles = (inputValue) => {
 
 #search--res {
   overflow-y: scroll;
-  height: calc(100% - 8.125rem);
+  height: 100%;
   font-size: 1.25rem;
   color: rgb(109, 104, 104);
 }
