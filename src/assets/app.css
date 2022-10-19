@@ -1775,9 +1775,6 @@ input,textarea {
         height: 100%;
         max-width: 15rem;
     }
-    .side--links{
-        display: inline-block !important;
-    }
 }
 
 #sidebar.affix>.inner {
