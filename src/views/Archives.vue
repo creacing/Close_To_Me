@@ -8,13 +8,13 @@
     </h2>
     <RouterLink :to="`/article${archive.path}`" v-for="archive in archiveList" :key="archive">
       <h3 class="item section">
-        <span>{{ archive.date.split("-")[0] }} 年</span>
+        <span class="bg">{{ archive.date.split("-")[0] }} 年</span>
         <small>/</small>
-        <span to>{{ archive.date.split("-")[1] }} 月</span>
+        <span class="bg">{{ archive.date.split("-")[1] }} 月</span>
         <small>/</small>
-        <span to>{{ archive.date.split("-")[2] }} 月</span>
+        <span class="bg">{{ archive.date.split("-")[2] }} 月</span>
         <small>/</small>
-        <span to>{{ archive.title }} 月</span>
+        <span class="bg">{{ archive.title }} 月</span>
       </h3>
     </RouterLink>
   </div>
@@ -33,3 +33,13 @@ for (const post of posts) {
   archiveList.value.push(post[1]);
 }
 </script>
+<style scoped lang='scss'>
+.item {
+  display: flex;
+  // justify-content: space-around;
+  .bg {
+    // background-color: #fff;
+    padding: 0.125rem;
+  }
+}
+</style>

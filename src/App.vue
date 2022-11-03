@@ -60,6 +60,7 @@ onMounted(() => {
         var(--grey-1) 20%
       )
       no-repeat bottom;
+    z-index: 999;
   }
 
   #footer {

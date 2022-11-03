@@ -1,9 +1,5 @@
 <template>
-  <div
-    id="search"
-    :class="[showSearch ? 'show--search' : '']"
-    v-show="showSearch"
-  >
+  <div id="search" :class="[showSearch ? 'show--search' : '']" v-show="showSearch">
     <div class="search--content">
       <div class="header">
         <span class="icon">
@@ -37,12 +33,7 @@
           </span>
 
           <ol id="search--res">
-            <li
-              class="item"
-              v-for="res in searchResult"
-              :key="res"
-              @click="closeSearchDialog"
-            >
+            <li class="item" v-for="res in searchResult" :key="res" @click="closeSearchDialog">
               <RouterLink :to="`article${res.path}`">
                 <span>
                   {{ res.title }}
@@ -119,7 +110,7 @@ const searchForArticles = (inputValue) => {
   width: 100%;
   height: 100%;
   padding: 1.25rem;
-  z-index: 999;
+  z-index: 1000;
 }
 
 #search > .search--content {
