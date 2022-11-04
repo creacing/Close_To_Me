@@ -25,7 +25,7 @@ const { author, CNName, description } = config;
   width: 100%;
   height: 50vh;
   min-height: 10rem;
-  z-index: -1;
+  z-index: 997;
 }
 
 #brand,

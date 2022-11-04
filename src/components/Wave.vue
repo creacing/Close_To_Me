@@ -33,6 +33,7 @@
   min-height: 3.125rem;
   max-height: 9.375rem;
   position: relative;
+  z-index: 998;
 }
 
 @media (max-width: 767px) {
