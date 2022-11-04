@@ -26,16 +26,17 @@ import { onMounted, ref } from "vue";
 
 import initAnime from "@/utils/clickAnime.js";
 const showLoading = ref(false);
+
 // register global animation
+const init = () => {
+  document.addEventListener("click", function (e) { initAnime(e); }, false);
+}
+
 onMounted(() => {
-  document.addEventListener(
-    "click",
-    function (e) {
-      initAnime(e);
-    },
-    false
-  );
+  init()
 });
+
+
 </script>
 <style lang="scss" scoped>
 #container {

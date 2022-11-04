@@ -36,9 +36,7 @@ for (const post of posts) {
 <style scoped lang='scss'>
 .item {
   display: flex;
-  // justify-content: space-around;
   .bg {
-    // background-color: #fff;
     padding: 0.125rem;
   }
 }
