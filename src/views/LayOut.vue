@@ -3,7 +3,7 @@
     <Sidebar class="full-side" />
     <Index :sideIndex="sideIndex" v-if="isShow" class="sideIndex full-side" />
     <MobileSide v-show="showIndex" :sideIndex="sideIndex" />
-    <div id="main" class="g--animation g--content">
+    <div id="main" class="gb-animation gb-content">
       <slot name="content"></slot>
     </div>
   </div>

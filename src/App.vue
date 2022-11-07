@@ -1,6 +1,6 @@
 <template>
-  <div id="container">
-    <header id="header">
+  <div id="blog" class="flex-col pos-rel">
+    <header id="header" class="pos-rel">
       <Nav />
     </header>
     <Wave />
@@ -39,15 +39,11 @@ onMounted(() => {
 
 </script>
 <style lang="scss" scoped>
-#container {
+#blog {
   min-height: 100%;
   min-width: 100%;
-  position: relative;
-  display: flex;
-  flex-direction: column;
   #header {
     margin: 0 auto;
-    position: relative;
     width: 100%;
     height: 50vh;
     text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.5);

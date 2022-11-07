@@ -1,16 +1,13 @@
 
 
 <template>
-  <div
-    id="imgs"
-    :class="[isSun === 1 ? 'brand--image--white' : 'brand--image--dark']"
-  ></div>
+  <div id="imgs" :class="[isDark === 1 ? 'brand--image--white' : 'brand--image--dark']"></div>
 </template>
 <script setup>
 import { watch } from "vue";
 import { store } from "@/stores/store.js";
 import { storeToRefs } from "pinia";
-const { isSun } = storeToRefs(store());
+const { isDark } = storeToRefs(store());
 </script>
 <style scoped lang='scss'>
 .brand--image--white {

@@ -1,6 +1,6 @@
 <template>
   <div id="mobileSidebar">
-    <div class="links g--animation" data-title="站点概览">
+    <div class="links gb-animation" data-title="站点概览">
       <router-link
         class="link"
         :to="link.url"
@@ -34,7 +34,7 @@
         <h2 class="title">文章目录</h2>
       </div>
 
-      <div class="content g--animation" data-title="文章目录">
+      <div class="content gb-animation" data-title="文章目录">
         <ol>
           <li class="index-item" v-for="(item, index) in sideIndex" :key="item">
             <a href="#">

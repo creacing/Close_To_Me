@@ -40,7 +40,7 @@ export const store = defineStore('main', {
       pageSize: 10,
       posts,
       postLen,
-      isSun: 1,
+      isDark: 1,
       sideIndex: []
     }
   },

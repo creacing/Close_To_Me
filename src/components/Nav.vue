@@ -1,9 +1,9 @@
 <template>
-  <Neko :isShow="isShow" :isSun="isSun" />
+  <Neko :isShow="isShow" :isDark="isDark" />
   <div class="inner">
     <Brand />
 
-    <nav id="nav" :class="navBottom === 2 ? '' : navBottom === 1 ? 'show down' : 'show up'">
+    <nav id="nav" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
       <div class="inner">
         <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
           <div class="lines" aria-label="切换导航栏">
@@ -30,8 +30,8 @@
         </ul>
         <ul class="right">
           <li class="item theme">
-            <i v-if="isSun" class="ic i-sun" @click="changeTheme" data-theme></i>
-            <i v-if="!isSun" class="ic i-moon" @click="changeTheme" data-theme="dark"></i>
+            <i v-if="isDark" class="ic i-sun" @click="changeTheme" data-theme></i>
+            <i v-if="!isDark" class="ic i-moon" @click="changeTheme" data-theme="dark"></i>
           </li>
           <li class="item search">
             <i class="ic i-search" @click="searchArticles"></i>
@@ -58,17 +58,17 @@ const { nav } = config;
 const state = store();
 
 //切换黑白背景
-const isSun = ref(true); // 白天黑夜 default 白天
+const isDark = ref(true); // 白天黑夜 default 白天
 const isShow = ref(false); // 是否显示 default 不显示
 onMounted(() => {
-  const hasSun = localStorage.getItem("isSun");
+  const hasSun = localStorage.getItem("isDark");
   const HTML = document.documentElement;
   //初始化读取localStorage数据 判断主题颜色
   if (hasSun) {
-    isSun.value = Number(hasSun) === 0 ? false : true;
-    state.isSun = isSun.value ? 1 : 0;
+    isDark.value = Number(hasSun) === 0 ? false : true;
+    state.isDark = isDark.value ? 1 : 0;
 
-    if (!isSun.value) {
+    if (!isDark.value) {
       HTML.setAttribute("data-theme", "dark");
     } else {
       HTML.setAttribute("data-theme", "");
@@ -79,24 +79,24 @@ onMounted(() => {
 const changeTheme = () => {
   const HTML = document.documentElement;
 
-  isSun.value = !isSun.value;
+  isDark.value = !isDark.value;
   isShow.value = !isShow.value;
   //background color
-  localStorage.setItem("isSun", isSun.value ? 1 : 0);
-  state.isSun = isSun.value ? 1 : 0;
-  if (!isSun.value) {
+  localStorage.setItem("isDark", isDark.value ? 1 : 0);
+  state.isDark = isDark.value ? 1 : 0;
+  if (!isDark.value) {
     HTML.setAttribute("data-theme", "dark");
   } else {
     HTML.setAttribute("data-theme", "");
   }
   // switch white and dark
   setTimeout(() => {
-    isSun.value = !isSun.value;
+    isDark.value = !isDark.value;
   }, 200);
   //hidden animation ,stop for 2500ms
   setTimeout(() => {
     isShow.value = !isShow.value;
-    isSun.value = !isSun.value;
+    isDark.value = !isDark.value;
   }, 2500);
 };
 //search component
@@ -108,7 +108,7 @@ const closeSearchDialog = (value) => {
   showSearch.value = value;
 };
 
-const navBottom = ref(2);
+const navBtm = ref(2);
 let scroll = 0;
 let offsetWave = null;
 
@@ -123,10 +123,10 @@ const scrollTop = () => {
 
   if (newScroll > scroll) {
     //往下拉
-    newScroll < offsetWave ? (navBottom.value = 2) : (navBottom.value = 1);
+    newScroll < offsetWave ? (navBtm.value = 2) : (navBtm.value = 1);
   } else {
     // 往上拉
-    newScroll < offsetWave ? (navBottom.value = 2) : (navBottom.value = 0);
+    newScroll < offsetWave ? (navBtm.value = 2) : (navBtm.value = 0);
   }
   scroll = newScroll;
 };
@@ -134,9 +134,10 @@ const scrollTop = () => {
 onUnmounted(() => {
   window.removeEventListener("scroll", scrollTop);
 });
+const { showIndex } = toRefs(state);
 
 const showSide = () => {
-  state.showIndex = !state.showIndex;
+  showIndex.value = !showIndex.value;
 
   // const side = document.getElementById("sidebar");
   // const sidebar = side ? side : document.getElementById("sideTool");

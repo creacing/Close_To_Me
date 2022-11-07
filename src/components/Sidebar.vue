@@ -1,6 +1,6 @@
 <template>
   <div id="sideTool">
-    <div class="side--links g--animation" data-title="站点概览">
+    <div class="side--links gb-animation" data-title="站点概览">
       <router-link
         class="link"
         :to="link.url"

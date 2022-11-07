@@ -35,11 +35,15 @@ watch(
     const { type, path } = newParams;
     const matchPath = `/${type}/${path}`;
 
-    const { content, title, tags, index } = state.postsDic.get(matchPath);
-    articleContent.value = content;
-    articleTitle.value = title;
-    articleTags.value = tags.join(" ");
-    state.sideIndex = index;
+    const existArticle = state.postsDic.get(matchPath)
+    if (existArticle) {
+      const { content, title, tags, index } = existArticle
+      articleContent.value = content;
+      articleTitle.value = title;
+      articleTags.value = tags.join(" ");
+      state.sideIndex = index;
+    }
+
   },
   { immediate: true }
 );

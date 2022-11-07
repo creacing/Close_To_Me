@@ -1,8 +1,41 @@
-.g--content{
+.gb-content{
   padding: 1.25rem;
   position: relative;
 }
 
-.g--animation{
+.gb-animation{
   animation: slideUpBigIn 0.5s;
+}
+
+.flex-row{
+  display: flex;
+}
+.flex-col{
+  display: flex;
+  flex-direction: column;
+}
+.flex-main-center{
+  justify-content: center;
+}
+.flex-sub-center{
+  align-items: center;
+}
+
+.flex-center{
+  justify-content: center;
+  align-items: center;
+}
+
+.pos-rel{
+  position: relative;
+}
+
+.pos-abs{
+  position: absolute;
+}
+.pos-fix{
+  position: fixed;
+}
+.pos-sti{
+  position: sticky;
 }
