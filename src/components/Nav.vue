@@ -3,7 +3,7 @@
   <div class="inner">
     <Brand />
 
-    <nav id="nav" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
+    <nav class="nav" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
       <div class="inner">
         <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
           <div class="lines" aria-label="切换导航栏">
@@ -196,7 +196,162 @@ const showSide = () => {
 </script>
 
 <style lang="scss" scoped>
-#nav {
+.nav {
   z-index: 998;
+}
+
+.nav .inner {
+    height: 100%;
+    display: flex;
+    width: calc(100% - .625rem);
+    flex-wrap: nowrap;
+    margin: 0 auto;
+    width: 100%
+}
+
+@media (min-width: 1200px) {
+    .nav .inner {
+        width:72.5rem
+    }
+}
+
+@media (min-width: 1600px) {
+    .nav .inner {
+        width:73%
+    }
+}
+
+.nav .toggle {
+    display: none
+}
+
+@media (max-width: 991px) {
+    .nav .toggle {
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center
+    }
+}
+
+.nav .toggle .lines {
+    padding: 1.25rem;
+    width: 1.375rem;
+    box-sizing: unset
+}
+
+.nav .menu {
+    padding: .625rem 0;
+    margin: 0;
+    width: 100%
+}
+
+.nav .menu .item {
+    display: inline-block;
+    position: relative;
+    padding: 0 .625rem;
+    letter-spacing: .0625rem;
+    text-align: center
+}
+
+@media (max-width: 767px) {
+    .nav .menu .item {
+        display:none
+    }
+
+    .nav .menu .item.title {
+        display: block
+    }
+}
+
+.nav .menu .item .ic {
+    margin-right: .5rem
+}
+
+.nav .menu .item:not(.title) a {
+    display: block;
+    font-size: 1em
+}
+
+.nav .menu .item.active:not(.dropdown) a::before,.nav .menu .item:not(.dropdown):hover a::before {
+    width: 80%
+}
+
+.nav .menu .submenu {
+    display: none;
+    position: absolute;
+    margin-top: .5rem;
+    padding: 0;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+    background-color: var(--grey-9-a5);
+    box-shadow: 0 .3125rem 1.25rem -.25rem var(--grey-9-a1);
+    border-radius: .625rem
+}
+
+.nav .menu .submenu::before {
+    position: absolute;
+    top: -1.25rem;
+    left: 0;
+    width: 100%;
+    height: 2.5rem;
+    content: ''
+}
+
+.nav .menu .submenu:hover {
+    display: block
+}
+
+.nav .menu .submenu .item {
+    display: block
+}
+
+.nav .menu .submenu .item a {
+    display: inline-block;
+    padding: .3rem .7rem;
+    width: 100%;
+    text-shadow: none
+}
+
+.nav .menu .submenu .item a::before {
+    content: none
+}
+
+.nav .menu .submenu .item:hover a {
+    transform: translateX(.3rem)
+}
+
+.nav .menu .submenu .item.active a,.nav .menu .submenu .item:hover a {
+    opacity: 1
+}
+
+.nav .menu .item.dropdown>a::after {
+    content: "";
+    display: inline-block;
+    margin-left: .3rem;
+    vertical-align: middle;
+    border: .3rem solid transparent;
+    border-top-color: currentColor;
+    border-bottom: 0
+}
+
+.nav .menu .item.dropdown:hover .submenu {
+    display: block
+}
+
+.nav .right {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center
+}
+
+.nav .right .item {
+    padding: .625rem .5rem;
+    cursor: pointer
+}
+
+.nav .right .i-sun {
+    font-size: 1.125em
 }
 </style>
