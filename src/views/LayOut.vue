@@ -47,7 +47,9 @@ watch(
   justify-content: center;
   align-items: flex-start;
 }
-
+.container {
+  padding: 1.25rem;
+}
 @media (min-width: 1200px) {
   .layout {
     width: 65rem;

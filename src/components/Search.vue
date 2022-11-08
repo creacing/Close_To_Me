@@ -1,14 +1,14 @@
 <template>
-  <div id="search" :class="[showSearch ? 'show--search' : '']" v-show="showSearch">
-    <div class="search--content">
+  <div class="search pos-fix" :class="[showSearch ? 'search-show' : '']" v-show="showSearch">
+    <div class="body">
       <div class="header">
         <span class="icon">
           <i class="ic i-search"></i>
         </span>
-        <div class="search--input">
+        <div class="search-input">
           <form role="search" novalidate>
             <input
-              class="search-input"
+              class="input"
               type="search"
               placeholder="文章搜索"
               autocomplete="off"
@@ -25,25 +25,21 @@
           <i class="ic i-times-circle"></i>
         </span>
       </div>
-      <div class="results">
-        <div class="results--content">
-          <span>
-            找到 {{ searchResult.length }} 条结果
-            <hr />
-          </span>
+      <div class="content">
+        <span>找到 {{ searchResult.length }} 条结果</span>
+        <hr />
 
-          <ol id="search--res">
-            <li class="item" v-for="res in searchResult" :key="res" @click="closeSearchDialog">
-              <RouterLink :to="`article${res.path}`">
-                <span>
-                  {{ res.title }}
-                  <i class="ic i-angle-right"></i>
-                  {{ res.date }}
-                </span>
-              </RouterLink>
-            </li>
-          </ol>
-        </div>
+        <ol class="result">
+          <li class="item" v-for="res in searchResult" :key="res" @click="closeSearchDialog">
+            <RouterLink :to="`article${res.path}`">
+              <span>
+                {{ res.title }}
+                <i class="ic i-angle-right"></i>
+                {{ res.date }}
+              </span>
+            </RouterLink>
+          </li>
+        </ol>
       </div>
     </div>
   </div>
@@ -55,29 +51,16 @@ import { store } from "@/stores/store.js";
 import { debounce } from "@/utils/util.js";
 import { RouterLink } from "vue-router";
 const state = store();
-const posts = state.postsDic;
+
 const props = defineProps({ showSearch: Boolean });
 const { showSearch } = toRefs(props);
+
 const emits = defineEmits(["close"]);
 const closeSearchDialog = () => {
   emits("close", false);
 };
-// out close
-onMounted(() => {
-  const dialog = document.getElementById("search");
-  const btn = document.getElementsByClassName("item search")[0];
-  const content = document.getElementsByClassName("search--content")[0];
 
-  dialog.addEventListener("click", (e) => {
-    emits("close", false);
-  });
-  btn.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
-  content.addEventListener("click", (e) => {
-    e.stopPropagation();
-  });
-});
+const posts = state.postsDic;
 const inputVal = ref("");
 const searchResult = ref([]);
 const query = () => {
@@ -91,19 +74,14 @@ const query = () => {
 };
 const db = debounce(query, 500);
 
-const searchForArticles = (inputValue) => {
-  db();
-};
+const searchForArticles = (inputValue) => { db(); };
 </script>
 <style lang="scss" scoped>
-.show--search {
-  transform: scale(1);
-  opacity: 1;
+.search-show {
   display: block !important;
 }
 
-#search {
-  position: fixed;
+.search {
   background: var(--nav-bg);
   left: 0;
   top: 0;
@@ -111,112 +89,75 @@ const searchForArticles = (inputValue) => {
   height: 100%;
   padding: 1.25rem;
   z-index: 1000;
-}
+  .body {
+    height: 100%;
+    margin: 0 auto;
+    text-shadow: none;
+    .header {
+      display: flex;
+      padding: 0.5rem 1.5rem;
+      font-size: 1.125em;
+      align-items: center;
+      .search-input {
+        flex-grow: 1;
+        form {
+          padding: 0.125rem;
+        }
+      }
+      .close-btn,
+      .icon {
+        color: var(--grey-5);
+        font-size: 1.125rem;
+        padding: 0 0.625rem;
+      }
 
-#search > .search--content {
-  border-radius: 0;
-  height: 100%;
-  margin: 0 auto;
-  /* width: 43.75rem; */
-  text-shadow: none;
-}
+      .close-btn {
+        cursor: pointer;
+      }
 
-@media (max-width: 767px) {
-  #search > .search--content {
+      .close-btn:hover i {
+        color: var(--grey-7);
+      }
+    }
+
+    .content {
+      height: calc(100% - 6.25rem);
+      padding: 1.875rem 1.875rem 0.3125rem;
+      color: var(--text-color);
+      position: relative;
+      .result {
+        overflow-y: scroll;
+        height: 100%;
+        .item {
+          margin: 0.9375rem 0;
+          a {
+            transition: all 0.2s ease-in-out 0s;
+            span {
+              font-size: 90%;
+              display: block;
+              i {
+                color: var(--grey-4);
+                margin: 0 0.3125rem;
+              }
+            }
+          }
+        }
+      }
+      hr {
+        margin: 0.625rem 0;
+      }
+    }
+  }
+
+  .body .input {
+    background: 0 0;
+    border: 0;
+    outline: 0;
     width: 100%;
   }
-}
 
-#search > .search--content .close-btn,
-#search > .search--content .icon {
-  color: var(--grey-5);
-  font-size: 1.125rem;
-  padding: 0 0.625rem;
-}
-
-#search > .search--content .close-btn {
-  cursor: pointer;
-}
-
-#search > .search--content .close-btn:hover i {
-  color: var(--grey-7);
-}
-
-#search > .search--content .header {
-  display: flex;
-  // background: var(--color-morandi-purple);
-  padding: 0.5rem 1.5rem;
-  // margin-bottom: 1.25rem;
-  font-size: 1.125em;
-  align-items: center;
-}
-
-#search > .search--content .search--input {
-  flex-grow: 1;
-}
-
-#search > .search--content .search--input form {
-  padding: 0.125rem;
-}
-
-#search > .search--content .search-input {
-  background: 0 0;
-  border: 0;
-  outline: 0;
-  width: 100%;
-}
-
-#search > .search--content .search-input::-webkit-search-cancel-button {
-  display: none;
-}
-
-#search .results {
-  height: calc(100% - 6.25rem);
-  padding: 1.875rem 1.875rem 0.3125rem;
-  border-radius: 0.3125rem;
-  // background: var(--color-morandi-purple) url(../../public/images/search.png)
-  //   no-repeat bottom right;
-  color: var(--text-color);
-}
-
-#search .results .results--content {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-}
-
-#search .results hr {
-  margin: 0.625rem 0;
-}
-
-#search--res {
-  overflow-y: scroll;
-  height: 100%;
-  font-size: 1.25rem;
-  color: rgb(109, 104, 104);
-}
-
-#search--res ol {
-  padding: 0;
-}
-
-#search--res .item {
-  margin: 0.9375rem 0;
-}
-
-#search--res .item a {
-  border-bottom: 0.0625rem dashed var(--grey-4);
-  display: block;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-#search--res .item span {
-  font-size: 70%;
-  display: block;
-}
-
-#search--res .item span i {
-  color: var(--grey-4);
-  margin: 0 0.3125rem;
+  .body .input::-webkit-search-cancel-button {
+    display: none;
+  }
 }
 </style>

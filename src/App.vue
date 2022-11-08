@@ -3,7 +3,7 @@
     <header id="header" class="pos-rel">
       <Nav />
     </header>
-    <Wave />
+    <Wave id="waves" />
     <main>
       <LayOut>
         <template v-slot:content>

@@ -2,7 +2,7 @@
   <Neko :isShow="isShow" :isDark="isDark" />
 
   <nav class="nav" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
-    <div class="inner flex-row">
+    <div class="body flex-row">
       <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
         <div class="lines" aria-label="切换导航栏">
           <span class="line"></span>
@@ -10,9 +10,10 @@
           <span class="line"></span>
         </div>
       </div>
+
       <ul class="menu">
         <li class="item" :class="item.liClass" v-for="item in nav" :key="item">
-          <RouterLink :to="item.link" :class="item.aClass" :rel="item.rel">
+          <RouterLink :to="item.link" :class="item.aClass" :rel="item.rel" class="link pos-rel">
             <i class="ic" :class="item.iClass" v-if="item.iClass"></i>
             {{ item.name }}
           </RouterLink>
@@ -144,17 +145,17 @@ const showSide = () => {
 <style lang="scss" scoped>
 .nav {
   z-index: 998;
-  .inner {
-    height: 100%;
-    width: calc(100% - 0.625rem);
-    flex-wrap: nowrap;
-    margin: 0 auto;
+  .body {
     width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    flex-wrap: nowrap;
+    width: calc(100% - 0.625rem);
     .toggle {
       display: none;
       .lines {
-        padding: 1.25rem;
         width: 1.375rem;
+        padding: 1.25rem;
         box-sizing: unset;
       }
     }
@@ -181,6 +182,7 @@ const showSide = () => {
       .ic {
         margin-right: 0.5rem;
       }
+
       .submenu {
         display: none;
         position: absolute;
@@ -273,13 +275,13 @@ const showSide = () => {
   }
 
   @media (min-width: 1200px) {
-    .inner {
+    .body {
       width: 72.5rem;
     }
   }
 
   @media (min-width: 1600px) {
-    .inner {
+    .body {
       width: 73%;
     }
   }
