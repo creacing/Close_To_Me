@@ -8,8 +8,7 @@
       <ol>
         <li class="index-item" v-for="(item, index) in sideIndex" :key="item">
           <a href="#">
-            <!-- <span>{{ index + 1 }}.</span> -->
-            <span v-html="item" class="index--title"></span>
+            <span v-html="item" class="index-title"></span>
           </a>
         </li>
       </ol>
@@ -33,18 +32,15 @@ const { sideIndex } = toRefs(props);
   width: 15rem !important;
 }
 
-// @media (max-width: 991px) {
 #sidebar .index-item {
   padding: 0 2rem;
 }
-// }
 
 .content .index-item {
   font-size: 1em;
   line-height: 1.8;
   overflow: hidden;
   text-overflow: ellipsis;
-  // white-space: nowrap;
 }
 
 #sidebar .title {
@@ -52,11 +48,24 @@ const { sideIndex } = toRefs(props);
 }
 #sidebar .content .index-item {
   display: flex;
-  // width: 100%;
-  // flex-wrap: wrap;
 }
 
-.index--title {
+.index-title {
   font-size: 0.7rem !important;
+}
+
+#sidebar {
+  position: static;
+  top: 0;
+  bottom: 0;
+  transition: all 0.2s ease-in-out 0s;
+}
+
+@media (max-width: 991px) {
+  #sidebar {
+    font-size: 0.8rem;
+    background: var(--grey-1);
+    z-index: 99;
+  }
 }
 </style>

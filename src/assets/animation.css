@@ -1,3 +1,47 @@
+.rotate {
+  animation: rotate 6s linear infinite
+}
+
+.beat {
+  animation: beat 1.33s ease-in-out infinite
+}
+
+.flash {
+  animation: flash 6s cubic-bezier(.22,.61,.36,1) infinite
+}
+
+.shake {
+  animation: shake 1s
+}
+
+.fade-in,.tabs .tab,.tip {
+  animation: fadeIn .5s
+}
+
+.fade-out,.tip.hide {
+  animation: fadeOut .3s
+}
+
+.slide-right-in {
+  animation: slideRightIn .3s
+}
+
+.slide-left-in {
+  animation: slideLeftIn .3s
+}
+
+.slide-down-in {
+  animation: slideDownIn .3s
+}
+
+.blur,.lozaded {
+  animation: blur .8s ease-in-out forwards
+}
+
+.elastic {
+  animation: elastic 1s
+}
+
 @keyframes rotate {
   from {
       transform: rotate(0)

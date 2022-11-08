@@ -67,15 +67,12 @@
   --note-hover: rgba(168,49,72,0.8)
 }
 
-[data-theme=dark] .index.wrap .card .message .btn,[data-theme=dark] .sidebar .tab li,[data-theme=dark] [data-background-image],[data-theme=dark] img {
+[data-theme=dark] .index.wrap .card .message .btn,[data-theme=dark] [data-background-image],[data-theme=dark] img {
   transition: all .2s ease-in-out 0s;
   opacity: .75
 }
 
-[data-theme=dark] .index.wrap .card .message .btn:hover,[data-theme=dark] .sidebar .tab li:hover,[data-theme=dark] [data-background-image]:hover,[data-theme=dark] img:hover {
+[data-theme=dark] .index.wrap .card .message .btn:hover,[data-theme=dark] [data-background-image]:hover,[data-theme=dark] img:hover {
   opacity: .9
 }
 
-[data-theme=dark] #imgs::before {
-  background-color: rgba(0,0,0,.5)
-}

@@ -361,4 +361,26 @@ const showSide = () => {
     }
   }
 }
+.toggle {
+  line-height: 0;
+  cursor: pointer;
+}
+
+.toggle .line {
+  background: var(--header-text-color);
+  display: inline-block;
+  height: 0.125rem;
+  left: 0;
+  position: relative;
+  border-radius: 0.0625rem;
+  top: 0;
+  transition: all 0.4s;
+  vertical-align: top;
+  width: 100%;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.toggle .line:not(:first-child) {
+  margin-top: 0.1875rem;
+}
 </style>

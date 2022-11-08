@@ -69,6 +69,18 @@ const { showIndex } = toRefs(state);
     display: none;
   }
 }
+@media (max-width: 991px) {
+  #sideTool {
+    top: 0;
+    right: 0;
+    z-index: 99;
+    position: fixed;
+    background-color: hsla(0deg, 0%, 100%, 1);
+    height: 100%;
+    max-width: 15rem;
+  }
+}
+
 @media (min-width: 991px) {
   #sideTool {
     display: flex;
