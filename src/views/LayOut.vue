@@ -1,9 +1,9 @@
 <template>
   <div class="layout">
-    <Sidebar class="full-side" />
+    <!-- <Sidebar class="full-side" /> -->
     <Index :sideIndex="sideIndex" v-if="isShow" class="sideIndex full-side" />
-    <MobileSide v-show="showIndex" :sideIndex="sideIndex" />
-    <div id="main" class="gb-animation gb-content">
+    <!-- <MobileSide v-show="showIndex" :sideIndex="sideIndex" /> -->
+    <div id="main" class="slide-up-big-in container pos-rel">
       <slot name="content"></slot>
     </div>
   </div>

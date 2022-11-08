@@ -917,9 +917,7 @@ template {
     animation: slideUpIn .3s
 }
 
-.posts>.item.show,.slide-up-big-in {
-    animation: slideUpBigIn .5s
-}
+
 
 .slide-right-in {
     animation: slideRightIn .3s

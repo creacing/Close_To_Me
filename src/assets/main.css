@@ -1,9 +1,8 @@
-.gb-content{
+.container{
   padding: 1.25rem;
-  position: relative;
 }
 
-.gb-animation{
+.slide-up-big-in{
   animation: slideUpBigIn 0.5s;
 }
 
