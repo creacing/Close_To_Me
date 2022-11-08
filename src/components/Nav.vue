@@ -1,7 +1,7 @@
 <template>
   <Neko :isShow="isShow" :isDark="isDark" />
 
-  <nav class="nav" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
+  <nav class="nav pos-fix" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
     <div class="body flex-row">
       <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
         <div class="lines" aria-label="切换导航栏">
@@ -143,82 +143,35 @@ const showSide = () => {
 </script>
 
 <style lang="scss" scoped>
-.nav .menu .item:not(.title) a::before {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 0.1875rem;
-  bottom: 0;
-  border-radius: 0.125rem;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: currentColor;
-}
-
-.nav .menu .submenu .item:first-child:hover {
-  border-radius: 0.625rem 0.625rem 0 0;
-}
-
-.nav .menu .submenu .item:last-child:hover {
-  border-radius: 0 0 0.625rem 0.625rem;
-}
-
-.nav .menu .submenu .item.active,
-.nav .menu .submenu .item:hover {
-  color: var(--grey-0);
-  background-color: var(--color-morandi-blue);
-  box-shadow: 0 0.125rem 0.75rem var(--color-morandi-blue);
-  opacity: 0.9;
-  border-radius: 0.625rem;
-}
-.nav .menu .submenu,
-.slide-up-in {
-  animation: slideUpIn 0.3s;
-}
-
-.nav {
-  position: fixed;
-  z-index: 9;
-  width: 100%;
-  height: 3.125rem;
-  transition: all 0.2s ease-in-out 0s;
-}
-
-.nav.up {
+.up {
   transform: translateY(0);
 }
 
-.nav.down {
+.down {
   transform: translateY(-100%);
 }
 
-.nav.show {
+.show {
   background: var(--nav-bg);
   box-shadow: 0.1rem 0.1rem 0.2rem var(--grey-9-a1);
   text-shadow: 0 0 0.0625rem var(--grey-9-a1);
   color: var(--text-color);
-}
 
-.nav.show .line {
-  background: var(--text-color);
-  box-shadow: 0 0 0.0625rem var(--grey-9-a1);
-}
+  .line {
+    background: var(--text-color);
+    box-shadow: 0 0 0.0625rem var(--grey-9-a1);
+  }
 
-.nav.show .item.active > a,
-.nav.show .item.expand > a {
-  color: var(--color-aqua);
-  opacity: 1;
-}
-
-.nav.show .menu .submenu {
-  background-color: var(--grey-1);
-}
-
-.nav.show .menu .submenu .item.active a {
-  color: var(--grey-0);
-  opacity: 1;
+  .item.active > a,
+  .item.expand > a {
+    color: var(--color-aqua);
+    opacity: 1;
+  }
 }
 .nav {
+  width: 100%;
+  height: 3.125rem;
+  transition: all 0.2s ease-in-out 0s;
   z-index: 998;
   .body {
     width: 100%;
@@ -291,6 +244,25 @@ const showSide = () => {
           opacity: 1;
         }
       }
+      .submenu .item:first-child:hover {
+        border-radius: 0.625rem 0.625rem 0 0;
+      }
+
+      .submenu .item:last-child:hover {
+        border-radius: 0 0 0.625rem 0.625rem;
+      }
+
+      .submenu .item.active,
+      .submenu .item:hover {
+        color: var(--grey-0);
+        background-color: var(--color-morandi-blue);
+        box-shadow: 0 0.125rem 0.75rem var(--color-morandi-blue);
+        opacity: 0.9;
+        border-radius: 0.625rem;
+      }
+      .submenu {
+        animation: slideUpIn 0.3s;
+      }
 
       .submenu::before {
         position: absolute;
@@ -305,9 +277,21 @@ const showSide = () => {
         display: block;
       }
     }
+
     .item:not(.title) a {
       display: block;
       font-size: 1em;
+    }
+    .item:not(.title) a::before {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0.1875rem;
+      bottom: 0;
+      border-radius: 0.125rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: currentColor;
     }
     .item.active:not(.dropdown) a::before,
     .item:not(.dropdown):hover a::before {
@@ -361,6 +345,7 @@ const showSide = () => {
     }
   }
 }
+
 .toggle {
   line-height: 0;
   cursor: pointer;

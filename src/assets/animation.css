@@ -34,6 +34,10 @@
   animation: slideDownIn .3s
 }
 
+.slide-up-in {
+  animation: slideUpIn 0.3s;
+}
+
 .blur,.lozaded {
   animation: blur .8s ease-in-out forwards
 }
