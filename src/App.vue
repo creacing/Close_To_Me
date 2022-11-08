@@ -49,7 +49,9 @@ onMounted(() => {
     text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.5);
     color: var(--header-text-color);
   }
-
+  #header a:hover {
+    color: currentColor;
+  }
   main {
     background: linear-gradient(
         to top,

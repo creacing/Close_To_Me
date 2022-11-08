@@ -1,0 +1,373 @@
+@keyframes rotate {
+  from {
+      transform: rotate(0)
+  }
+
+  to {
+      transform: rotate(360deg)
+  }
+}
+
+@keyframes rotating {
+  from {
+      transform: rotate(720deg)
+  }
+
+  to {
+      transform: none
+  }
+}
+
+@keyframes rotate-needle-pause {
+  0% {
+      transform: rotateZ(-35deg)
+  }
+
+  100% {
+      transform: rotateZ(-60deg)
+  }
+}
+
+@keyframes rotate-needle-resume {
+  0% {
+      transform: rotateZ(-60deg)
+  }
+
+  100% {
+      transform: rotateZ(-35deg)
+  }
+}
+
+@keyframes beat {
+  0%,100% {
+      transform: scale(1)
+  }
+
+  10%,30% {
+      transform: scale(.9)
+  }
+
+  20%,40%,60%,80% {
+      transform: scale(1.1)
+  }
+
+  50%,70% {
+      transform: scale(1.1)
+  }
+}
+
+@keyframes flash {
+  0%,50%,to {
+      opacity: 1
+  }
+
+  25%,75% {
+      opacity: 0
+  }
+}
+
+@keyframes shake {
+  from,to {
+      transform: translate3d(0,0,0)
+  }
+
+  10%,30%,50%,70%,90% {
+      transform: translate3d(-10px,0,0)
+  }
+
+  20%,40%,60%,80% {
+      transform: translate3d(10px,0,0)
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0
+  }
+
+  100% {
+      opacity: 1
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1
+  }
+
+  100% {
+      opacity: 0
+  }
+}
+
+@keyframes blur {
+  0% {
+      filter: blur(10px)
+  }
+
+  to {
+      filter: blur(0)
+  }
+}
+
+@keyframes blur-dark {
+  0% {
+      filter: blur(10px) brightness(.9)
+  }
+
+  to {
+      filter: blur(0) brightness(.9)
+  }
+}
+
+@keyframes UpDown {
+  0%,100% {
+      opacity: .8;
+      transform: translateY(10px)
+  }
+
+  50% {
+      opacity: .4;
+      transform: translateY(0)
+  }
+}
+
+@keyframes DownUp {
+  0%,100% {
+      opacity: .8;
+      transform: rotate(180deg) translateY(0)
+  }
+
+  50% {
+      opacity: .4;
+      transform: rotate(180deg) translateY(-10px)
+  }
+}
+
+@keyframes slide {
+  0% {
+      opacity: 0;
+      transform: scaleY(0)
+  }
+
+  100% {
+      opacity: 1;
+      transform: scaleY(1)
+  }
+}
+
+@keyframes slideRightIn {
+  0% {
+      opacity: 0;
+      transform: translateX(50%)
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0)
+  }
+}
+
+@keyframes slideLeftIn {
+  0% {
+      opacity: 0;
+      transform: translateX(-50%)
+  }
+
+  to {
+      opacity: 1;
+      transform: translateX(0)
+  }
+}
+
+@keyframes slideUpIn {
+  0% {
+      opacity: 0;
+      transform: translateY(10px)
+  }
+
+  to {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+
+@keyframes slideUpBigIn {
+  0% {
+      opacity: 0;
+      transform: translateY(80px)
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+
+
+@keyframes slideDownIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-18px)
+  }
+
+  100% {
+      opacity: 1;
+      transform: translateY(0)
+  }
+}
+
+@keyframes elastic {
+  0% {
+      transform: scale(0)
+  }
+
+  55% {
+      transform: scale(1)
+  }
+
+  70% {
+      transform: scale(.98)
+  }
+
+  100% {
+      transform: scale(1)
+  }
+}
+
+@keyframes imageAnimation {
+  0% {
+      opacity: 0;
+      animation-timing-function: ease-in
+  }
+
+  2% {
+      opacity: 1
+  }
+
+  8% {
+      opacity: 1;
+      transform: scale(1.05);
+      animation-timing-function: ease-out
+  }
+
+  17% {
+      opacity: 1;
+      transform: scale(1.1)
+  }
+
+  25% {
+      opacity: 0;
+      transform: scale(1.1)
+  }
+
+  100% {
+      opacity: 0
+  }
+}
+
+@keyframes wave {
+  0% {
+      transform: translate3d(-90px,0,0)
+  }
+
+  100% {
+      transform: translate3d(85px,0,0)
+  }
+}
+
+@keyframes shake {
+    0% {
+        transform: scale(1)
+    }
+
+    10%,20% {
+        transform: scale(.9) rotate(3deg)
+    }
+
+    30%,50%,70%,90% {
+        transform: scale(1.1) rotate(-3deg)
+    }
+
+    40%,60%,80% {
+        transform: scale(1.1) rotate(3deg)
+    }
+
+    100% {
+        transform: scale(1)
+    }
+}
+
+@keyframes rainbow {
+  to {
+      background-position: -2000vw
+  }
+}
+
+@keyframes body {
+    0% {
+        clip-path: polygon(50% 50%,0 50%,0 100%,100% 100%,100% 20%)
+    }
+
+    10% {
+        clip-path: polygon(50% 50%,30% 120%,50% 100%,100% 100%,100% 20%)
+    }
+
+    20% {
+        clip-path: polygon(50% 50%,100% 90%,120% 90%,100% 100%,100% 20%)
+    }
+
+    40% {
+        clip-path: polygon(50% 50%,100% 45%,120% 45%,120% 50%,100% 20%)
+    }
+
+    50% {
+        clip-path: polygon(50% 50%,100% 45%,120% 45%,120% 50%,100% 20%)
+    }
+
+    65% {
+        clip-path: polygon(50% 50%,100% 65%,120% 65%,120% 50%,100% 20%)
+    }
+
+    80% {
+        clip-path: polygon(50% 50%,75% 130%,120% 65%,120% 50%,100% 20%)
+    }
+
+    90% {
+        clip-path: polygon(50% 50%,-20% 110%,50% 120%,100% 100%,100% 20%)
+    }
+
+    100% {
+        clip-path: polygon(50% 50%,0 50%,0 100%,100% 100%,100% 20%)
+    }
+}
+
+@keyframes foot {
+    0% {
+        transform: rotate(-10deg)
+    }
+
+    10% {
+        transform: rotate(-100deg)
+    }
+
+    20% {
+        transform: rotate(-145deg)
+    }
+
+    35% {
+        transform: rotate(-190deg)
+    }
+
+    50% {
+        transform: rotate(-195deg)
+    }
+
+    70% {
+        transform: rotate(-165deg)
+    }
+
+    100% {
+        transform: rotate(-10deg)
+    }
+}
