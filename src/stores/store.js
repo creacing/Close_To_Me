@@ -34,7 +34,7 @@ function getTags() {
 export const store = defineStore('authorStore', {
   state: () => {
     return {
-      showIndex: false,
+      showSide: false,
       postsDic: getPostsDic(),
       tags: getTags(),
       pageSize: 10,

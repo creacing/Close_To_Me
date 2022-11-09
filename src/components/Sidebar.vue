@@ -1,28 +1,15 @@
 <template>
-  <div class="side" :class="showIndex?'open':'close'" v-show="showIndexCopy">
+  <div class="side pos-rel" :class="showSide ? 'open' : 'close'" v-show="showSideCopy">
+    <div class="close-btn pos-abs" @click="closeSide">&lt;</div>
     <div class="links flex-col">
-      <router-link
-        class="link"
-        :to="link.url"
-        v-for="link of sidebar.localPath"
-        :key="link"
-        :class="link.name"
-      >
+      <router-link class="link" :to="link.url" v-for="link of sidebar.localPath" :key="link" :class="link.name">
         <i class="ic" :class="link.icon"></i>
         <!-- <span class="count">{{ sidebar.articlesNum }}</span>
         <span class="name">文章</span>-->
       </router-link>
 
-      <a
-        v-for="link of sidebar.socialLinks"
-        :key="link"
-        :href="link.url"
-        rel="noopener external nofollow noreferrer"
-        target="_blank"
-        class="link"
-        :class="link.name"
-        :title="link.url"
-      >
+      <a v-for="link of sidebar.socialLinks" :key="link" :href="link.url" rel="noopener external nofollow noreferrer"
+        target="_blank" class="link" :class="link.name" :title="link.url">
         <i class="ic" :class="link.icon"></i>
       </a>
     </div>
@@ -34,21 +21,21 @@ import config from "../../public/config";
 import { RouterLink, useRoute } from "vue-router";
 //props
 const props = defineProps({
-  showIndex: {
+  showSide: {
     type: Boolean,
     default: false,
   },
 });
-const { showIndex } = toRefs(props);
+const { showSide } = toRefs(props);
 
 //delay fade
-const showIndexCopy = ref(false)
-watch(showIndex, (newVal, oldVal) => {
+const showSideCopy = ref(false)
+watch(showSide, (newVal, oldVal) => {
   if (newVal) {
-    showIndexCopy.value = newVal
+    showSideCopy.value = newVal
   } else {
     setTimeout(() => {
-      showIndexCopy.value = newVal
+      showSideCopy.value = newVal
     }, 200)
   }
 
@@ -58,6 +45,15 @@ const { sidebar } = config;
 </script>
 
 <style lang='scss' scoped>
+.close-btn {
+  top: 50%;
+  height: 0.725rem;
+  width: 0.725rem;
+  left: -0.725rem;
+  background-color: #fff;
+  // border-radius: 0.125rem;
+}
+
 .side {
   opacity: 0.9;
   background-image: linear-gradient(to bottom, hsl(195deg, 100%, 78%), #a29bfe);
@@ -82,17 +78,21 @@ const { sidebar } = config;
     height: 100%;
     z-index: 1001;
   }
+
   .open {
     animation: openFromRight 0.2s ease-in-out forwards;
   }
+
   .close {
     animation: closeFromLeft 0.2s ease-in-out forwards;
   }
 }
+
 [data-theme="dark"] .side {
   background-image: linear-gradient(#040706, #a29bfe);
   opacity: 0.9;
 }
+
 .links {
   padding: 10px;
 }
@@ -154,6 +154,7 @@ const { sidebar } = config;
 .links .link.could1 i {
   color: var(--color-could1);
 }
+
 .links .link.could2::before {
   background-color: var(--color-could2);
 }
@@ -161,6 +162,7 @@ const { sidebar } = config;
 .links .link.could2 i {
   color: var(--color-could2);
 }
+
 .links .link.could3::before {
   background-color: var(--color-could3);
 }
@@ -168,6 +170,7 @@ const { sidebar } = config;
 .links .link.could3 i {
   color: var(--color-could3);
 }
+
 .links .link.could4::before {
   background-color: var(--color-could4);
 }
@@ -183,6 +186,7 @@ const { sidebar } = config;
 .links .link.could5 i {
   color: var(--color-could5);
 }
+
 .links .link.github::before {
   background-color: #191717;
 }
@@ -248,6 +252,7 @@ const { sidebar } = config;
     width: 60%;
   }
 }
+
 @keyframes closeFromLeft {
   from {
     width: 60%;

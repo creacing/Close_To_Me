@@ -3,11 +3,11 @@
 
   <nav class="nav pos-fix" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
     <div class="body flex-row">
-      <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
+      <div class="toggle" :class="showSide ? 'close' : ''" @click="showSidebar">
         <div class="lines" aria-label="切换导航栏">
           <span class="line first"></span>
           <span class="line second"></span>
-          <span class="line third" :class="showIndex ? 'fade' : ''"></span>
+          <span class="line third" :class="showSide ? 'fade' : ''"></span>
         </div>
       </div>
 
@@ -135,10 +135,10 @@ const scrollTop = () => {
 onUnmounted(() => {
   window.removeEventListener("scroll", scrollTop);
 });
-const { showIndex } = toRefs(state);
+const { showSide } = toRefs(state);
 
-const showSide = () => {
-  showIndex.value = !showIndex.value;
+const showSidebar = () => {
+  showSide.value = !showSide.value;
 };
 </script>
 
@@ -162,25 +162,29 @@ const showSide = () => {
     box-shadow: 0 0 0.0625rem var(--grey-9-a1);
   }
 
-  .item.active > a,
-  .item.expand > a {
+  .item.active>a,
+  .item.expand>a {
     color: var(--color-aqua);
     opacity: 1;
   }
 }
+
 .nav {
   width: 100%;
   height: 3.125rem;
   transition: all 0.2s ease-in-out 0s;
   z-index: 1000;
+
   .body {
     width: 100%;
     height: 100%;
     margin: 0 auto;
     flex-wrap: nowrap;
     width: calc(100% - 0.625rem);
+
     .toggle {
       display: none;
+
       .lines {
         width: 1.375rem;
         padding: 1.25rem;
@@ -197,19 +201,23 @@ const showSide = () => {
       }
     }
   }
+
   .menu {
     padding: 0.625rem 0;
     margin: 0;
     width: 100%;
+
     .item {
       display: inline-block;
       position: relative;
       padding: 0 0.625rem;
       letter-spacing: 0.0625rem;
       text-align: center;
+
       a:hover {
         color: currentColor;
       }
+
       .ic {
         margin-right: 0.5rem;
       }
@@ -225,14 +233,17 @@ const showSide = () => {
         background-color: var(--grey-9-a5);
         box-shadow: 0 0.3125rem 1.25rem -0.25rem var(--grey-9-a1);
         border-radius: 0.625rem;
+
         .item {
           display: block;
+
           a {
             display: inline-block;
             padding: 0.3rem 0.7rem;
             width: 100%;
             text-shadow: none;
           }
+
           a::before {
             content: none;
           }
@@ -247,6 +258,7 @@ const showSide = () => {
           opacity: 1;
         }
       }
+
       .submenu .item:first-child:hover {
         border-radius: 0.625rem 0.625rem 0 0;
       }
@@ -263,6 +275,7 @@ const showSide = () => {
         opacity: 0.9;
         border-radius: 0.625rem;
       }
+
       .submenu {
         animation: slideUpIn 0.3s;
       }
@@ -285,6 +298,7 @@ const showSide = () => {
       display: block;
       font-size: 1em;
     }
+
     .item:not(.title) a::before {
       content: "";
       position: absolute;
@@ -296,11 +310,13 @@ const showSide = () => {
       transform: translateX(-50%);
       background-color: currentColor;
     }
+
     .item.active:not(.dropdown) a::before,
     .item:not(.dropdown):hover a::before {
       width: 80%;
     }
-    .item.dropdown > a::after {
+
+    .item.dropdown>a::after {
       content: "";
       display: inline-block;
       margin-left: 0.3rem;
@@ -313,6 +329,7 @@ const showSide = () => {
     .item.dropdown:hover .submenu {
       display: block;
     }
+
     @media (max-width: 767px) {
       .item {
         display: none;
@@ -323,14 +340,17 @@ const showSide = () => {
       }
     }
   }
+
   .right {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+
     .item {
       padding: 0.625rem 0.5rem;
       cursor: pointer;
     }
+
     .i-sun {
       font-size: 1.125em;
     }
@@ -371,17 +391,21 @@ const showSide = () => {
 .toggle .line:not(:first-child) {
   margin-top: 0.1875rem;
 }
+
 .close {
   .first {
     transform: translateY(0.3125rem) rotate(-45deg);
   }
+
   .second {
     transform: rotate(45deg);
   }
+
   .third {
     transform: translateY(1rem);
     transition: all 0.5s;
   }
+
   .fade {
     opacity: 0;
   }

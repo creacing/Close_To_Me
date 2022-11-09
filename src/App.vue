@@ -5,7 +5,7 @@
     </header>
     <Wave id="waves" />
     <div id="sidebar">
-      <Sidebar class :showIndex="showIndex" />
+      <Sidebar class :showSide="showSide" />
       <!-- <Sideindex :sideIndex="sideIndex" v-if="isShow" class="sideIndex" /> -->
     </div>
     <main>
@@ -34,7 +34,7 @@ import { store } from "@/stores/store.js";
 import { useRoute } from "vue-router";
 
 const state = store();
-const { showIndex } = toRefs(state);
+const { showSide } = toRefs(state);
 
 const route = useRoute();
 
@@ -73,6 +73,7 @@ onMounted(() => {
 #blog {
   min-height: 100%;
   min-width: 100%;
+
   #header {
     margin: 0 auto;
     width: 100%;
@@ -80,16 +81,15 @@ onMounted(() => {
     text-shadow: 0 0.2rem 0.3rem rgba(0, 0, 0, 0.5);
     color: var(--header-text-color);
   }
+
   #header a:hover {
     color: currentColor;
   }
+
   main {
-    background: linear-gradient(
-        to top,
+    background: linear-gradient(to top,
         var(--body-bg-shadow) 0,
-        var(--grey-1) 20%
-      )
-      no-repeat bottom;
+        var(--grey-1) 20%) no-repeat bottom;
     z-index: 999;
   }
 

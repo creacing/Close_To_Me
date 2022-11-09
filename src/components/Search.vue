@@ -7,18 +7,8 @@
         </span>
         <div class="search-input">
           <form role="search" novalidate>
-            <input
-              class="input"
-              type="search"
-              placeholder="文章搜索"
-              autocomplete="off"
-              autocorrect="off"
-              autocapitalize="off"
-              spellcheck="false"
-              maxlength="512"
-              @input="searchForArticles"
-              v-model="inputVal"
-            />
+            <input class="input" type="search" placeholder="文章搜索" autocomplete="off" autocorrect="off"
+              autocapitalize="off" spellcheck="false" maxlength="512" @input="searchForArticles" v-model="inputVal" />
           </form>
         </div>
         <span class="close-btn" @click="closeSearchDialog">
@@ -81,29 +71,35 @@ const searchForArticles = (inputValue) => { db(); };
   display: block !important;
 }
 
+
 .search {
   background: var(--nav-bg);
   left: 0;
   top: 0;
-  width: 100%;
+  width: 40%;
   height: 100%;
   padding: 1.25rem;
   z-index: 1000;
+
   .body {
     height: 100%;
     margin: 0 auto;
     text-shadow: none;
+
     .header {
       display: flex;
       padding: 0.5rem 1.5rem;
       font-size: 1.125em;
       align-items: center;
+
       .search-input {
         flex-grow: 1;
+
         form {
           padding: 0.125rem;
         }
       }
+
       .close-btn,
       .icon {
         color: var(--grey-5);
@@ -125,16 +121,21 @@ const searchForArticles = (inputValue) => { db(); };
       padding: 1.875rem 1.875rem 0.3125rem;
       color: var(--text-color);
       position: relative;
+
       .result {
         overflow-y: scroll;
         height: 100%;
+
         .item {
           margin: 0.9375rem 0;
+
           a {
             transition: all 0.2s ease-in-out 0s;
+
             span {
               font-size: 90%;
               display: block;
+
               i {
                 color: var(--grey-4);
                 margin: 0 0.3125rem;
@@ -143,6 +144,7 @@ const searchForArticles = (inputValue) => { db(); };
           }
         }
       }
+
       hr {
         margin: 0.625rem 0;
       }
@@ -158,6 +160,12 @@ const searchForArticles = (inputValue) => { db(); };
 
   .body .input::-webkit-search-cancel-button {
     display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  .search {
+    width: 100%;
   }
 }
 </style>
