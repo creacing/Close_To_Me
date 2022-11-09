@@ -1,5 +1,5 @@
 {
-  "name": "aliceinwonderland",
+  "name": "alice",
   "version": "0.0.0",
   "scripts": {
     "dev": "cd serve && npm run dev && cd ../ && vite",

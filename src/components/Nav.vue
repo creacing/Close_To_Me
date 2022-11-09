@@ -1,13 +1,13 @@
 <template>
-  <Neko :isShow="isShow" :isDark="isDark" />
+  <Theme :isShow="isShow" :isDark="isDark" />
 
   <nav class="nav pos-fix" :class="navBtm === 2 ? '' : navBtm === 1 ? 'show down' : 'show up'">
     <div class="body flex-row">
       <div class="toggle" :class="showIndex ? 'close' : ''" @click="showSide">
         <div class="lines" aria-label="切换导航栏">
-          <span class="line"></span>
-          <span class="line"></span>
-          <span class="line"></span>
+          <span class="line first"></span>
+          <span class="line second"></span>
+          <span class="line third" :class="showIndex ? 'fade' : ''"></span>
         </div>
       </div>
 
@@ -46,7 +46,7 @@
 </template>
 <script setup>
 import { RouterLink } from "vue-router";
-import Neko from "./Neko.vue";
+import Theme from "./Theme.vue";
 import Search from "./Search.vue";
 import config from "./../../public/config.js";
 import Brand from "./Brand.vue";
@@ -114,7 +114,7 @@ let scroll = 0;
 let offsetWave = null;
 
 onMounted(() => {
-  offsetWave = document.getElementById("waves").offsetTop;
+  offsetWave = document.getElementById("brand").offsetHeight;
   window.addEventListener("scroll", scrollTop, true);
 });
 
@@ -172,7 +172,7 @@ const showSide = () => {
   width: 100%;
   height: 3.125rem;
   transition: all 0.2s ease-in-out 0s;
-  z-index: 998;
+  z-index: 1000;
   .body {
     width: 100%;
     height: 100%;
@@ -207,6 +207,9 @@ const showSide = () => {
       padding: 0 0.625rem;
       letter-spacing: 0.0625rem;
       text-align: center;
+      a:hover {
+        color: currentColor;
+      }
       .ic {
         margin-right: 0.5rem;
       }
@@ -367,5 +370,20 @@ const showSide = () => {
 
 .toggle .line:not(:first-child) {
   margin-top: 0.1875rem;
+}
+.close {
+  .first {
+    transform: translateY(0.3125rem) rotate(-45deg);
+  }
+  .second {
+    transform: rotate(45deg);
+  }
+  .third {
+    transform: translateY(1rem);
+    transition: all 0.5s;
+  }
+  .fade {
+    opacity: 0;
+  }
 }
 </style>

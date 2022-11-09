@@ -4,6 +4,10 @@
       <Nav />
     </header>
     <Wave id="waves" />
+    <div id="sidebar">
+      <Sidebar class :showIndex="showIndex" />
+      <!-- <Sideindex :sideIndex="sideIndex" v-if="isShow" class="sideIndex" /> -->
+    </div>
     <main>
       <LayOut>
         <template v-slot:content>
@@ -22,9 +26,36 @@ import Nav from "@/components/Nav.vue";
 import Footer from "@/components/Footer.vue";
 import Wave from "@/components/Wave.vue";
 import LayOut from "@/views/LayOut.vue";
-import { onMounted, ref } from "vue";
-
+import Sidebar from "@/components/Sidebar.vue";
+import Sideindex from "@/components/sideindex.vue";
 import initAnime from "@/utils/clickAnime.js";
+import { onMounted, ref, watch, toRefs } from "vue";
+import { store } from "@/stores/store.js";
+import { useRoute } from "vue-router";
+
+const state = store();
+const { showIndex } = toRefs(state);
+
+const route = useRoute();
+
+const sideIndex = ref([]);
+const isShow = ref(false);
+watch(
+  () => route.path,
+  (newPath, oldPath) => {
+    isShow.value = newPath.startsWith("/article/") ? true : false;
+  },
+  { immediate: true }
+);
+
+watch(
+  () => state.sideIndex,
+  (newIndex, oldIndex) => {
+    sideIndex.value = newIndex;
+  },
+  { immediate: true }
+);
+
 const showLoading = ref(false);
 
 // register global animation

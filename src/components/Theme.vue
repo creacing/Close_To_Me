@@ -1,5 +1,5 @@
 <template>
-  <div class="neko pos-fix" :class="[isDark ? 'dark' : '', isShow ? 'show' : '']">
+  <div class="theme pos-fix" :class="[isDark ? 'dark' : '', isShow ? 'show' : '']">
     <div class="planet pos-fix">
       <div class="sun pos-abs"></div>
       <div class="moon pos-abs"></div>
@@ -23,11 +23,11 @@ const props = defineProps({ isDark: Boolean, isShow: Boolean });
 const { isDark, isShow } = toRefs(props);
 </script>
 <style scoped lang="scss">
-.neko.show {
+.theme.show {
   display: block !important;
 }
 
-.neko {
+.theme {
   left: 0;
   right: 0;
   top: 0;
@@ -140,7 +140,7 @@ const { isDark, isShow } = toRefs(props);
   }
 }
 
-.neko:before {
+.theme:before {
   content: "";
   position: absolute;
   left: 0;
@@ -152,10 +152,10 @@ const { isDark, isShow } = toRefs(props);
   transition: 2s ease all;
 }
 
-.neko.dark:before {
+.theme.dark:before {
   opacity: 1;
 }
-.neko.dark {
+.theme.dark {
   .sun {
     opacity: 0;
   }

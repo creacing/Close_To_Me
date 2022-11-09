@@ -1,6 +1,6 @@
 <template>
-  <div id="sideTool">
-    <div class="side--links slide-up-big-in" data-title="站点概览">
+  <div class="side" :class="showIndex?'open':'close'" v-show="showIndexCopy">
+    <div class="links flex-col">
       <router-link
         class="link"
         :to="link.url"
@@ -26,87 +26,82 @@
         <i class="ic" :class="link.icon"></i>
       </a>
     </div>
-
-    <!-- <Index :sideIndex="sideIndex" class="sideIndex" /> -->
   </div>
 </template>
 <script setup>
-import { toRefs, watch, ref } from "vue";
+import { toRefs, defineProps, watch, ref } from "vue";
 import config from "../../public/config";
-import Index from "@/components/Index.vue";
 import { RouterLink, useRoute } from "vue-router";
-import { store } from "@/stores/store.js";
+//props
+const props = defineProps({
+  showIndex: {
+    type: Boolean,
+    default: false,
+  },
+});
+const { showIndex } = toRefs(props);
 
+//delay fade
+const showIndexCopy = ref(false)
+watch(showIndex, (newVal, oldVal) => {
+  if (newVal) {
+    showIndexCopy.value = newVal
+  } else {
+    setTimeout(() => {
+      showIndexCopy.value = newVal
+    }, 200)
+  }
+
+})
 const { sidebar } = config;
 
-const state = store();
-
-// const route = useRoute();
-// const sideIndex = ref([]);
-// const isShow = ref(false);
-const { showIndex } = toRefs(state);
-
-// watch(
-//   () => state.sideIndex,
-//   (newIndex, oldIndex) => {
-//     sideIndex.value = newIndex;
-//   },
-//   { immediate: true }
-// );
-
-// watch(
-//   () => route.path,
-//   (newPath, oldPath) => {
-//     isShow.value = newPath.startsWith("/article/") ? true : false;
-//   },
-//   { immediate: true }
-// );
 </script>
 
 <style lang='scss' scoped>
-@media (min-width: 991px) {
-  .sideIndex {
-    display: none;
-  }
+.side {
+  opacity: 0.9;
+  background-image: linear-gradient(to bottom, hsl(195deg, 100%, 78%), #a29bfe);
+  transition: all 0.2s ease 0s;
+  // display: flex;
+  // position: fixed;
+  // left: 0;
+  // top: 50%;
+  // transform: translateY(-50%);
+
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
+
 @media (max-width: 991px) {
-  #sideTool {
+  .side {
+    position: fixed;
     top: 0;
     right: 0;
-    z-index: 99;
-    position: fixed;
-    background-color: hsla(0deg, 0%, 100%, 1);
+    width: 0;
     height: 100%;
-    max-width: 15rem;
+    z-index: 1001;
+  }
+  .open {
+    animation: openFromRight 0.2s ease-in-out forwards;
+  }
+  .close {
+    animation: closeFromLeft 0.2s ease-in-out forwards;
   }
 }
-
-@media (min-width: 991px) {
-  #sideTool {
-    display: flex;
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.2s ease-in-out 0s;
-  }
+[data-theme="dark"] .side {
+  background-image: linear-gradient(#040706, #a29bfe);
+  opacity: 0.9;
 }
-
-.side--links {
-  display: flex;
-  flex-direction: column;
+.links {
   padding: 10px;
 }
 
-.side--links {
+.links {
   text-align: center;
 }
 
-.side--links .link {
+.links .link {
   display: inline-block;
   width: 1.875rem;
   height: 1.875rem;
@@ -117,13 +112,13 @@ const { showIndex } = toRefs(state);
   border-radius: 38%;
 }
 
-.side--links .link i {
+.links .link i {
   font-size: 1.4em;
   vertical-align: middle;
   transform: scale(0.8);
 }
 
-.side--links .link::before {
+.links .link::before {
   top: 90%;
   left: -110%;
   content: "";
@@ -133,112 +128,133 @@ const { showIndex } = toRefs(state);
   transform: rotate(45deg);
 }
 
-.side--links .link i,
-.side--links .link::before {
+.links .link i,
+.links .link::before {
   transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59) 0s;
 }
 
-.side--links .link:focus::before,
-.side--links .link:hover::before {
+.links .link:focus::before,
+.links .link:hover::before {
   top: -10%;
   left: -10%;
 }
 
-.side--links .link.could::before {
+.links .link.could::before {
   background-color: var(--color-morandi-purple);
 }
 
-.side--links .link.could i {
+.links .link.could i {
   color: var(--color-morandi-purple);
 }
 
-.side--links .link.could1::before {
+.links .link.could1::before {
   background-color: var(--color-could1);
 }
 
-.side--links .link.could1 i {
+.links .link.could1 i {
   color: var(--color-could1);
 }
-.side--links .link.could2::before {
+.links .link.could2::before {
   background-color: var(--color-could2);
 }
 
-.side--links .link.could2 i {
+.links .link.could2 i {
   color: var(--color-could2);
 }
-.side--links .link.could3::before {
+.links .link.could3::before {
   background-color: var(--color-could3);
 }
 
-.side--links .link.could3 i {
+.links .link.could3 i {
   color: var(--color-could3);
 }
-.side--links .link.could4::before {
+.links .link.could4::before {
   background-color: var(--color-could4);
 }
 
-.side--links .link.could4 i {
+.links .link.could4 i {
   color: var(--color-could4);
 }
 
-.side--links .link.could5::before {
+.links .link.could5::before {
   background-color: var(--color-could5);
 }
 
-.side--links .link.could5 i {
+.links .link.could5 i {
   color: var(--color-could5);
 }
-.side--links .link.github::before {
+.links .link.github::before {
   background-color: #191717;
 }
 
-.side--links .link.github i {
+.links .link.github i {
   color: #191717;
 }
 
-.side--links .link.twitter::before {
+.links .link.twitter::before {
   background-color: #00aff0;
 }
 
-.side--links .link.twitter i {
+.links .link.twitter i {
   color: #00aff0;
 }
 
-.side--links .link.zhihu::before {
+.links .link.zhihu::before {
   background-color: #1e88e5;
 }
 
-.side--links .link.zhihu i {
+.links .link.zhihu i {
   color: #1e88e5;
 }
 
-.side--links .link.music::before {
+.links .link.music::before {
   background-color: #e60026;
 }
 
-.side--links .link.music i {
+.links .link.music i {
   color: #e60026;
 }
 
-.side--links .link.telegram::before {
+.links .link.telegram::before {
   background-color: #32afed;
 }
 
-.side--links .link.telegram i {
+.links .link.telegram i {
   color: #32afed;
 }
 
-.side--links .link.about::before {
+.links .link.about::before {
   background-color: #3b5998;
 }
 
-.side--links .link.about i {
+.links .link.about i {
   color: #3b5998;
 }
 
-.side--links .link:focus i,
-.side--links .link:hover i {
+.links .link:focus i,
+.links .link:hover i {
   color: var(--grey-0);
   transform: scale(1);
+}
+</style>
+
+<style>
+@keyframes openFromRight {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 60%;
+  }
+}
+@keyframes closeFromLeft {
+  from {
+    width: 60%;
+  }
+
+  to {
+    width: 0;
+  }
 }
 </style>
