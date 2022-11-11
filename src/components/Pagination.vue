@@ -19,10 +19,8 @@
 </template>
 <script setup>
 import { defineProps, toRefs, defineEmits, ref } from 'vue'
-import { RouterLink } from "vue-router";
 
 const curPageList = ref([])
-
 const currentIndex = ref(1)
 
 const props = defineProps({
@@ -32,19 +30,20 @@ const props = defineProps({
   }
 })
 
-
-
 const emits = defineEmits(['getCurIndex'])
-
 const { pageNum } = toRefs(props)
 
-if (pageNum.value > 5) {
-  curPageList.value = [1, 2, 3, 4, 5]
-} else {
-  for (let i = 0; i < pageNum.value; i++) {
-    curPageList.value.push(i)
+const initCurPageList = () => {
+  if (pageNum.value > 5) {
+    curPageList.value = [1, 2, 3, 4, 5]
+  } else {
+    for (let i = 0; i < pageNum.value; i++) {
+      curPageList.value.push(i)
+    }
   }
 }
+
+initCurPageList()
 
 const nextPage = () => {
   const last = curPageList.value[4]
@@ -59,8 +58,6 @@ const nextPage = () => {
 
     curPageList.value = [last + 1, last + 2, last + 3, last + 4, last + 5]
   }
-
-
 }
 const prePage = () => {
   const first = curPageList.value[0]
@@ -75,71 +72,76 @@ const toPage = (pageIndex) => {
 </script>
 
 <style scoped lang='scss'>
-.pagination .next:hover,
-.pagination .page-number.current,
-.pagination .page-number:hover,
-.pagination .prev:hover {
-  color: var(--grey-0);
-  background-color: var(--color-morandi-blue);
-  box-shadow: 0 0.125rem 0.75rem var(--color-morandi-blue);
-  opacity: 0.9;
-  border-radius: 0.625rem;
-}
-
-.pagination .next,
-.pagination .page-number,
-.pagination .prev,
-.pagination .space {
-  display: inline-block;
-  margin: 0 0.5rem;
-  padding: 0 0.75rem;
-  position: relative;
-  border-radius: 0.3125rem;
-}
-
-@media (max-width: 767px) {
-  .pagination .next,
-  .pagination .page-number,
-  .pagination .prev,
-  .pagination .space {
-    margin: 0 0.3125rem;
-  }
-}
-
 .pagination {
   width: 100%;
   padding: 1.25rem 3.125rem;
   text-align: center;
   display: inline-block;
   color: var(--grey-5);
+  .next:hover,
+  .page-number.current,
+  .page-number:hover,
+  .prev:hover {
+    color: var(--grey-0);
+    background-image: linear-gradient(
+      to right,
+      var(--color-pink) 0,
+      var(--color-orange) 100%
+    );
+    opacity: 0.9;
+    border-radius: 0.625rem;
+  }
+
+  .next,
+  .page-number,
+  .prev,
+  .space {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0 0.75rem;
+    position: relative;
+    border-radius: 0.3125rem;
+  }
+
+  @media (max-width: 767px) {
+    .next,
+    .page-number,
+    .prev,
+    .space {
+      margin: 0 0.3125rem;
+    }
+    .page-number {
+      padding: 0 0.375rem;
+    }
+  }
+
+  .next,
+  .page-number,
+  .prev {
+    transition: all 0.2s ease-in-out 0s;
+  }
+
+  .space {
+    margin: 0;
+    padding: 0;
+  }
+
+  .prev {
+    margin-left: 0;
+  }
+
+  .next {
+    margin-right: 0;
+  }
+
+  .page-number.current:hover {
+    box-shadow: 0 0 0.3125rem var(--primary-color);
+  }
 }
 
 @media (max-width: 767px) {
   .pagination {
-    padding: 1.25rem 0.625rem;
+    padding: 1.25rem 0.125rem;
   }
-}
-
-.pagination .next,
-.pagination .page-number,
-.pagination .prev {
-  transition: all 0.2s ease-in-out 0s;
-}
-
-.pagination .space {
-  margin: 0;
-  padding: 0;
-}
-
-.pagination .prev {
-  margin-left: 0;
-}
-
-.pagination .next {
-  margin-right: 0;
-}
-
-.pagination .page-number.current:hover {
-  box-shadow: 0 0 0.3125rem var(--primary-color);
 }
 </style>

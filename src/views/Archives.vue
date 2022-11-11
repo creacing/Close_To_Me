@@ -9,6 +9,7 @@
     </RouterLink>
     <RouterLink :to="`/article${archive.path}`" v-for="archive in archiveList" :key="archive">
       <h3 class="item flex-row pos-rel">
+        <div></div>
         <span class="bg">{{ archive.date.split("-")[0] }} 年</span>
         <small>/</small>
         <span class="bg">{{ archive.date.split("-")[1] }} 月</span>
