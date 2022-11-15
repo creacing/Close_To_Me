@@ -162,8 +162,8 @@ const showSidebar = () => {
     box-shadow: 0 0 0.0625rem var(--grey-9-a1);
   }
 
-  .item.active>a,
-  .item.expand>a {
+  .item.active > a,
+  .item.expand > a {
     color: var(--color-aqua);
     opacity: 1;
   }
@@ -316,7 +316,7 @@ const showSidebar = () => {
       width: 80%;
     }
 
-    .item.dropdown>a::after {
+    .item.dropdown > a::after {
       content: "";
       display: inline-block;
       margin-left: 0.3rem;

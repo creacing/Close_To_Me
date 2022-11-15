@@ -2,20 +2,35 @@
   <div class="side pos-rel" :class="showSide ? 'open' : 'close'" v-show="showSideCopy">
     <div class="close-btn pos-abs" @click="closeSide">&lt;</div>
     <div class="links flex-col">
-      <router-link class="link" :to="link.url" v-for="link of sidebar.localPath" :key="link" :class="link.name">
+      <router-link
+        class="link"
+        :to="link.url"
+        v-for="link of sidebar.localPath"
+        :key="link"
+        :class="link.name"
+      >
         <i class="ic" :class="link.icon"></i>
         <!-- <span class="count">{{ sidebar.articlesNum }}</span>
         <span class="name">文章</span>-->
       </router-link>
 
-      <a v-for="link of sidebar.socialLinks" :key="link" :href="link.url" rel="noopener external nofollow noreferrer"
-        target="_blank" class="link" :class="link.name" :title="link.url">
+      <a
+        v-for="link of sidebar.socialLinks"
+        :key="link"
+        :href="link.url"
+        rel="noopener external nofollow noreferrer"
+        target="_blank"
+        class="link"
+        :class="link.name"
+        :title="link.url"
+      >
         <i class="ic" :class="link.icon"></i>
       </a>
     </div>
   </div>
 </template>
 <script setup>
+import { debounce } from '@/utils/util.js'
 import { toRefs, defineProps, watch, ref } from "vue";
 import config from "../../public/config";
 import { RouterLink, useRoute } from "vue-router";
@@ -30,7 +45,9 @@ const { showSide } = toRefs(props);
 
 //delay fade
 const showSideCopy = ref(false)
-watch(showSide, (newVal, oldVal) => {
+
+const show = debounce(200, () => {
+  const newVal = arguments[0]
   if (newVal) {
     showSideCopy.value = newVal
   } else {
@@ -38,7 +55,10 @@ watch(showSide, (newVal, oldVal) => {
       showSideCopy.value = newVal
     }, 200)
   }
+})
 
+watch(showSide, (newVal, oldVal) => {
+  show(newVal)
 })
 const { sidebar } = config;
 

@@ -1,8 +1,12 @@
-export function debounce(func, wait) {
+export function debounce(wait, func) {
   let timeout;
   return function () {
     // 清空定时器
     if(timeout) clearTimeout(timeout);
-    timeout = setTimeout(func, wait)
+    const args = arguments
+    const that = this
+    timeout = setTimeout(()=>{
+      func.apply(that,args)
+    }, wait)
   }
 }
