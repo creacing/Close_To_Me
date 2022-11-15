@@ -26,7 +26,7 @@ const currentYear = currentDate.getFullYear();
   margin: 1rem 0;
 }
 .sakura {
-  color: hsl(350deg 100% 88%);
+  color: #ffc2cc;
   display: inline-block;
   margin: 0 0.5rem;
 }

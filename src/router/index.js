@@ -10,19 +10,19 @@ const router = createRouter({
       component: () => import('@/views/Home.vue')
     },
     {
-      path: '/tags',
-      name: 'tags',
-      component: () => import('@/views/Tags.vue')
+      path: '/tag',
+      name: 'tag',
+      component: () => import('@/views/Tag.vue')
     },
     {
-      path: '/categories',
-      name: 'categories',
-      component: () => import('@/views/Categories.vue')
+      path: '/category',
+      name: 'category',
+      component: () => import('@/views/Category.vue')
     },
     {
-      path: '/archives',
-      name: 'archives',
-      component: () => import('@/views/Archives.vue')
+      path: '/archive',
+      name: 'archive',
+      component: () => import('@/views/Archive.vue')
     },
     {
       path: '/about',
@@ -30,9 +30,9 @@ const router = createRouter({
       component: () => import('@/views/About.vue')
     },
     {
-      path: '/WebSites',
-      name: 'WebSites',
-      component: () => import('@/views/WebSites.vue')
+      path: '/site',
+      name: 'site',
+      component: () => import('@/views/Site.vue')
     },
     {
       path: '/article/:type/:path',

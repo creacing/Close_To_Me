@@ -11,10 +11,10 @@ const { isDark } = storeToRefs(store());
 </script>
 <style scoped lang='scss'>
 .brand-img--white {
-  background-image: linear-gradient(hsl(195deg, 100%, 78%), #a29bfe);
+  background-image: var(--brand-light);
 }
 .brand-img--dark {
-  background-image: linear-gradient(#040706, #a29bfe);
+  background-image: var(--brand-dark);
 }
 
 .brand-bg {

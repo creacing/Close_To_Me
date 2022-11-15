@@ -10,8 +10,6 @@
       >
         <i class="ic" :class="link.icon"></i>
       </router-link>
-      <!-- <span class="count">{{ sidebar.articlesNum }}</span>
-      <span class="name">文章</span>-->
       <a
         v-for="link of sidebar.socialLinks"
         :key="link"
@@ -64,10 +62,12 @@ const { sidebar } = config;
 
 <style lang='scss' scoped>
 .side {
-  background-image: linear-gradient(to bottom, hsl(195deg, 100%, 78%), #a29bfe);
+  background-image: var(--brand-light);
   transition: all 0.2s ease 0s;
 }
-
+[data-theme="dark"] .side {
+  background-image: var(--brand-dark);
+}
 @media (max-width: 991px) {
   .side {
     position: fixed;
@@ -85,10 +85,6 @@ const { sidebar } = config;
   .close {
     animation: closeFromLeft 0.2s ease-in-out forwards;
   }
-}
-
-[data-theme="dark"] .side {
-  background-image: linear-gradient(#040706, #a29bfe);
 }
 
 .links {
