@@ -32,13 +32,13 @@ const config = {
         ]
     },
     sites: [
-        { url: "https://www.remove.bg/zh", title: "在线抠图", color: "", description: '在线抠图' },
+        { url: "https://www.remove.bg/zh", title: "抠图", color: "", description: '在线抠图' },
         { url: "http://www.sortablejs.com/", title: "sortablejs", color: "", description: '功能强大的javascript拖拽库' },
-        { url: "http://tool.c7sky.com/webcolor/", title: "网页设计常用色彩搭配表", color: "", description: '网页设计常用色彩搭配表' },
-        { url: "http://www.googlefonts.net/", title: "谷歌字体", color: "", description: '谷歌字体' },
-        { url: "https://jpgmin.cn/", title: "压图大师", color: "", description: '压图大师' },
-        { url: "https://www.fontke.com/tool/rgb/eee5f8/", title: "颜色查询", color: "", description: '颜色查询' },
-        { url: "https://animista.net/play/basic/rotate", title: "css动画大全", color: "", description: 'css动画大全' }
+        { url: "http://tool.c7sky.com/webcolor/", title: "色彩搭配表", color: "", description: '网页设计常用的色彩搭配表' },
+        { url: "http://www.googlefonts.net/", title: "字体", color: "", description: '谷歌字体' },
+        { url: "https://jpgmin.cn/", title: "压缩图片", color: "", description: '压图大师' },
+        { url: "https://www.fontke.com/tool/rgb/eee5f8/", title: "查询颜色", color: "", description: '颜色查询' },
+        { url: "https://animista.net/play/basic/rotate", title: "css动画", color: "", description: 'css动画大全' }
 
         
     ],

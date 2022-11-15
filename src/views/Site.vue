@@ -1,13 +1,13 @@
 <template>
   <div class="site flex-row">
-    <div class="item pos-rel" :title="site.title" v-for="site in sites" :key="site">
+    <div class="item" :title="site.title" v-for="site in sites" :key="site">
       <div class="info">
         <a
+          class="title"
+          target="_blank"
           :href="site.url"
           :title="site.title"
           rel="noopener external nofollow noreferrer"
-          target="_blank"
-          class="title"
         >{{site.title}}</a>
         <p class="desc">{{site.description}}</p>
       </div>

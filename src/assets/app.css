@@ -342,25 +342,7 @@ input,textarea {
     font-size: 0
 }
 
-.panels {
-    padding: 4.6875rem 0 0;
-    width: 100%;
-    overflow: hidden
-}
-
-.panels .inner {
-    overflow-x: hidden;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    width: auto;
-    height: 100%
-}
-
-.panels .inner::-webkit-scrollbar {
-    display: none
-}
-
-.index.wrap .btn {
+.container .btn {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -370,7 +352,7 @@ input,textarea {
     background-image: linear-gradient(to right,var(--color-pink) 0,var(--color-orange) 100%)
 }
 
-.index.wrap .btn::before {
+.container .btn::before {
     position: absolute;
     display: block;
     content: '';
@@ -383,38 +365,38 @@ input,textarea {
     background-color: var(--color-pink-a3)
 }
 
-.index.wrap .btn:hover::before {
+.container .btn:hover::before {
     transform: translateZ(-2.5rem)
 }
 
-.index.wrap .active .btn {
+.container .active .btn {
     transform-style: preserve-3d;
     transform: translateZ(2rem);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
 
-.index.wrap .active .btn::before {
+.container .active .btn::before {
     transform-style: preserve-3d;
     transform: translateZ(-2rem);
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden
 }
 
-.index.wrap .meta {
+.container .meta {
     font-size: .8125em;
     color: var(--grey-5)
 }
 
-.index.wrap .meta .ic {
+.container .meta .ic {
     margin-right: .0625rem
 }
 
-.index.wrap .meta .item+.item {
+.container .meta .item+.item {
     margin-left: .625rem
 }
 
-.index.wrap .meta.footer {
+.container .meta.footer {
     position: absolute;
     bottom: .5rem;
     max-width: calc(100% - 7rem);
@@ -424,17 +406,8 @@ input,textarea {
     justify-content: flex-start
 }
 
-.index.wrap .meta.footer span {
+.container .meta.footer span {
     margin-right: .5rem
-}
-
-.tag.cloud a {
-    display: inline-block;
-    margin: .625rem
-}
-
-.tag.cloud a:hover {
-    color: var(--primary-color)!important
 }
 
 #loading {

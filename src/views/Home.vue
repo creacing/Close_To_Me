@@ -1,5 +1,5 @@
 <template>
-  <div class="index wrap">
+  <div class="container">
     <ArticleList :articles="articles" />
   </div>
   <Pagination :pageNum="pageNum" @getCurIndex="getCurIndex" />
