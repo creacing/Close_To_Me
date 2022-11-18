@@ -1,23 +1,25 @@
 <template>
   <div class="category wrap">
-   <RouterLink to="/"> <h2 class="item title">
-      <span>分类</span>
-      <small>/</small>
-      {{categoryNum}}</RouterLink>
-    </h2>
+    <RouterLink to="/">
+      <h2 class="item title">
+        <span>分类</span>
+        <small>/</small>
+        {{ categoryNum }}
+      </h2>
+    </RouterLink>
     <div v-for="category in categories" :key="category">
       <h2 class="item header">
-        <p :path="category.firstPath">{{category.firstTitle}}</p>
-        <small>( {{category.firstNum}} )</small>
+        <p :path="category.firstPath">{{ category.firstTitle }}</p>
+        <small>( {{ category.firstNum }} )</small>
       </h2>
       <h3 class="item section">
-        <p :path="category.secondPath">{{category.secondTitle}}</p>
-        <small>( {{category.secondNum}} )</small>
+        <p :path="category.secondPath">{{ category.secondTitle }}</p>
+        <small>( {{ category.secondNum }} )</small>
       </h3>
       <div class="item normal">
         <div class="title">
-          <RouterLink :to="category.thirdPath">{{category.thirdTitle}}</RouterLink>
-          <small>( {{category.thirdNum}} )</small>
+          <RouterLink :to="category.thirdPath">{{ category.thirdTitle }}</RouterLink>
+          <small>( {{ category.thirdNum }} )</small>
         </div>
       </div>
     </div>
@@ -35,7 +37,7 @@ const posts = state.categoryDic
 const categories = posts
 </script>
 <style scoped lang='scss'>
-.category{
+.category {
   small {
     color: var(--grey-4);
     margin: auto 0.3125rem;
@@ -147,5 +149,4 @@ const categories = posts
     margin-left: 0.3125rem;
   }
 }
-
 </style>

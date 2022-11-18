@@ -62,7 +62,7 @@ const query = () => {
     }
   }
 };
-const db = debounce(query, 500);
+const db = debounce(500, query);
 
 const searchForArticles = (inputValue) => { db(); };
 </script>
