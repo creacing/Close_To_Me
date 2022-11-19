@@ -10,8 +10,8 @@
         <span>{{ link.title }}</span>
       </div>
       <div class="item" v-for="link of sidebar.socialLinks" :key="link">
-        <a :href="link.url" rel="noopener external nofollow noreferrer" target="_blank" class="link" :class="link.name"
-          :title="link.url">
+        <a :href="link.url" rel="noopener external nofollow noreferrer" target="_blank"
+          class="link flex-center flex-row" :class="link.name" :title="link.url">
           <div class="flex-row item">
             <i class="ic" :class="link.icon"></i>
           </div>
