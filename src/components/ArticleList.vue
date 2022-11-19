@@ -108,39 +108,39 @@ const { articles } = toRefs(props);
     box-shadow: 0 0 2rem var(--box-bg-shadow);
   }
 
-  .body:nth-child(even) {
-    flex-direction: row-reverse;
+  // .body:nth-child(even) {
+  //   flex-direction: row-reverse;
 
-    .info {
-      padding: 1rem 0 3rem 1.5rem;
+  //   .info {
+  //     padding: 1rem 0 3rem 1.5rem;
 
-      .meta {
-        justify-content: flex-start;
-      }
+  //     .meta {
+  //       justify-content: flex-start;
+  //     }
 
-      .footer {
-        right: 0.5rem;
-      }
-    }
+  //     .footer {
+  //       right: 0.5rem;
+  //     }
+  //   }
 
-    .btn {
-      left: 0;
-      right: auto;
-      border-radius: 0 0.25rem;
-      background-image: linear-gradient(to right,
-          var(--color-orange) 0,
-          var(--color-pink) 100%);
-    }
-  }
+  //   .btn {
+  //     left: 0;
+  //     right: auto;
+  //     border-radius: 0 0.25rem;
+  //     background-image: linear-gradient(to right,
+  //         var(--color-orange) 0,
+  //         var(--color-pink) 100%);
+  //   }
+  // }
 
   @media (max-width: 767px) {
-    .body:nth-child(even) {
-      flex-direction: column;
+    // .body:nth-child(even) {
+    //   flex-direction: column;
 
-      .info {
-        padding: 0 1rem 3rem;
-      }
-    }
+    //   .info {
+    //     padding: 0 1rem 3rem;
+    //   }
+    // }
 
     .body {
       width: 100%;
