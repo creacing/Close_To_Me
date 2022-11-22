@@ -41,34 +41,6 @@ const config = {
         { url: "https://animista.net/play/basic/rotate", title: "css动画", color: "", description: 'css动画大全' }
 
         
-    ],
-    //colud color
-    cloudColorList: [
-        '#747bff',
-        '#646cff',
-        '#cf9baa',
-        '#de8293',
-        '#5b93b1',
-        '#1b5489',
-        '#7690b8',
-        '#cfd8e0',
-        '#6896b7',
-        '#db8ea6',
-        '#7b9361',
-        '#3b6f87',
-        '#b85b6c',
-        '#dd8a94',
-        '#f38b61',
-        '#ffa842',
-        '#596085',
-        '#3e3a64',
-        '#e15195',
-        '#5fa3d5',
-        '#7c94b1',
-        '#3e749f',
-        '#da7b35',
-        '#ff9d4e',
-        '#345a6d',
     ]
 }
 export default config
