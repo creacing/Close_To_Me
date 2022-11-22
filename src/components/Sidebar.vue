@@ -1,27 +1,23 @@
 <template>
   <div class="side pos-rel" :class="showSide ? 'open' : 'close'" v-show="showSideCopy">
     <div class="links flex-col">
-      <router-link
-        class="link flex-center flex-row"
-        :to="link.url"
-        v-for="link of sidebar.localPath"
-        :key="link"
-        :class="link.name"
-      >
-        <i class="ic" :class="link.icon"></i>
-      </router-link>
-      <a
-        v-for="link of sidebar.socialLinks"
-        :key="link"
-        :href="link.url"
-        rel="noopener external nofollow noreferrer"
-        target="_blank"
-        class="link"
-        :class="link.name"
-        :title="link.url"
-      >
-        <i class="ic" :class="link.icon"></i>
-      </a>
+      <div class="item" v-for="link of sidebar.localPath" :key="link">
+        <router-link class="link flex-center flex-row" :to="link.url" :class="link.name">
+          <div class="flex-row item">
+            <i class="ic" :class="link.icon"></i>
+          </div>
+        </router-link>
+        <span>{{ link.title }}</span>
+      </div>
+      <div class="item" v-for="link of sidebar.socialLinks" :key="link">
+        <a :href="link.url" rel="noopener external nofollow noreferrer" target="_blank" class="link" :class="link.name"
+          :title="link.url">
+          <div class="flex-row item">
+            <i class="ic" :class="link.icon"></i>
+          </div>
+        </a>
+        <span>{{ link.title }}</span>
+      </div>
     </div>
   </div>
 </template>
@@ -62,12 +58,14 @@ const { sidebar } = config;
 
 <style lang='scss' scoped>
 .side {
-  background-image: var(--brand-light);
+  background-color: var(--grey-3);
   transition: all 0.2s ease 0s;
 }
+
 [data-theme="dark"] .side {
-  background-image: var(--brand-dark);
+  background-color: var(--grey-7);
 }
+
 @media (max-width: 991px) {
   .side {
     position: fixed;
@@ -87,20 +85,41 @@ const { sidebar } = config;
   }
 }
 
+@media (min-width: 991px) {
+  .side {
+    display: none;
+  }
+
+}
+
 .links {
   padding: 0.625rem;
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .item:hover {
+    background-color: var(--color-could8);
+  }
+
   .link {
     width: 1.875rem;
     height: 1.875rem;
     position: relative;
     overflow: hidden;
     border-radius: 38%;
+
     i {
       font-size: 1.4rem;
       transform: scale(0.8);
       transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59) 0s;
     }
   }
+
   .link::before {
     top: 90%;
     left: -110%;
@@ -111,16 +130,19 @@ const { sidebar } = config;
     transform: rotate(45deg);
     transition: all 0.35s cubic-bezier(0.31, -0.105, 0.43, 1.59) 0s;
   }
+
   .link:focus::before,
   .link:hover::before {
     top: -10%;
     left: -10%;
   }
+
   .link:focus i,
   .link:hover i {
     color: var(--grey-0);
     transform: scale(1);
   }
+
   .could::before {
     background-color: var(--color-morandi-purple);
   }

@@ -13,9 +13,28 @@
 import { RouterLink } from "vue-router";
 import config from "../../public/config";
 import { store } from "@/stores/store.js";
+import { ref } from "vue";
 const state = store();
 const tags = state.tags;
+
+const posts = state.posts
 const tagList = [];
+
+
+const tagRows = ref([])
+const clickTag = (tag) => {
+  tagRows.value = []
+  for (const post of posts) {
+    if (post.tags.includes(tag)) {
+
+      console.log('tag-click', post.tags);
+
+      tagRows.value.push(post)
+    }
+  }
+
+
+}
 
 for (const tag in tags) {
   tagList.push({ name: tag, path: "", articlesNum: tag.length });
@@ -31,6 +50,15 @@ for (const tag in tags) {
 
   .link:hover {
     color: var(--primary-color) !important;
+  }
+
+  .between {
+    justify-content: space-between;
+    margin-top: 1rem;
+  }
+
+  .between:hover {
+    color: var(--color-blue);
   }
 }
 </style>

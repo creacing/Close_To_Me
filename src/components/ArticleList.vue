@@ -18,9 +18,13 @@
           </span>
         </div>
         <h3>
-          <RouterLink :to="`article${article.path}`" :title="article.title">{{article.title}}</RouterLink>
+          <RouterLink :to="`article${article.path}`" :title="article.title">{{ article.title }}</RouterLink>
         </h3>
-        <div class="excerpt">{{ article.description }}</div>
+
+        <RouterLink :to="`article${article.path}`" :title="article.title">
+          <div class="excerpt">{{ article.description }}</div>
+        </RouterLink>
+
         <div class="meta footer">
           <span>
             <RouterLink :to="`article${article.path}`" :title="article.title">
@@ -29,7 +33,7 @@
             </RouterLink>
           </span>
         </div>
-        <RouterLink :to="`article${article.path}`" :title="article.title" class="btn">more...</RouterLink>
+        <!-- <RouterLink :to="`article${article.path}`" :title="article.title" class="btn">more...</RouterLink> -->
       </div>
     </article>
   </div>
@@ -56,15 +60,18 @@ const { articles } = toRefs(props);
     min-width: calc(100% - 2rem);
     transition: all 0.2s ease-in-out 0s;
     box-shadow: 0 0.625rem 1.875rem -0.9375rem var(--box-bg-shadow);
+
     .info {
       width: 100%;
       perspective: 62.5rem;
       padding: 1rem 1.5rem 3rem !important;
+
       .meta {
         margin: 0;
         display: flex;
         justify-content: flex-end;
       }
+
       h3 {
         overflow: hidden;
         white-space: nowrap;
@@ -89,46 +96,52 @@ const { articles } = toRefs(props);
         width: 100%;
         height: 14rem;
         padding: 0 1rem 3rem;
+
         .meta .item:not(:first-child) {
           display: none;
         }
       }
     }
   }
+
   .body:hover {
     box-shadow: 0 0 2rem var(--box-bg-shadow);
   }
-  .body:nth-child(even) {
-    flex-direction: row-reverse;
-    .info {
-      padding: 1rem 0 3rem 1.5rem;
-      .meta {
-        justify-content: flex-start;
-      }
-      .footer {
-        right: 0.5rem;
-      }
-    }
 
-    .btn {
-      left: 0;
-      right: auto;
-      border-radius: 0 0.25rem;
-      background-image: linear-gradient(
-        to right,
-        var(--color-orange) 0,
-        var(--color-pink) 100%
-      );
-    }
-  }
+  // .body:nth-child(even) {
+  //   flex-direction: row-reverse;
+
+  //   .info {
+  //     padding: 1rem 0 3rem 1.5rem;
+
+  //     .meta {
+  //       justify-content: flex-start;
+  //     }
+
+  //     .footer {
+  //       right: 0.5rem;
+  //     }
+  //   }
+
+  //   .btn {
+  //     left: 0;
+  //     right: auto;
+  //     border-radius: 0 0.25rem;
+  //     background-image: linear-gradient(to right,
+  //         var(--color-orange) 0,
+  //         var(--color-pink) 100%);
+  //   }
+  // }
 
   @media (max-width: 767px) {
-    .body:nth-child(even) {
-      flex-direction: column;
-      .info {
-        padding: 0 1rem 3rem;
-      }
-    }
+    // .body:nth-child(even) {
+    //   flex-direction: column;
+
+    //   .info {
+    //     padding: 0 1rem 3rem;
+    //   }
+    // }
+
     .body {
       width: 100%;
       flex-direction: column;
@@ -141,7 +154,7 @@ const { articles } = toRefs(props);
     }
   }
 
-  .body + .body {
+  .body+.body {
     margin-top: 0.625rem;
   }
 }
