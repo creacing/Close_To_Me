@@ -1,19 +1,13 @@
 <template>
   <div class="tag">
-    <RouterLink class="link" :key="tag" v-for="tag in tagList" :to="tag.path" @click="clickTag(tag.name)"
-      :style="{ 'font-size': tag.articlesNum > 20 ? '1.5rem' : tag.articlesNum < 14 ? '1rem' : `${tag.articlesNum * 1.5}px`, color: cloudColorList[tag.articlesNum % cloudColorList.length] }">
-      {{ tag.name }}
-    </RouterLink>
-
-    <div class="content">
-      <p v-for="row in tagRows" class="flex-row between">
-        <span>{{ row.title }}</span>
-        <span>{{ row.date }}</span>
-      </p>
-    </div>
-
+    <RouterLink
+      class="link"
+      :key="tag"
+      v-for="(tag,index) in tagList"
+      :to="tag.path"
+      :style="{'font-size':  tag.articlesNum > 20 ? '1.5rem' : tag.articlesNum < 14 ? '1rem': `${tag.articlesNum * 1.5}px`, color: `var(--color-could${index+1})` }"
+    >{{ tag.name }}</RouterLink>
   </div>
-
 </template>
 <script setup>
 import { RouterLink } from "vue-router";
@@ -21,7 +15,6 @@ import config from "../../public/config";
 import { store } from "@/stores/store.js";
 import { ref } from "vue";
 const state = store();
-const { cloudColorList } = config;
 const tags = state.tags;
 
 const posts = state.posts
