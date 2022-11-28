@@ -9,6 +9,7 @@ int CountLines(const char *filename)
   char line[512];
   string temp;
   ReadFile.open(filename, ios::in);
+  cout << ReadFile.fail() << endl;
   if (ReadFile.fail())
   {
     ReadFile.close();
