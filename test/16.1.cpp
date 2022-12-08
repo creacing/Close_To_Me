@@ -19,6 +19,7 @@ int CountLines(const char *filename)
   {
     while (getline(ReadFile, temp))
     {
+      cout << temp << endl;
       n++;
     }
     ReadFile.close();
